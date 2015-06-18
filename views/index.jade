@@ -1,0 +1,23 @@
+extends layout
+
+block head
+    script(type='text/javascript', src='/javascripts/index.js')
+    script(type='text/javascript', src=''
+    title ENERGY CHARTS
+
+block content
+    h3 Available Items:
+    div(data-bind='foreach: $root.availableItems')
+        input(type='checkbox', data-bind='value: id(), checked: $root.associatedItemIds, click: $root.toggleAssociation')
+        span(data-bind="text: ' ' + Name()")
+        br
+    br
+    h3 Associated Item Ids:
+    div(data-bind='foreach: $root.associatedItemIds')
+        span(data-bind='text: $data')
+        br
+
+    #chart-row-CZ
+    #chart-ring-ENERGY
+    #chart-ring-ENERGY2
+    a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
