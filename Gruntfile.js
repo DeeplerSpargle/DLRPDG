@@ -12,24 +12,21 @@ module.exports = function(grunt) {
         //        dest: 'build/<%= pkg.name %>.min.js'
         //    }
         //}
-        browserify: {
-            src:'',
-            dist: {
-                files: {
-                    'build/module.js': ['client/scripts/**/*.js', 'client/scripts/**/*.coffee'],
-                },
-                options: {
-                    transform: ['coffeeify']
-                }
-            }
-        }
+        //browserify: {
+        //
+        //    bundle: {
+        //        src: ['/node_modules/knockout/build/output/knockout-latest.js'],
+        //        dest: 'public/js/lib/'
+        //
+        //    }
+        //}
     });
 
     // Load the plugin that provides the "uglify" task.
     //grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-browserify');
+    //grunt.loadNpmTasks('grunt-browserify');
 
     // Default task(s).
-    grunt.registerTask('default', ['grunt-browserify']);
+    //grunt.registerTask('default', ['browserify']);
 
 };
