@@ -86,15 +86,15 @@ function ViewModel() {
                 .width(300).height(200)
                 .dimension(WFDim)
                 .group(PerZone)
-                .elasticX(true)
-                .renderlet(function(chart) {
-                    ENERGYRingChart.filter(chart.filter());
-                })
-                .on("filtered", function(chart) {
-                    dc.events.trigger(function() {
-                        ENERGYRingChart.filter(chart.filter());
-                    });
-                });
+                .elasticX(true);
+                //.renderlet(function(chart) {
+                //    ENERGYRingChart.filter(chart.filter());
+                //})
+                //.on("filtered", function(chart) {
+                //    dc.events.trigger(function() {
+                //        ENERGYRingChart.filter(chart.filter());
+                //    });
+                //});
 
             dc.renderAll();
 
