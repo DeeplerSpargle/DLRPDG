@@ -17,7 +17,7 @@
   <body>
     <h3>Available Items:</h3>
     <div data-bind="foreach: availableItems">
-      <input type="checkbox" data-bind="value: Url, checked: $root.associatedItemIds, click: $root.toggleAssociation"><span data-bind="text: '�' + Name()"></span><br>
+      <input type="checkbox" data-bind="value: Id, checked: $root.associatedItemIds, click: $root.toggleAssociation"><span data-bind="text: '�' + Name()"></span><br>
     </div><br>
     <h3>Associated Item Ids:</h3>
     <div data-bind="foreach: associatedItemIds"><span data-bind="text: $data"></span><br></div>
