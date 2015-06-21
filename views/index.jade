@@ -16,13 +16,13 @@ block head
 block content
     h3 Available Items:
     div(data-bind='foreach: availableItems')
-        input(type='checkbox', data-bind='value: Id, checked: $root.associatedItemIds, click: $root.toggleAssociation')
+        input(type='radio', data-bind='value: Id, checked: $root.associatedItemId, click: $root.toggleAssociation')
         span(data-bind="text: ' ' + Name()")
         br
     br
     h3 Associated Item Ids:
-    div(data-bind='foreach: associatedItemIds')
-        span(data-bind='text: $data')
+    div
+        span(data-bind='text: associatedItemId')
         br
 
     #chart-row-CZ

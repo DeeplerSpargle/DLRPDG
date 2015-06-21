@@ -17,10 +17,10 @@
   <body>
     <h3>Available Items:</h3>
     <div data-bind="foreach: availableItems">
-      <input type="checkbox" data-bind="value: Id, checked: $root.associatedItemIds, click: $root.toggleAssociation"><span data-bind="text: '�' + Name()"></span><br>
+      <input type="radio" data-bind="value: Id, checked: $root.associatedItemId, click: $root.toggleAssociation"><span data-bind="text: '�' + Name()"></span><br>
     </div><br>
     <h3>Associated Item Ids:</h3>
-    <div data-bind="foreach: associatedItemIds"><span data-bind="text: $data"></span><br></div>
+    <div><span data-bind="text: associatedItemId"></span><br></div>
     <div id="chart-row-CZ"></div>
     <div id="chart-ring-ENERGY"></div>
     <div id="chart-ring-ENERGY2"></div><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
