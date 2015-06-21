@@ -16,7 +16,7 @@ block head
 block content
     h3 Available Items:
     div(data-bind='foreach: availableItems')
-        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem, click: $root.toggleAssociation')
+        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
         span(data-bind="text: ' ' + Name()")
         br
     br
