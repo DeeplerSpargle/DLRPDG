@@ -15,13 +15,13 @@ block head
 
 block content
     h3 Available Items:
-    div(data-bind='foreach: $root.availableItems')
-        input(type='checkbox', data-bind='value: id(), checked: $root.associatedItemIds, click: $root.toggleAssociation')
+    div(data-bind='foreach: availableItems')
+        input(type='checkbox', data-bind='value: Url, checked: $root.associatedItemIds, click: $root.toggleAssociation')
         span(data-bind="text: ' ' + Name()")
         br
     br
     h3 Associated Item Ids:
-    div(data-bind='foreach: $root.associatedItemIds')
+    div(data-bind='foreach: associatedItemIds')
         span(data-bind='text: $data')
         br
 
