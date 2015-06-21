@@ -15,13 +15,18 @@ $(function () {
         self.availableItems = ko.observableArray();
         self.associatedItemIds = ko.observableArray();
 
+        self.associatedItemIds.subscribe(function(_associatedItemIds){
+           //put code here. each time a checkbox is marked, this is run.
+           //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
+
+        });
+
         self.init = function init() {
             self.availableItems.push(new DemoItem(0, "https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/dbf7f1bf5e9d48e3f5f0e60012c4ccbb36f9fcd8/JSONEXAM.json", 'Miami'));
             self.availableItems.push(new DemoItem(1, "https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/4a255040c002392cb256730578681f7176536c35/Json2.json", 'Dallas'));
             self.availableItems.push(new DemoItem(2, "URL HERE", 'Chicago'));
             self.availableItems.push(new DemoItem(3, "URL HERE", 'Denver'));
             self.availableItems.push(new DemoItem(4, "URL HERE", 'SanteFe'));
-
         };
 
         self.toggleAssociation = function toggleAssociation(item) {
