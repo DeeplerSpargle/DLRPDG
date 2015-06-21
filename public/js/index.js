@@ -13,11 +13,13 @@ $(function () {
         var self = this;
         var htmlString = "https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/dbf7f1bf5e9d48e3f5f0e60012c4ccbb36f9fcd8/JSONEXAM.json";
         self.availableItems = ko.observableArray();
-        self.associatedItemId = ko.observable();
+        self.associatedItem = ko.observable();
 
-        self.associatedItemId.subscribe(function (_associatedItemIds) {
+        self.associatedItem.subscribe(function (_associatedItem) {
             //put code here. each time a checkbox is marked, this is run.
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
+
+            self.getChartData(_associatedItem.Url(), self.renderChart);
 
         });
 
