@@ -1,8 +1,28 @@
 doctype html
 html
     head
-        title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        block head
+        div.container
+            div.jumbotron
+                title= title
+                link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+                block head
+
+
     body
-        block content
+        div.container
+            div.jumbotron
+                block content
+
+        .sidebar
+        br
+
+        #container
+            #header
+                ul
+                    li
+                        h1
+                            block sidebar
+                                p nothing
+                            .primary
+                                block primary
+                                    p nothing

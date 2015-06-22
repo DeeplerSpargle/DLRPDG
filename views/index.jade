@@ -11,15 +11,22 @@ block head
     script(type='text/javascript', src='js/lib/topojson.v0.min.js')
 
     script(type='text/javascript', src='/js/index.js')
-    title ENERGY CHARTS
+    h1 DLR ENERGY APP TEST:
+
+
+
+
+
 
 block content
     h3 Available Items:
+    #chart-row-CZ
     div(data-bind='foreach: availableItems')
         input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
         span(data-bind="text: ' ' + Name()")
         br
     br
+
     h3 Associated Item Ids:
     div
         //ko if: associatedItem
@@ -27,7 +34,19 @@ block content
         // /ko
         br
 
-    #chart-row-CZ
+    #container-fluid.col
+
+            p
+                h2 You ARe amazing
     #chart-ring-ENERGY
-    #chart-ring-ENERGY2
+
+
+
+
     a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
+
+block sidebar
+    #container.col
+        h2 ENERGY USE:
+        #chart-ring-ENERGY2
+

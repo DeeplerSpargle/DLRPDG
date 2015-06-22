@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script type="text/javascript" src="js/lib/crossfilter.js"></script>
-    <script type="text/javascript" src="js/lib/d3.min.js"></script>
-    <script type="text/javascript" src="js/lib/datamaps.usa.min.js"></script>
-    <script type="text/javascript" src="js/lib/dc.js"></script>
-    <script type="text/javascript" src="js/lib/dc.min.js"></script>
-    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
-    <script type="text/javascript" src="js/lib/knockout-min.js"></script>
-    <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
-    <title>ENERGY CHARTS</title>
+    <div class="container">
+      <div class="jumbotron">
+        <title></title>
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+        <script type="text/javascript" src="js/lib/crossfilter.js"></script>
+        <script type="text/javascript" src="js/lib/d3.min.js"></script>
+        <script type="text/javascript" src="js/lib/datamaps.usa.min.js"></script>
+        <script type="text/javascript" src="js/lib/dc.js"></script>
+        <script type="text/javascript" src="js/lib/dc.min.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="js/lib/knockout-min.js"></script>
+        <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
+        <h1>DLR ENERGY APP TEST:</h1>
+      </div>
+    </div>
   </head>
   <body>
-    <h3>Available Items:</h3>
-    <div data-bind="foreach: availableItems">
-      <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '�' + Name()"></span><br>
-    </div><br>
-    <h3>Associated Item Ids:</h3>
-    <div>
-      <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
-      <!-- /ko--><br>
+    <div class="container">
+      <div class="jumbotron">
+        <h3>Available Items:</h3>
+        <div id="chart-row-CZ"></div>
+        <div data-bind="foreach: availableItems">
+          <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '�' + Name()"></span><br>
+        </div><br>
+        <h3>Associated Item Ids:</h3>
+        <div>
+          <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
+          <!-- /ko--><br>
+        </div>
+        <div id="container-fluid" class="col">
+          <p>
+            <h2>You ARe amazing</h2>
+          </p>
+        </div>
+        <div id="chart-ring-ENERGY"></div><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+      </div>
     </div>
-    <div id="chart-row-CZ"></div>
-    <div id="chart-ring-ENERGY"></div>
-    <div id="chart-ring-ENERGY2"></div><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+    <div class="sidebar"></div><br>
+    <div id="container">
+      <div id="header">
+        <ul>
+          <li>
+            <h1>
+              <div id="container" class="col">
+                <h2>ENERGY USE:</h2>
+                <div id="chart-ring-ENERGY2"></div>
+              </div>
+              <div class="primary">
+                <p>nothing</p>
+              </div>
+            </h1>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
