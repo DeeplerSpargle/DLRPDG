@@ -6,14 +6,12 @@ $(function () {
         self.Url = ko.observable(url);
         self.Name = ko.observable(name);
         self.Selected = ko.observable(false);
-
     }
 
     function ViewModel() {
         var self = this;
         self.availableItems = ko.observableArray();
         self.associatedItem = ko.observable();
-
 
         self.associatedItem.subscribe(function (_associatedItem) {
             //put code here. each time a checkbox is marked, this is run.
@@ -92,9 +90,9 @@ $(function () {
         };
 
         self.init = function init() {
-            self.availableItems.push(new DemoItem("datafiles/JSONEXAM.json", 'Miami'));
+            self.availableItems.push(new DemoItem("https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/dbf7f1bf5e9d48e3f5f0e60012c4ccbb36f9fcd8/JSONEXAM.json", 'Miami'));
             self.availableItems.push(new DemoItem("https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/4a255040c002392cb256730578681f7176536c35/Json2.json", 'Dallas'));
-            self.availableItems.push(new DemoItem("http://www.w3schools.com/html/pic_mountain.jpg", 'Chicago'));
+            self.availableItems.push(new DemoItem("URL HERE", 'Chicago'));
             self.availableItems.push(new DemoItem("URL HERE", 'Denver'));
             self.availableItems.push(new DemoItem("URL HERE", 'SanteFe'));
 
