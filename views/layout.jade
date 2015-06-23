@@ -1,11 +1,41 @@
 doctype html
 html
+
     head
         div.container
             div.jumbotron
                 title= title
                 link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
                 block head
+        .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+            .container-fluid
+                .navbar-header
+                    block navbar
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='#') Dashboard
+                        li
+                            a(href='#') Settings
+                        li
+                            a(href='#') Profile
+                        li
+                            a(href='#') Help
+
+
+    body
+
+        block column
+
+        div.sidebar
+
+                #header
+                    block sidebar
+    body
+        div.container
+            div.jumbotron
+                block contenttwo
+
 
 
     body
@@ -13,16 +43,7 @@ html
             div.jumbotron
                 block content
 
-        .sidebar
-        br
 
-        #container
-            #header
-                ul
-                    li
-                        h1
-                            block sidebar
-                                p nothing
-                            .primary
-                                block primary
-                                    p nothing
+
+
+

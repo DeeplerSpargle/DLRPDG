@@ -1,5 +1,14 @@
 extends layout
 
+block navbar
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    a.navbar-brand(href='#') WIBBLE
+
+
 block head
     script(type='text/javascript', src='js/lib/crossfilter.js')
     script(type='text/javascript', src='js/lib/d3.min.js')
@@ -14,39 +23,84 @@ block head
     h1 DLR ENERGY APP TEST:
 
 
+block contenttwo
 
-
-
-
-block content
-    h3 Available Items:
-    #chart-row-CZ
-    div(data-bind='foreach: availableItems')
-        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-        span(data-bind="text: ' ' + Name()")
+        div(data-bind='foreach: availableItems')
+            input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+            span(data-bind="text: ' ' + Name()")
+            br
         br
-    br
-
     h3 Associated Item Ids:
-    div
-        //ko if: associatedItem
-        span(data-bind='text: associatedItem().Url()')
-        // /ko
+        div
+            //ko if: associatedItem
+            span(data-bind='text: associatedItem().Url()')
+            // /ko
         br
+block content
+
+    h3 Available Items:
+        div
+            #chart-row-CZ
+
+
+
 
     #container-fluid.col
-
+    #chart-ring-ENERGY
             p
                 h2 You ARe amazing
-    #chart-ring-ENERGY
+
 
 
 
 
     a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
 
+ block column
+    .row
+        .col-md-4.col-sm-6.col-xs-12
+            .panel.panel-default
+                .panel-heading Panel Heading
+                    .panel-body
+                        #chart-ring-ENERGY2
+                        | We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+        .col-md-4.col-sm-6.col-xs-12
+            .panel.panel-success
+                .panel-heading Panel Heading
+                    .panel-body
+                        |We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+                        p
+        .col-md-4.col-sm-6.col-xs-12
+            .panel.panel-primary
+                .panel-heading Panel Heading
+                
+                    .panel-body
+                        | We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+
+
+
+
+
+
+
+
+
 block sidebar
-    #container.col
+
+
         h2 ENERGY USE:
-        #chart-ring-ENERGY2
+
+
+
+
+            p
+                button.btn.btn-sm.btn-default(type='button') Default
+                button.btn.btn-sm.btn-primary(type='button') Primary
+                button.btn.btn-sm.btn-success(type='button') Success
+                button.btn.btn-sm.btn-info(type='button') Info
+                button.btn.btn-sm.btn-warning(type='button') Warning
+                button.btn.btn-sm.btn-danger(type='button') Danger
+                button.btn.btn-sm.btn-link(type='button') Link
+
+
 

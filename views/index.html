@@ -17,44 +17,89 @@
         <h1>DLR ENERGY APP TEST:</h1>
       </div>
     </div>
+    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">WIBBLE</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </head>
+  <body>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Panel Heading
+            <div class="panel-body">
+              <div id="chart-ring-ENERGY2"></div>We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-success">
+          <div class="panel-heading">Panel Heading
+            <div class="panel-body">We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Panel Heading
+            <div class="panel-body">We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div id="header">
+        <h2>ENERGY USE:
+          <p>
+            <button type="button" class="btn btn-sm btn-default">Default</button>
+            <button type="button" class="btn btn-sm btn-primary">Primary</button>
+            <button type="button" class="btn btn-sm btn-success">Success</button>
+            <button type="button" class="btn btn-sm btn-info">Info</button>
+            <button type="button" class="btn btn-sm btn-warning">Warning</button>
+            <button type="button" class="btn btn-sm btn-danger">Danger</button>
+            <button type="button" class="btn btn-sm btn-link">Link</button>
+          </p>
+        </h2>
+      </div>
+    </div>
+  </body>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h3>Available Items:</h3>
-        <div id="chart-row-CZ"></div>
         <div data-bind="foreach: availableItems">
           <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '�' + Name()"></span><br>
         </div><br>
-        <h3>Associated Item Ids:</h3>
-        <div>
-          <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
-          <!-- /ko--><br>
-        </div>
-        <div id="container-fluid" class="col">
+      </div>
+    </div>
+  </body>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h3>Available Items:
+          <div>
+            <div id="chart-row-CZ"></div>
+          </div>
+        </h3>
+        <div id="container-fluid" class="col"></div>
+        <div id="chart-ring-ENERGY">
           <p>
             <h2>You ARe amazing</h2>
           </p>
-        </div>
-        <div id="chart-ring-ENERGY"></div><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
-      </div>
-    </div>
-    <div class="sidebar"></div><br>
-    <div id="container">
-      <div id="header">
-        <ul>
-          <li>
-            <h1>
-              <div id="container" class="col">
-                <h2>ENERGY USE:</h2>
-                <div id="chart-ring-ENERGY2"></div>
-              </div>
-              <div class="primary">
-                <p>nothing</p>
-              </div>
-            </h1>
-          </li>
-        </ul>
+        </div><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
       </div>
     </div>
   </body>
