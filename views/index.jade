@@ -25,11 +25,7 @@ block head
 
 block contenttwo
 
-        div(data-bind='foreach: availableItems')
-            input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-            span(data-bind="text: ' ' + Name()")
-            br
-        br
+
     h3 Associated Item Ids:
         div
             //ko if: associatedItem
@@ -40,15 +36,20 @@ block content
 
     h3 Available Items:
         div
-            #chart-row-CZ
+
+    //#chart-ring-ENERGY2
 
 
+    .row
+        .col-lg-8.col-md-6.col-md-12
+            .panel.panel-success
+                div.panel-heading Building Energy Use Breakout
+                div.panel-body
 
-
-    #container-fluid.col
-    #chart-ring-ENERGY
-            p
-                h2 You ARe amazing
+                    |Must contain
+                    #chart-ring-ENERGY
+                    p
+                        h2 You ARe amazing
 
 
 
@@ -60,29 +61,27 @@ block content
     .row
         .col-md-4.col-sm-6.col-xs-12
             .panel.panel-default
-                .panel-heading Panel Heading
-                    .panel-body
-                        #chart-ring-ENERGY2
-                        | We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+                div.panel-heading Climate Zone
+
+                div.panel-body
+                        div(data-bind='foreach: availableItems')
+                            input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                            span(data-bind="text: '' + Name()")
+                            br
+                        br
+                        | We are a fairly small, flexible w dancerie looking for a design refresh we are confident you will be pleased with the results.
         .col-md-4.col-sm-6.col-xs-12
             .panel.panel-success
-                .panel-heading Panel Heading
-                    .panel-body
-                        |We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
-                        p
+                div.panel-heading Weather File
+                div.panel-body
+                    #chart-row-CZ
+                    |We are a fairly small, flexibleio n.  ie
         .col-md-4.col-sm-6.col-xs-12
             .panel.panel-primary
-                .panel-heading Panel Heading
-                
-                    .panel-body
+                div.panel-heading Panel Heading
+
+                div.panel-body
                         | We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
-
-
-
-
-
-
-
 
 
 block sidebar

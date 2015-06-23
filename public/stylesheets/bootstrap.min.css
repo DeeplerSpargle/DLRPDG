@@ -5859,10 +5859,12 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-heading {
-    padding: 10px 15px;
+    padding: 10px 30px;
+    font-size:20px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px
+
 }
 
 .panel-heading > .dropdown .dropdown-toggle {

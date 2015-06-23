@@ -20,17 +20,12 @@ html
                         li
                             a(href='#') Profile
                         li
-                            a(href='#') Help
-
+                            a(href='javascript:dc.filterAll(); dc.renderAll();') RESET ALL
 
     body
+        div.container
+         block column
 
-        block column
-
-        div.sidebar
-
-                #header
-                    block sidebar
     body
         div.container
             div.jumbotron
@@ -40,10 +35,15 @@ html
 
     body
         div.container
-            div.jumbotron
+
                 block content
 
 
 
 
 
+    .table
+
+        div.sidebar
+            #header
+                block sidebar
