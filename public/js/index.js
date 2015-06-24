@@ -32,7 +32,7 @@ $(function () {
             var ENERGYRingChart = dc.pieChart("#chart-ring-ENERGY"),
                 ENERGY2RingChart = dc.pieChart("#chart-ring-ENERGY2"),
                 CZRowChart = dc.rowChart("#chart-row-CZ");
-
+                totalchart = dc.numberDisplay("#totalchart");
             // use static or load via d3.csv
 
             // set crossfilter
@@ -62,11 +62,20 @@ $(function () {
                     return +d.Heat;
                 }),
 
-                ENERGYRingChart
-                    .width(600).height(600)
-                    .dimension(LabelDim)
-                    .group(EnergyPerYear)
-                    .innerRadius(100);
+            ENERGYRingChart
+                .width(600).height(600)
+                .dimension(LabelDim)
+                .title(function (d){
+                    return d.Label + " : " + d.value + "KW";
+                    }
+                )
+                .legend(dc.legend().x(250).y(200))
+                .group(EnergyPerYear)
+
+
+                .innerRadius(150);
+
+
 
             ENERGY2RingChart
                 .width(200).height(200)
@@ -74,11 +83,14 @@ $(function () {
                 .group(HeatingPerYear)
                 .innerRadius(50);
 
+
             CZRowChart
                 .width(300).height(200)
                 .dimension(WFDim)
                 .group(PerZone)
+                .legend(dc.legend().x(400))
                 .elasticX(true);
+
             //.renderlet(function(chart) {
             //    ENERGYRingChart.filter(chart.filter());
             //})
@@ -87,6 +99,10 @@ $(function () {
             //        ENERGYRingChart.filter(chart.filter());
             //    });
             //});
+
+
+
+
 
             dc.renderAll();
         };

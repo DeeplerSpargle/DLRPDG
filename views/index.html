@@ -15,6 +15,7 @@
         <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
         <script type="text/javascript" src="/js/index.js"></script>
         <h1>DLR ENERGY APP TEST:</h1>
+        <div id="test-bar-chart"></div>
       </div>
     </div>
     <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
@@ -36,28 +37,40 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">Climate Zone</div>
-            <div class="panel-body">
-              <div data-bind="foreach: availableItems">
-                <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
-              </div><br>We are a fairly small, flexible w dancerie looking for a design refresh we are confident you will be pleased with the results.
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <div class="row">
+            <div class="col-sm-12 col-sm-12 col-xs-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">Climate Zone</div>
+                <div class="panel-body">
+                  <div data-bind="foreach: availableItems">
+                    <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
+                  </div>
+                  <h3>Associated Item Ids:
+                    <div>
+                      <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
+                      <!-- /ko-->
+                    </div><br>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-sm-12 col-xs-12">
+              <div class="panel panel-success">
+                <div class="panel-heading">Weather File</div>
+                <div class="panel-body">
+                  <div id="chart-row-CZ"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="panel panel-success">
-            <div class="panel-heading">Weather File</div>
-            <div class="panel-body">
-              <div id="chart-row-CZ"></div>We are a fairly small, flexibleio n.  ie
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="col-md-8 col-md-8 col-md-8">
           <div class="panel panel-primary">
             <div class="panel-heading">Panel Heading</div>
-            <div class="panel-body">We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.</div>
+            <div class="panel-body"><img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-container"></div>
           </div>
         </div>
       </div>
@@ -65,14 +78,6 @@
   </body>
   <body>
     <div class="container">
-      <div class="jumbotron">
-        <h3>Associated Item Ids:
-          <div>
-            <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
-            <!-- /ko-->
-          </div><br>
-        </h3>
-      </div>
     </div>
   </body>
   <body>
@@ -83,13 +88,15 @@
       <!--#chart-ring-ENERGY2-->
       
       <div class="row">
-        <div class="col-lg-8 col-md-6 col-md-12">
+        <div class="col-lg-9 col-md-8 col-md-10">
           <div class="panel panel-success">
             <div class="panel-heading">Building Energy Use Breakout</div>
-            <div class="panel-body">Must contain
+            <div class="panel-body">
               <div id="chart-ring-ENERGY"></div>
               <p>
-                <h2>You ARe amazing</h2>
+                <h2>
+                  <div id="totalchart"></div>
+                </h2>
               </p>
             </div>
           </div>
@@ -97,21 +104,4 @@
       </div><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
     </div>
   </body>
-  <div class="table">
-    <div class="sidebar">
-      <div id="header">
-        <h2>ENERGY USE:
-          <p>
-            <button type="button" class="btn btn-sm btn-default">Default</button>
-            <button type="button" class="btn btn-sm btn-primary">Primary</button>
-            <button type="button" class="btn btn-sm btn-success">Success</button>
-            <button type="button" class="btn btn-sm btn-info">Info</button>
-            <button type="button" class="btn btn-sm btn-warning">Warning</button>
-            <button type="button" class="btn btn-sm btn-danger">Danger</button>
-            <button type="button" class="btn btn-sm btn-link">Link</button>
-          </p>
-        </h2>
-      </div>
-    </div>
-  </div>
 </html>

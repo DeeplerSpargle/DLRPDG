@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>index.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(248,248,248); }
+.s1 { color: rgb(205,168,105); }
+.s2 { color: rgb(204,120,50); }
+.s3 { color: rgb(95,90,96); font-style: italic; }
+.s4 { color: rgb(143,157,106); }
+.s5 { color: rgb(207,106,76); }
+</style>
+</head>
+<BODY BGCOLOR="#141414">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+index.js</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">$(</span><span class="s1">function </span><span class="s0">() { 
+ 
+    </span><span class="s1">function </span><span class="s0">DemoItem(url</span><span class="s2">, </span><span class="s0">name) { 
+        </span><span class="s1">var </span><span class="s0">self </span><span class="s1">= this</span><span class="s2">;</span><span class="s0"> 
+ 
+        self.Url </span><span class="s1">= </span><span class="s0">ko.observable(url)</span><span class="s2">;</span><span class="s0"> 
+        self.Name </span><span class="s1">= </span><span class="s0">ko.observable(name)</span><span class="s2">;</span><span class="s0"> 
+        self.Selected </span><span class="s1">= </span><span class="s0">ko.observable(</span><span class="s1">false</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+ 
+    } 
+ 
+    </span><span class="s1">function </span><span class="s0">ViewModel() { 
+        </span><span class="s1">var </span><span class="s0">self </span><span class="s1">= this</span><span class="s2">;</span><span class="s0"> 
+        self.availableItems </span><span class="s1">= </span><span class="s0">ko.observableArray()</span><span class="s2">;</span><span class="s0"> 
+        self.associatedItem </span><span class="s1">= </span><span class="s0">ko.observable()</span><span class="s2">;</span><span class="s0"> 
+ 
+ 
+        self.associatedItem.subscribe(</span><span class="s1">function </span><span class="s0">(_associatedItem) { 
+            </span><span class="s3">//put code here. each time a checkbox is marked, this is run.</span><span class="s0"> 
+            </span><span class="s3">//With each run _associatedItemIds contains the ID of each DemoItem that has been checked</span><span class="s0"> 
+ 
+            self.getChartData(_associatedItem.Url()</span><span class="s2">, </span><span class="s0">self.renderChart)</span><span class="s2">;</span><span class="s0"> 
+ 
+        })</span><span class="s2">;</span><span class="s0"> 
+ 
+ 
+        self.getChartData </span><span class="s1">= function </span><span class="s0">(url</span><span class="s2">, </span><span class="s0">callback) { 
+            $.get(url</span><span class="s2">, </span><span class="s1">null</span><span class="s2">, </span><span class="s0">callback</span><span class="s2">, </span><span class="s4">&quot;json&quot;</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+        }</span><span class="s2">;</span><span class="s0"> 
+ 
+        self.renderChart </span><span class="s1">= function </span><span class="s0">(chartData) { 
+            </span><span class="s1">var </span><span class="s0">ENERGYRingChart </span><span class="s1">= </span><span class="s0">dc.pieChart(</span><span class="s4">&quot;#chart-ring-ENERGY&quot;</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+                ENERGY2RingChart </span><span class="s1">= </span><span class="s0">dc.pieChart(</span><span class="s4">&quot;#chart-ring-ENERGY2&quot;</span><span class="s0">)</span><span class="s2">,</span><span class="s0"> 
+                CZRowChart </span><span class="s1">= </span><span class="s0">dc.rowChart(</span><span class="s4">&quot;#chart-row-CZ&quot;</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+                totalchart </span><span class="s1">= </span><span class="s0">dc.numberDisplay(</span><span class="s4">&quot;#totalchart&quot;</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+            </span><span class="s3">// use static or load via d3.csv</span><span class="s0"> 
+ 
+            </span><span class="s3">// set crossfilter</span><span class="s0"> 
+            </span><span class="s1">var </span><span class="s0">ndx </span><span class="s1">= </span><span class="s0">crossfilter(chartData)</span><span class="s2">;</span><span class="s0"> 
+ 
+            LabelDim </span><span class="s1">= </span><span class="s0">ndx.dimension(</span><span class="s1">function </span><span class="s0">(d) { 
+ 
+                </span><span class="s1">return </span><span class="s0">d.Label</span><span class="s2">;</span><span class="s0"> 
+            })</span><span class="s2">,</span><span class="s0"> 
+                HeatingDim </span><span class="s1">= </span><span class="s0">ndx.dimension(</span><span class="s1">function </span><span class="s0">(d) { 
+                    </span><span class="s1">return +</span><span class="s0">d.Heat</span><span class="s2">;</span><span class="s0"> 
+                })</span><span class="s2">,</span><span class="s0"> 
+ 
+                WFDim </span><span class="s1">= </span><span class="s0">ndx.dimension(</span><span class="s1">function </span><span class="s0">(d) { 
+                    </span><span class="s1">return </span><span class="s0">d.WF</span><span class="s2">;</span><span class="s0"> 
+                })</span><span class="s2">,</span><span class="s0"> 
+                EnergyPerYear </span><span class="s1">= </span><span class="s0">LabelDim.group().reduceSum(</span><span class="s1">function </span><span class="s0">(d) { 
+                    </span><span class="s1">return +</span><span class="s0">d.Heat</span><span class="s2">;</span><span class="s0"> 
+ 
+                })</span><span class="s2">,</span><span class="s0"> 
+                HeatingPerYear </span><span class="s1">= </span><span class="s0">HeatingDim.group().reduceSum(</span><span class="s1">function </span><span class="s0">(d) { 
+                    </span><span class="s1">return +</span><span class="s0">d.Heat</span><span class="s2">;</span><span class="s0"> 
+ 
+                })</span><span class="s2">,</span><span class="s0"> 
+ 
+                PerZone </span><span class="s1">= </span><span class="s0">WFDim.group().reduceSum(</span><span class="s1">function </span><span class="s0">(d) { 
+                    </span><span class="s1">return +</span><span class="s0">d.Heat</span><span class="s2">;</span><span class="s0"> 
+                })</span><span class="s2">,</span><span class="s0"> 
+ 
+            ENERGYRingChart 
+                .width(</span><span class="s5">600</span><span class="s0">).height(</span><span class="s5">600</span><span class="s0">) 
+                .dimension(LabelDim) 
+                .title(</span><span class="s1">function </span><span class="s0">(d){ 
+                    </span><span class="s1">return </span><span class="s0">d.Label </span><span class="s1">+ </span><span class="s4">&quot; : &quot; </span><span class="s1">+ </span><span class="s0">d.value </span><span class="s1">+ </span><span class="s4">&quot;KW&quot;</span><span class="s2">;</span><span class="s0"> 
+                    } 
+                ) 
+                .legend(dc.legend().x(</span><span class="s5">250</span><span class="s0">).y(</span><span class="s5">200</span><span class="s0">)) 
+                .group(EnergyPerYear) 
+ 
+ 
+                .innerRadius(</span><span class="s5">150</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+ 
+ 
+ 
+            ENERGY2RingChart 
+                .width(</span><span class="s5">200</span><span class="s0">).height(</span><span class="s5">200</span><span class="s0">) 
+                .dimension(HeatingDim) 
+                .group(HeatingPerYear) 
+                .innerRadius(</span><span class="s5">50</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+ 
+ 
+            CZRowChart 
+                .width(</span><span class="s5">300</span><span class="s0">).height(</span><span class="s5">200</span><span class="s0">) 
+                .dimension(WFDim) 
+                .group(PerZone) 
+                .legend(dc.legend().x(</span><span class="s5">400</span><span class="s0">)) 
+                .elasticX(</span><span class="s1">true</span><span class="s0">)</span><span class="s2">;</span><span class="s0"> 
+ 
+            </span><span class="s3">//.renderlet(function(chart) {</span><span class="s0"> 
+            </span><span class="s3">//    ENERGYRingChart.filter(chart.filter());</span><span class="s0"> 
+            </span><span class="s3">//})</span><span class="s0"> 
+            </span><span class="s3">//.on(&quot;filtered&quot;, function(chart) {</span><span class="s0"> 
+            </span><span class="s3">//    dc.events.trigger(function() {</span><span class="s0"> 
+            </span><span class="s3">//        ENERGYRingChart.filter(chart.filter());</span><span class="s0"> 
+            </span><span class="s3">//    });</span><span class="s0"> 
+            </span><span class="s3">//});</span><span class="s0"> 
+ 
+ 
+ 
+ 
+ 
+            dc.renderAll()</span><span class="s2">;</span><span class="s0"> 
+        }</span><span class="s2">;</span><span class="s0"> 
+ 
+        self.init </span><span class="s1">= function </span><span class="s0">init() { 
+            self.availableItems.push(</span><span class="s1">new </span><span class="s0">DemoItem(</span><span class="s4">&quot;datafiles/JSONEXAM.json&quot;</span><span class="s2">, </span><span class="s4">'Miami'</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+            self.availableItems.push(</span><span class="s1">new </span><span class="s0">DemoItem(</span><span class="s4">&quot;https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/4a255040c002392cb256730578681f7176536c35/Json2.json&quot;</span><span class="s2">, </span><span class="s4">'Dallas'</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+            self.availableItems.push(</span><span class="s1">new </span><span class="s0">DemoItem(</span><span class="s4">&quot;http://www.w3schools.com/html/pic_mountain.jpg&quot;</span><span class="s2">, </span><span class="s4">'Chicago'</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+            self.availableItems.push(</span><span class="s1">new </span><span class="s0">DemoItem(</span><span class="s4">&quot;URL HERE&quot;</span><span class="s2">, </span><span class="s4">'Denver'</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+            self.availableItems.push(</span><span class="s1">new </span><span class="s0">DemoItem(</span><span class="s4">&quot;URL HERE&quot;</span><span class="s2">, </span><span class="s4">'SanteFe'</span><span class="s0">))</span><span class="s2">;</span><span class="s0"> 
+ 
+            self.associatedItem(self.availableItems()[</span><span class="s5">0</span><span class="s0">])</span><span class="s2">;</span><span class="s0"> 
+        }</span><span class="s2">;</span><span class="s0"> 
+    } 
+ 
+    </span><span class="s1">var </span><span class="s0">viewModel </span><span class="s1">= new </span><span class="s0">ViewModel()</span><span class="s2">;</span><span class="s0"> 
+    ko.applyBindings(viewModel)</span><span class="s2">;</span><span class="s0"> 
+    viewModel.init()</span><span class="s2">;</span><span class="s0"> 
+    window.viewModel </span><span class="s1">= </span><span class="s0">viewModel</span><span class="s2">;</span><span class="s0"> 
+})</span><span class="s2">;</span></pre>
+</body>
+</html>

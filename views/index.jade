@@ -21,17 +21,12 @@ block head
 
     script(type='text/javascript', src='/js/index.js')
     h1 DLR ENERGY APP TEST:
-
+    #test-bar-chart
 
 block contenttwo
 
 
-    h3 Associated Item Ids:
-        div
-            //ko if: associatedItem
-            span(data-bind='text: associatedItem().Url()')
-            // /ko
-        br
+
 block content
 
     h3 Available Items:
@@ -41,15 +36,18 @@ block content
 
 
     .row
-        .col-lg-8.col-md-6.col-md-12
+        .col-lg-9.col-md-8.col-md-10
             .panel.panel-success
                 div.panel-heading Building Energy Use Breakout
                 div.panel-body
 
-                    |Must contain
                     #chart-ring-ENERGY
                     p
-                        h2 You ARe amazing
+                        h2
+
+                         #totalchart
+
+
 
 
 
@@ -57,49 +55,43 @@ block content
 
     a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
 
- block column
-    .row
-        .col-md-4.col-sm-6.col-xs-12
-            .panel.panel-default
-                div.panel-heading Climate Zone
+block column
+ .row
+    .col-md-4.col-sm-4.col-xs-4
+        .row
+            .col-sm-12.col-sm-12.col-xs-12
+                .panel.panel-default
+                    div.panel-heading Climate Zone
 
-                div.panel-body
+                    div.panel-body
                         div(data-bind='foreach: availableItems')
                             input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
                             span(data-bind="text: '' + Name()")
                             br
-                        br
-                        | We are a fairly small, flexible w dancerie looking for a design refresh we are confident you will be pleased with the results.
-        .col-md-4.col-sm-6.col-xs-12
-            .panel.panel-success
-                div.panel-heading Weather File
-                div.panel-body
-                    #chart-row-CZ
-                    |We are a fairly small, flexibleio n.  ie
-        .col-md-4.col-sm-6.col-xs-12
-            .panel.panel-primary
-                div.panel-heading Panel Heading
-
-                div.panel-body
-                        | We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+                        h3 Associated Item Ids:
+                            div
+                                //ko if: associatedItem
+                                span(data-bind='text: associatedItem().Url()')
+                                // /ko
+                            br
 
 
-block sidebar
+        .row
+            .col-sm-12.col-sm-12.col-xs-12
+                .panel.panel-success
+                    div.panel-heading Weather File
+                    div.panel-body
+                        #chart-row-CZ
+
+    .col-md-8.col-md-8.col-md-8
+        .panel.panel-primary
+            div.panel-heading Panel Heading
+
+            div.panel-body
+
+                img.img-container(src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg')
 
 
-        h2 ENERGY USE:
-
-
-
-
-            p
-                button.btn.btn-sm.btn-default(type='button') Default
-                button.btn.btn-sm.btn-primary(type='button') Primary
-                button.btn.btn-sm.btn-success(type='button') Success
-                button.btn.btn-sm.btn-info(type='button') Info
-                button.btn.btn-sm.btn-warning(type='button') Warning
-                button.btn.btn-sm.btn-danger(type='button') Danger
-                button.btn.btn-sm.btn-link(type='button') Link
 
 
 

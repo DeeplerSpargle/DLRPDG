@@ -3,6 +3,16 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+
+.img-container{
+    height:100%;
+    max-height:600px;
+    width: 100%;
+    max-width: 600;
+}
+
+
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -6400,7 +6410,7 @@ button.close {
     z-index: 1070;
     display: block;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.42857143;
