@@ -25,36 +25,19 @@ block head
 
 block contenttwo
 
-
-
 block content
-
-
     h3 Available Items:
         div
-
     //#chart-ring-ENERGY2
-
-
     .row
         .col-lg-9.col-md-8.col-md-10
             .panel.panel-success
                 div.panel-heading Passive Strategies
                 div.panel-body
-
-
                     #chart-ring-ENERGY
                     p
                         h2
-
                          #totalchart
-
-
-
-
-
-
-
     a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
 
 block column
@@ -64,7 +47,6 @@ block column
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-default
                     div.panel-heading Climate Zone
-
                     div.panel-body
                         div(data-bind='foreach: availableItems')
                             input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
@@ -81,8 +63,6 @@ block column
 
                                 //img(data-bind="attr: {src: picture}")
                             br
-
-
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-success
@@ -93,13 +73,5 @@ block column
     .col-md-8.col-md-8.col-md-8
         .panel.panel-primary
             div.panel-heading Panel Heading
-
             div.panel-body
-
-                img.img-container(id='zoom',src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg')
-
-
-
-
-
-canvas#canvas(style='border:2px solid black;', width='200', height='200')
+                img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
