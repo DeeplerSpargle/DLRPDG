@@ -46,12 +46,20 @@
                   <div data-bind="foreach: availableItems">
                     <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
                   </div>
-                  <h3>Associated Item Ids:
-                    <div>
-                      <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
-                      <!-- /ko-->
-                    </div><br>
-                  </h3>
+                  <!--h3 Associated Item Ids:
+                  div
+                  
+                  
+                      //ko if: associatedItem
+                      span(data-bind='text: associatedItem().Picture()')
+                      img#photo
+                      // /ko
+                  
+                      //img(data-bind="attr: {src: picture}")
+                  br
+                  
+                  
+                  -->
                 </div>
               </div>
             </div>
@@ -59,7 +67,7 @@
           <div class="row">
             <div class="col-sm-12 col-sm-12 col-xs-12">
               <div class="panel panel-success">
-                <div class="panel-heading">Weather File</div>
+                <div class="panel-heading">Weather File IIII</div>
                 <div class="panel-body">
                   <div id="chart-row-CZ"></div>
                 </div>
@@ -70,7 +78,7 @@
         <div class="col-md-8 col-md-8 col-md-8">
           <div class="panel panel-primary">
             <div class="panel-heading">Panel Heading</div>
-            <div class="panel-body"><img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-container"></div>
+            <div class="panel-body"><img id="zoom" src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-container"></div>
           </div>
         </div>
       </div>
@@ -90,7 +98,7 @@
       <div class="row">
         <div class="col-lg-9 col-md-8 col-md-10">
           <div class="panel panel-success">
-            <div class="panel-heading">Building Energy Use Breakout</div>
+            <div class="panel-heading">Passive Strategies</div>
             <div class="panel-body">
               <div id="chart-ring-ENERGY"></div>
               <p>

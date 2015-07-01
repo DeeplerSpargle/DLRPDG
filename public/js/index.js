@@ -1,11 +1,17 @@
 $(function () {
 
-    function DemoItem(url, name) {
+
+
+
+
+    function DemoItem(url, name,picture) {
         var self = this;
 
         self.Url = ko.observable(url);
         self.Name = ko.observable(name);
+        self.Picture = ko.observable(picture);
         self.Selected = ko.observable(false);
+
 
     }
 
@@ -15,9 +21,12 @@ $(function () {
         self.associatedItem = ko.observable();
 
 
+
         self.associatedItem.subscribe(function (_associatedItem) {
             //put code here. each time a checkbox is marked, this is run.
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
+
+            $('#zoom').attr("src","http://www.online-image-editor.com//styles/2014/images/example_image.png");
 
             self.getChartData(_associatedItem.Url(), self.renderChart);
 
@@ -85,10 +94,9 @@ $(function () {
 
 
             CZRowChart
-                .width(300).height(200)
+                .width(280).height(200)
                 .dimension(WFDim)
                 .group(PerZone)
-                .legend(dc.legend().x(400))
                 .elasticX(true);
 
             //.renderlet(function(chart) {
@@ -100,25 +108,31 @@ $(function () {
             //    });
             //});
 
-
-
-
-
             dc.renderAll();
+
+
+
+
+
+
+
+
+
         };
 
         self.init = function init() {
-            self.availableItems.push(new DemoItem("datafiles/JSONEXAM.json", 'Miami'));
-            self.availableItems.push(new DemoItem("https://rawgit.com/DeeplerSpargle/b531d2790bac3bc4c397/raw/4a255040c002392cb256730578681f7176536c35/Json2.json", 'Dallas'));
-            self.availableItems.push(new DemoItem("http://www.w3schools.com/html/pic_mountain.jpg", 'Chicago'));
-            self.availableItems.push(new DemoItem("URL HERE", 'Denver'));
-            self.availableItems.push(new DemoItem("URL HERE", 'SanteFe'));
+            self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami','http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg'));
+            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Daluth',"http://www.online-image-editor.com//styles/2014/images/example_image.png"));
+            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Chicago',"http://www.online-image-editor.com//styles/2014/images/example_image.png"));
+            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Denver',"http://www.online-image-editor.com//styles/2014/images/example_image.png"));
+            self.availableItems.push(new DemoItem("datafiles/2b.json", 'SanteFe',"http://www.online-image-editor.com//styles/2014/images/example_image.png"));
 
             self.associatedItem(self.availableItems()[0]);
         };
     }
 
     var viewModel = new ViewModel();
+
     ko.applyBindings(viewModel);
     viewModel.init();
     window.viewModel = viewModel;

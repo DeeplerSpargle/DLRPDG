@@ -4,7 +4,10 @@ body {
     margin-bottom:120px;
 }
 
-
+img {
+    display: block;
+    margin: auto;
+}
 
 h1 {
     color: #00B7FF;

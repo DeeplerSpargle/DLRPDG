@@ -29,6 +29,7 @@ block contenttwo
 
 block content
 
+
     h3 Available Items:
         div
 
@@ -38,8 +39,9 @@ block content
     .row
         .col-lg-9.col-md-8.col-md-10
             .panel.panel-success
-                div.panel-heading Building Energy Use Breakout
+                div.panel-heading Passive Strategies
                 div.panel-body
+
 
                     #chart-ring-ENERGY
                     p
@@ -68,18 +70,23 @@ block column
                             input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
                             span(data-bind="text: '' + Name()")
                             br
-                        h3 Associated Item Ids:
+                        //h3 Associated Item Ids:
                             div
+
+
                                 //ko if: associatedItem
-                                span(data-bind='text: associatedItem().Url()')
+                                span(data-bind='text: associatedItem().Picture()')
+                                img#photo
                                 // /ko
+
+                                //img(data-bind="attr: {src: picture}")
                             br
 
 
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-success
-                    div.panel-heading Weather File
+                    div.panel-heading Weather File IIII
                     div.panel-body
                         #chart-row-CZ
 
@@ -89,9 +96,10 @@ block column
 
             div.panel-body
 
-                img.img-container(src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg')
+                img.img-container(id='zoom',src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg')
 
 
 
 
 
+canvas#canvas(style='border:2px solid black;', width='200', height='200')
