@@ -8,56 +8,32 @@ $(function () {
         self.Selected = ko.observable(false);
 
     }
-
-    function SeatReservation(name, initialMeal,initialPicture) {
+    function BuildingItem(initmname,buildingurl) {
         var self = this;
-        self.name = name;
-        self.meal = ko.observable(initialMeal);
-        self.pic=ko.observable(initialPicture);
 
-        self.formattedPrice = ko.computed(function() {
-            var price = self.meal().price;
-            var Picture = self.pic().Name;
-            var nnn = name;
-            if (price) {
-                return "$" + price + nnn;
-            } else {
-                return "None";
-            }
-        });
+        self.Burl = ko.observable(buildingurl);
+        self.Bname = ko.observable(initmname);
+
+
     }
+
+
 
     function ViewModel() {
         var self = this;
         self.availableItems = ko.observableArray();
         self.associatedItem = ko.observable();
-        self.firstName = ko.observable('bob');
-        self.lastName = ko.observable('smith');
+        self.availableBuildings = ko.observableArray();
+        self.associatedBuilding = ko.observable();
+        self.selectedChoice = ko.observable();
+
+
+
         self.fullName = ko.pureComputed(function(){
-          return self.firstName() + " " + self.lastName();
+            return self.associatedItem().Picture();
+
         },self);
-        self.availableMeals = [
-            { mealName: "Standard (sandwich)", price: 0 },
-            { mealName: "Premium (lobster)", price: 34.95 },
-            { mealName: "Ultimate (whole zebra)", price: 290 }
-        ];
-        self.seats = ko.observableArray([
-            new SeatReservation("Steve", self.availableMeals[0],self.associatedItem),
-            new SeatReservation("Bert", self.availableMeals[0],self.associatedItem)
 
-        ]);
-
-
-        self.totalSurcharge = ko.computed(function() {
-            var total = 0;
-            for (var i = 0; i < self.seats().length; i++)
-                total += self.seats()[i].meal().price;
-            return total;
-        });
-        self.addSeat = function() {
-            self.seats.push(new SeatReservation("", self.availableMeals[0]));
-        };
-        self.removeSeat = function(seat) { self.seats.remove(seat) };
 
         self.associatedItem.subscribe(function (_associatedItem) {
             //put code here. each time a checkbox is marked, this is run.
@@ -142,6 +118,12 @@ $(function () {
             self.availableItems.push(new DemoItem("datafiles/5a.json", 'Chicago', "images/kitten.png"));
             self.availableItems.push(new DemoItem("datafiles/2b.json", 'Denver', "images/kitten.png"));
             self.availableItems.push(new DemoItem("datafiles/2b.json", 'SanteFe', "images/kitten.png"));
+
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE I","images/lamb.jpg"));
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE II","images/kitten.png"));
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE III","images/lamb.jpg"));
+
+            self.associatedBuilding(self.availableBuildings()[0]);
 
             self.associatedItem(self.availableItems()[0]);
         };

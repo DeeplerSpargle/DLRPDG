@@ -55,38 +55,27 @@ block column
                         h3 Associated Item Ids:
                             div
 
-
                                 //ko if: associatedItem
                                 span(data-bind='text: associatedItem().Url()')
 
+
                                 // /ko
 
-                                //img(data-bind="attr: {src: picture}")
                             br
     table
          thead
              tr
-                 th Passenger name
-                 th Meal
-                 th Surcharge
-                 th
 
-         tbody(data-bind='foreach: seats')
+                 th Building Type
+
+
              tr
                  td
-                     input(data-bind='value: name')
+                    div
 
-                 td
-                     select(data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'")
+                        select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname', optionsCaption : 'Choose'")
+                        span(data-bind='text: selectedChoice().Burl()')
 
-                 td(data-bind='text: formattedPrice')
-
-                 td
-                     a(href='#', data-bind='click: $root.removeSeat') Remove
-
-        h3(data-bind='visible: totalSurcharge() > 0')
-            | Total surcharge: $
-            span(data-bind='text: totalSurcharge()')
 
         .row
             .col-sm-12.col-sm-12.col-xs-12
@@ -100,6 +89,7 @@ block column
             div.panel-heading Panel Heading
             div.panel-body
 
+                //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
                 img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
                 span(data-bind='text: fullName')
 
