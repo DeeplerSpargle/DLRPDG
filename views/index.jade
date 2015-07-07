@@ -52,17 +52,42 @@ block column
                             input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
                             span(data-bind="text: '' + Name()")
                             br
-                        //h3 Associated Item Ids:
+                        h3 Associated Item Ids:
                             div
 
 
                                 //ko if: associatedItem
-                                span(data-bind='text: associatedItem().Picture()')
-                                img#photo
+                                span(data-bind='text: associatedItem().Url()')
+
                                 // /ko
 
                                 //img(data-bind="attr: {src: picture}")
                             br
+    table
+         thead
+             tr
+                 th Passenger name
+                 th Meal
+                 th Surcharge
+                 th
+
+         tbody(data-bind='foreach: seats')
+             tr
+                 td
+                     input(data-bind='value: name')
+
+                 td
+                     select(data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'")
+
+                 td(data-bind='text: formattedPrice')
+
+                 td
+                     a(href='#', data-bind='click: $root.removeSeat') Remove
+
+        h3(data-bind='visible: totalSurcharge() > 0')
+            | Total surcharge: $
+            span(data-bind='text: totalSurcharge()')
+
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-success
@@ -74,4 +99,7 @@ block column
         .panel.panel-primary
             div.panel-heading Panel Heading
             div.panel-body
+
                 img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
+                span(data-bind='text: fullName')
+

@@ -46,29 +46,47 @@
                   <div data-bind="foreach: availableItems">
                     <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
                   </div>
-                  <!--h3 Associated Item Ids:
-                  div
-                  
-                  
-                      //ko if: associatedItem
-                      span(data-bind='text: associatedItem().Picture()')
-                      img#photo
-                      // /ko
-                  
-                      //img(data-bind="attr: {src: picture}")
-                  br
-                  -->
+                  <h3>Associated Item Ids:
+                    <div>
+                      <!--ko if: associatedItem--><span data-bind="text: associatedItem().Url()"></span>
+                      <!-- /ko-->
+                      <!--img(data-bind="attr: {src: picture}")-->
+                    </div><br>
+                  </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-12 col-sm-12 col-xs-12">
-              <div class="panel panel-success">
-                <div class="panel-heading">Weather File IIII</div>
-                <div class="panel-body">
-                  <div id="chart-row-CZ"></div>
-                </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Passenger name</th>
+              <th>Meal</th>
+              <th>Surcharge</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: seats">
+            <tr>
+              <td>
+                <input data-bind="value: name">
+              </td>
+              <td>
+                <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+              </td>
+              <td data-bind="text: formattedPrice"></td>
+              <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 data-bind="visible: totalSurcharge() &gt; 0">Total surcharge: $<span data-bind="text: totalSurcharge()"></span></h3>
+        <div class="row">
+          <div class="col-sm-12 col-sm-12 col-xs-12">
+            <div class="panel panel-success">
+              <div class="panel-heading">Weather File IIII</div>
+              <div class="panel-body">
+                <div id="chart-row-CZ"></div>
               </div>
             </div>
           </div>
@@ -76,7 +94,7 @@
         <div class="col-md-8 col-md-8 col-md-8">
           <div class="panel panel-primary">
             <div class="panel-heading">Panel Heading</div>
-            <div class="panel-body"><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container"></div>
+            <div class="panel-body"><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container"><span data-bind="text: fullName"></span></div>
           </div>
         </div>
       </div>

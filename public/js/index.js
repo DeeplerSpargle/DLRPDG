@@ -6,17 +6,63 @@ $(function () {
         self.Name = ko.observable(name);
         self.Picture = ko.observable(picture);
         self.Selected = ko.observable(false);
+
+    }
+
+    function SeatReservation(name, initialMeal,initialPicture) {
+        var self = this;
+        self.name = name;
+        self.meal = ko.observable(initialMeal);
+        self.pic=ko.observable(initialPicture);
+
+        self.formattedPrice = ko.computed(function() {
+            var price = self.meal().price;
+            var Picture = self.pic().Name;
+            var nnn = name;
+            if (price) {
+                return "$" + price + nnn;
+            } else {
+                return "None";
+            }
+        });
     }
 
     function ViewModel() {
         var self = this;
         self.availableItems = ko.observableArray();
         self.associatedItem = ko.observable();
+        self.firstName = ko.observable('bob');
+        self.lastName = ko.observable('smith');
+        self.fullName = ko.pureComputed(function(){
+          return self.firstName() + " " + self.lastName();
+        },self);
+        self.availableMeals = [
+            { mealName: "Standard (sandwich)", price: 0 },
+            { mealName: "Premium (lobster)", price: 34.95 },
+            { mealName: "Ultimate (whole zebra)", price: 290 }
+        ];
+        self.seats = ko.observableArray([
+            new SeatReservation("Steve", self.availableMeals[0],self.associatedItem),
+            new SeatReservation("Bert", self.availableMeals[0],self.associatedItem)
+
+        ]);
+
+
+        self.totalSurcharge = ko.computed(function() {
+            var total = 0;
+            for (var i = 0; i < self.seats().length; i++)
+                total += self.seats()[i].meal().price;
+            return total;
+        });
+        self.addSeat = function() {
+            self.seats.push(new SeatReservation("", self.availableMeals[0]));
+        };
+        self.removeSeat = function(seat) { self.seats.remove(seat) };
 
         self.associatedItem.subscribe(function (_associatedItem) {
             //put code here. each time a checkbox is marked, this is run.
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
-            $('#zoom').attr("src", "images/kitten.png");
+
             self.getChartData(_associatedItem.Url(), self.renderChart);
         });
 
@@ -28,7 +74,7 @@ $(function () {
             var ENERGYRingChart = dc.pieChart("#chart-ring-ENERGY"),
                 ENERGY2RingChart = dc.pieChart("#chart-ring-ENERGY2"),
                 CZRowChart = dc.rowChart("#chart-row-CZ");
-            totalchart = dc.numberDisplay("#totalchart");
+
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
