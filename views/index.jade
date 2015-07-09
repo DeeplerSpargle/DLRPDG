@@ -41,39 +41,37 @@ block column
                             span(data-bind="text: '' + Name()")
 
                             br
-                        h3 Associated Item Ids:
-                            div
-
-                                //ko if: associatedItem
-                                span(data-bind='text: associatedItem().Url()')
-
-
-
-                                // /ko
+                        
 
         .row
             .col-md-12.col-sm-12.col-xs-12
                 img.img-container2(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
 
-    .col-md-3.col-md-3.col-md-3
+    .col-md-4.col-md-4.col-md-4
         .panel.panel-primary
             div.panel-heading Building Type
             div.panel-body
                 div
 
                     select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
-                    span(data-bind='text: selectedChoice().Burl()')
+                    //span(data-bind='text: selectedChoice().Burl()')
                     img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
+                    //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
                 //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
 
-                span(data-bind='text: fullName')
+                //span(data-bind='text: fullName')
 
         .row
-            .col-sm-6.col-sm-6.col-xs-6
+            .col-md-12.col-sm-12.col-xs-12
                 .panel.panel-success
                     div.panel-heading Weather File
                     div.panel-body
                         #chart-row-CZ
+                        div Weather file
+                    //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
+
+
+
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-success
@@ -90,11 +88,13 @@ block column
             div.panel-body
 
                 img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
-                span(data-bind='text: associatedItem().Url()')
+                //span(data-bind='text: associatedItem().Url()')
                 iframe(seamless = 'seamless',src='datafiles/testtext.txt')
                 div
 
                 img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
-
+                iframe(seamless = 'seamless',src='datafiles/testtext.txt')
+                    div
                 img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
-    a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
+                iframe(seamless = 'seamless',src='datafiles/testtext.txt')
+                    div

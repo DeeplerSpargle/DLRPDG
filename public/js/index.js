@@ -27,7 +27,7 @@ $(function () {
 
 
         self.fullName = ko.pureComputed(function(){
-            return self.associatedItem().Picture() + '';
+            return self.associatedItem().Picture();
 
         },self);
 
@@ -80,7 +80,7 @@ $(function () {
                 .width(600).height(600)
                 .dimension(LabelDim)
                 .title(function (d) {
-                    return d.Label + " : " + d.value + "KW";
+                    return d.name + " : " + d.value + "KW";
                 })
                 .legend(dc.legend().x(250).y(200))
                 .group(EnergyPerYear)
@@ -133,7 +133,7 @@ $(function () {
 
 
 
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE I","images/lamb.jpg"));
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE I","images/1A MIAMI/1A_MAX_WR.png"));
             self.availableBuildings.push(new BuildingItem("BUILDING TYPE II","images/kitten.png"));
             self.availableBuildings.push(new BuildingItem("BUILDING TYPE III","images/lamb.jpg"));
 
