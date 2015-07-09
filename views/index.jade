@@ -21,7 +21,6 @@ block head
 
     script(type='text/javascript', src='/js/index.js')
     h1 DLR ENERGY APP:
-    #test-bar-chart
 
 
 
@@ -64,7 +63,7 @@ block column
         .row
             .col-md-12.col-sm-12.col-xs-12
                 .panel.panel-success
-                    div.panel-heading Weather File
+                    div.panel-heading Weather File (kBtu/Year)
                     div.panel-body
                         #chart-row-CZ
                         div Weather file
@@ -75,12 +74,26 @@ block column
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-success
-                    div.panel-heading Energy Use
+                    div.panel-heading End Energy Use
                     div.panel-body
                         #chart-ring-ENERGY
                         p
                             h2
                                 #totalchart
+        .row
+            .span12.table-graph
+            h4 Data Table for Filtered End Energy Use
+
+            table#dc-table-graph.table.table-hover.dc-data-table
+                thead
+                    tr.header
+                        th Weather File
+
+                        th End Use Energy
+
+                        th Energy Use (kBtu/Year)
+
+
 
     .col-lg-6.col-lg-8.col-lg-8
         .panel.panel-primary

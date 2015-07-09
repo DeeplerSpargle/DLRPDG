@@ -15,7 +15,6 @@
         <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
         <script type="text/javascript" src="/js/index.js"></script>
         <h1>DLR ENERGY APP:</h1>
-        <div id="test-bar-chart"></div>
       </div>
     </div>
     <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
@@ -25,9 +24,6 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
             <li><a href="javascript:dc.filterAll(); dc.renderAll();">RESET ALL</a></li>
           </ul>
         </div>
@@ -70,7 +66,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="panel panel-success">
-                <div class="panel-heading">Weather File</div>
+                <div class="panel-heading">Weather File (kBtu/Year)</div>
                 <div class="panel-body">
                   <div id="chart-row-CZ"></div>
                   <div>Weather file</div>
@@ -84,7 +80,7 @@
           <div class="row">
             <div class="col-sm-12 col-sm-12 col-xs-12">
               <div class="panel panel-success">
-                <div class="panel-heading">Energy Use</div>
+                <div class="panel-heading">End Energy Use</div>
                 <div class="panel-body">
                   <div id="chart-ring-ENERGY"></div>
                   <p>
@@ -95,6 +91,19 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="span12 table-graph"></div>
+            <h4>Data Table for Filtered End Energy Use</h4>
+            <table id="dc-table-graph" class="table table-hover dc-data-table">
+              <thead>
+                <tr class="header">
+                  <th>Weather File</th>
+                  <th>End Use Energy</th>
+                  <th>Energy Use (kBtu/Year)</th>
+                </tr>
+              </thead>
+            </table>
           </div>
         </div>
         <div class="col-lg-6 col-lg-8 col-lg-8">
