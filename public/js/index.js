@@ -150,20 +150,20 @@ $(function () {
         self.init = function init() {
             self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami',     'images/1A MIAMI/Climate Files.jpg'));
             self.availableItems.push(new DemoItem("datafiles/2a.json", 'Houston',    "images/2A HOUSTON/Climate Files2.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Phoenix',   "images/2B PHOENIX/Climate Files3.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Atlanta',    "images/3A ATLANTA/Climate Files4.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Las Vegas',   "images/3B LAS VEGAS/Climate Files5.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2a.json", 'San Francisco',    "images/3C SAN FRANCISCO/Climate Files6.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Baltimore',   "images/4A BALTIMORE/Climate Files7.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Albuquerque',    "images/4B ALBUQUERQUE/Climate Files8.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Portland',   "images/4C PORTLAND/Climate Files9.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Chicago',    "images/5A CHICAGO/Climate Files10.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Boulder',   "images/5B BOULDER/Climate Files11.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Vancouver',    "images/5C VANCOUVER/Climate Files12.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Minneapolis',   "images/6A MINNEAPOLIS/Climate Files13.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Helena',   "images/6B HELENA/Climate Files14.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Duluth',    "images/7 DULUTH/Climate Files15.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Fairbanks',   "images/8 FAIRBANKS/Climate Files16.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix',   "images/2B PHOENIX/Climate Files3.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/3a.json", 'Atlanta',    "images/3A ATLANTA/Climate Files4.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/3b.json", 'Las Vegas',   "images/3B LAS VEGAS/Climate Files5.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco',    "images/3C SAN FRANCISCO/Climate Files6.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/4a.json", 'Baltimore',   "images/4A BALTIMORE/Climate Files7.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/4b.json", 'Albuquerque',    "images/4B ALBUQUERQUE/Climate Files8.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/4c.json", 'Portland',   "images/4C PORTLAND/Climate Files9.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Chicago',    "images/5A CHICAGO/Climate Files10.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/5b.json", 'Boulder',   "images/5B BOULDER/Climate Files11.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/5c.json", 'Vancouver',    "images/5C VANCOUVER/Climate Files12.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/6a.json", 'Minneapolis',   "images/6A MINNEAPOLIS/Climate Files13.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/6b.json", 'Helena',   "images/6B HELENA/Climate Files14.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/7.json", 'Duluth',    "images/7 DULUTH/Climate Files15.jpg"));
+            self.availableItems.push(new DemoItem("datafiles/8.json", 'Fairbanks',   "images/8 FAIRBANKS/Climate Files16.jpg"));
 
             self.availableBuildings.push(new BuildingItem("BUILDING TYPE I","images/1A MIAMI/1A_MAX_WR.png"));
             self.availableBuildings.push(new BuildingItem("BUILDING TYPE II","images/2A HOUSTON/2A_MAX_WR.png"));
