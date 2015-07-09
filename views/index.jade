@@ -20,29 +20,17 @@ block head
     script(type='text/javascript', src='js/lib/topojson.v0.min.js')
 
     script(type='text/javascript', src='/js/index.js')
-    h1 DLR ENERGY APP TEST:
+    h1 DLR ENERGY APP:
     #test-bar-chart
 
-block contenttwo
+
 
 block content
-    h3 Available Items:
-        div
-    //#chart-ring-ENERGY2
-    .row
-        .col-lg-9.col-md-8.col-md-10
-            .panel.panel-success
-                div.panel-heading Passive Strategies
-                div.panel-body
-                    #chart-ring-ENERGY
-                    p
-                        h2
-                         #totalchart
-    a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All
+
 
 block column
  .row
-    .col-md-4.col-sm-4.col-xs-4
+    .col-md-2.col-md-3.col-xs-3
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-default
@@ -51,6 +39,7 @@ block column
                         div(data-bind='foreach: availableItems')
                             input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
                             span(data-bind="text: '' + Name()")
+
                             br
                         h3 Associated Item Ids:
                             div
@@ -59,37 +48,53 @@ block column
                                 span(data-bind='text: associatedItem().Url()')
 
 
+
                                 // /ko
 
-                            br
-    table
-         thead
-             tr
+        .row
+            .col-md-12.col-sm-12.col-xs-12
+                img.img-container2(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
 
-                 th Building Type
+    .col-md-3.col-md-3.col-md-3
+        .panel.panel-primary
+            div.panel-heading Building Type
+            div.panel-body
+                div
 
+                    select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
+                    span(data-bind='text: selectedChoice().Burl()')
+                    img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
+                //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
 
-             tr
-                 td
-                    div
+                span(data-bind='text: fullName')
 
-                        select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname', optionsCaption : 'Choose'")
-                        span(data-bind='text: selectedChoice().Burl()')
-
-
+        .row
+            .col-sm-6.col-sm-6.col-xs-6
+                .panel.panel-success
+                    div.panel-heading Weather File
+                    div.panel-body
+                        #chart-row-CZ
         .row
             .col-sm-12.col-sm-12.col-xs-12
                 .panel.panel-success
-                    div.panel-heading Weather File IIII
+                    div.panel-heading Energy Use
                     div.panel-body
-                        #chart-row-CZ
+                        #chart-ring-ENERGY
+                        p
+                            h2
+                                #totalchart
 
-    .col-md-8.col-md-8.col-md-8
+    .col-lg-6.col-lg-8.col-lg-8
         .panel.panel-primary
-            div.panel-heading Panel Heading
+            div.panel-heading Building Type
             div.panel-body
 
-                //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
-                img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
-                span(data-bind='text: fullName')
+                img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
+                span(data-bind='text: associatedItem().Url()')
+                iframe(seamless = 'seamless',src='datafiles/testtext.txt')
+                div
 
+                img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
+
+                img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
+    a(href='javascript:dc.filterAll(); dc.renderAll();') Reset All

@@ -2,7 +2,8 @@ doctype html
 html
 
     head
-        div.container
+
+        div.container-fluid
             div.jumbotron
                 title= title
                 link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
@@ -23,16 +24,16 @@ html
                             a(href='javascript:dc.filterAll(); dc.renderAll();') RESET ALL
 
     body
-        div.container
-         block column
+        div.container-fluid
+            block column
 
     body
-        div.container
+        div.container-fluid
             block contenttwo
 
 
     body
-        div.container
+        div.container-fluid
                 block content
 
 
