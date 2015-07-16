@@ -1,4 +1,12 @@
+function setAccessory(path){
+    $("#imgd").attr("src", path);
+}
+
+
 $(function () {
+
+
+
     function DemoItem(url, name, picture) {
         var self = this;
 
@@ -170,7 +178,7 @@ $(function () {
             self.availableBuildings.push(new BuildingItem("BUILDING TYPE III","images/2B PHOENIX/2B_MAX_WR.png"));
 
 
-
+            setAccessory('images/Passive/building.png');
 
             self.associatedBuilding(self.availableBuildings()[0]);
             self.associatedItem(self.availableItems()[0]);

@@ -2,20 +2,17 @@
 <html>
   <head>
     <div class="container-fluid">
-      <div class="jumbotron">
-        <title></title>
-        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-        <script type="text/javascript" src="js/lib/crossfilter.js"></script>
-        <script type="text/javascript" src="js/lib/d3.min.js"></script>
-        <script type="text/javascript" src="js/lib/datamaps.usa.min.js"></script>
-        <script type="text/javascript" src="js/lib/dc.js"></script>
-        <script type="text/javascript" src="js/lib/dc.min.js"></script>
-        <script type="text/javascript" src="js/lib/jquery.min.js"></script>
-        <script type="text/javascript" src="js/lib/knockout-min.js"></script>
-        <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
-        <script type="text/javascript" src="/js/index.js"></script>
-        <h1>DLR ENERGY APP:</h1>
-      </div>
+      <title></title>
+      <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+      <script type="text/javascript" src="js/lib/crossfilter.js"></script>
+      <script type="text/javascript" src="js/lib/d3.min.js"></script>
+      <script type="text/javascript" src="js/lib/datamaps.usa.min.js"></script>
+      <script type="text/javascript" src="js/lib/dc.js"></script>
+      <script type="text/javascript" src="js/lib/dc.min.js"></script>
+      <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+      <script type="text/javascript" src="js/lib/knockout-min.js"></script>
+      <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
+      <script type="text/javascript" src="/js/index.js"></script>
     </div>
     <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -32,6 +29,16 @@
   </head>
   <body>
     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="panel panel-success">
+            <div class="panel-heading">Passive</div>
+            <div class="panel-body">
+              <div class="cont2"><img id="imga" src="images/Passive/LEED Icons (EA).png" onclick="setAccessory('images/Passive/building Copy.png');"><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" onclick="setAccessory('images/Passive/buildingCopy2.png');"><img id="imgc" src="images/Passive/LEED Icons (SS).png" onclick="setAccessory('images/Passive/buildingCopy3.png');"><img id="imgd" src="images/Passive/building.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-2 col-md-3 col-xs-3">
           <div class="row">
@@ -69,7 +76,7 @@
                 <div class="panel-heading">Weather File (kBtu/Year)</div>
                 <div class="panel-body">
                   <div id="chart-row-CZ"></div>
-                  <div> </div>
+                  <div></div>
                 </div>
                 <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
                 
