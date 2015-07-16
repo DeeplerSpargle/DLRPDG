@@ -65,7 +65,15 @@ img
     top:100px;
     z-index: 0;
 }
-
+#imge
+{
+    width:1400px;
+    height: auto;
+    position:absolute;
+    left: 300px;
+    top:100px;
+    z-index: 0;
+}
 
 .img-container{
     height:100%;
@@ -76,7 +84,7 @@ img
 .img-container2{
     height:100%;
     max-height:1200px;
-    width: 100%;
+    width: 50%;
     max-width: 600;
 }
 .img-container3{

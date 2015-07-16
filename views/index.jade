@@ -21,11 +21,6 @@ block head
 
     script(type='text/javascript', src='/js/index.js')
 
-
-
-
-
-
 block column
     .row
 
@@ -41,36 +36,38 @@ block column
 
                         img#imgd(src='images/Passive/building.png')
 
-
-
-
-
-
     .row
 
         .col-md-2.col-md-3.col-xs-3
             .row
                 .col-sm-12.col-sm-12.col-xs-12
-                    .panel.panel-default
+                    .panel.panel-success
                         div.panel-heading Climate Zone
                         div.panel-body
                             div(data-bind='foreach: availableItems')
+
                                 input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
                                 span(data-bind="text: '' + Name()")
 
                                 br
 
-
             .row
                 .col-md-12.col-sm-12.col-xs-12
-                    img.img-container2(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
+                    .panel.panel-success
+                        div.panel-heading Weather File
+                        div.panel-body
+                            #chart-row-CZ
+                            div
+                        //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
+
 
         .col-md-4.col-md-4.col-md-4
-            .panel.panel-primary
+            .panel.panel-success
                 div.panel-heading Building Type
                 div.panel-body
                     div
-
+                        img.img-container2(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
+                        div
                         select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
                         //span(data-bind='text: selectedChoice().Burl()')
                         img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
@@ -79,26 +76,24 @@ block column
 
                     //span(data-bind='text: fullName')
 
-            .row
-                .col-md-12.col-sm-12.col-xs-12
-                    .panel.panel-success
-                        div.panel-heading Weather File (kBtu/Year)
-                        div.panel-body
-                            #chart-row-CZ
-                            div
-                        //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
 
 
 
+
+
+
+
+
+        .col-lg-6.col-lg-8.col-lg-8
             .row
                 .col-sm-12.col-sm-12.col-xs-12
                     .panel.panel-success
-                        div.panel-heading End Energy Use
+                        div.panel-heading End Energy Use(kBtu/Year)
                         div.panel-body
                             #chart-ring-ENERGY
-                            p
-                                h2
-                                    #totalchart
+
+
+
             .row
                 .span12.table-graph
                 h4 Data Table for Filtered End Energy Use
@@ -111,20 +106,3 @@ block column
                             th End Use Energy
 
                             th Energy Use (kBtu/Year)
-
-        .col-lg-6.col-lg-8.col-lg-8
-            .panel.panel-primary
-                div.panel-heading Building Type
-                div.panel-body
-
-                    img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
-                    //span(data-bind='text: associatedItem().Url()')
-                    iframe(seamless = 'seamless',src='datafiles/testtext.txt')
-                    div
-
-                    img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
-                    iframe(seamless = 'seamless',src='datafiles/testtext.txt')
-                        div
-                    img.img-container3(id='NatVent1',src = 'images/Passive/NAT VENT 1.jpg')
-                    iframe(seamless = 'seamless',src='datafiles/testtext.txt')
-                        div

@@ -113,7 +113,7 @@ $(function () {
                 .innerRadius(50);
 
             WeatherFileRowChart
-                .width(400).height(200)
+                .width(300).height(200)
                 .dimension(WFDim)
                 .title(function (d) {
                     return d.key + " : " + d.value + "KW";

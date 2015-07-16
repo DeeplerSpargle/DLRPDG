@@ -43,7 +43,7 @@
         <div class="col-md-2 col-md-3 col-xs-3">
           <div class="row">
             <div class="col-sm-12 col-sm-12 col-xs-12">
-              <div class="panel panel-default">
+              <div class="panel panel-success">
                 <div class="panel-heading">Climate Zone</div>
                 <div class="panel-body">
                   <div data-bind="foreach: availableItems">
@@ -54,47 +54,49 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12"><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container2"></div>
-          </div>
-        </div>
-        <div class="col-md-4 col-md-4 col-md-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Building Type</div>
-            <div class="panel-body">
-              <div>
-                <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
-                <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
-                <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
-              </div>
-              <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
-              <!--span(data-bind='text: fullName')-->
-            </div>
-          </div>
-          <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="panel panel-success">
-                <div class="panel-heading">Weather File (kBtu/Year)</div>
+                <div class="panel-heading">Weather File</div>
                 <div class="panel-body">
                   <div id="chart-row-CZ"></div>
                   <div></div>
                 </div>
                 <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
                 
-                
               </div>
             </div>
           </div>
+        </div>
+        <div class="col-md-4 col-md-4 col-md-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">Building Type</div>
+            <div class="panel-body">
+              <div><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container2">
+                <div></div>
+                <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
+                <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
+                <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
+              </div>
+              <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
+              <!--span(data-bind='text: fullName')-->
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lg-8 col-lg-8">
           <div class="row">
             <div class="col-sm-12 col-sm-12 col-xs-12">
               <div class="panel panel-success">
-                <div class="panel-heading">End Energy Use</div>
+                <div class="panel-heading">End Energy Use(kBtu/Year)</div>
                 <div class="panel-body">
                   <div id="chart-ring-ENERGY"></div>
-                  <p>
-                    <h2>
-                      <div id="totalchart"></div>
-                    </h2>
-                  </p>
                 </div>
               </div>
             </div>
@@ -111,22 +113,6 @@
                 </tr>
               </thead>
             </table>
-          </div>
-        </div>
-        <div class="col-lg-6 col-lg-8 col-lg-8">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Building Type</div>
-            <div class="panel-body"><img id="NatVent1" src="images/Passive/NAT VENT 1.jpg" class="img-container3">
-              <!--span(data-bind='text: associatedItem().Url()')-->
-              <iframe seamless="seamless" src="datafiles/testtext.txt"></iframe>
-              <div></div><img id="NatVent1" src="images/Passive/NAT VENT 1.jpg" class="img-container3">
-              <iframe seamless="seamless" src="datafiles/testtext.txt">
-                <div></div>
-              </iframe><img id="NatVent1" src="images/Passive/NAT VENT 1.jpg" class="img-container3">
-              <iframe seamless="seamless" src="datafiles/testtext.txt">
-                <div></div>
-              </iframe>
-            </div>
           </div>
         </div>
       </div>
