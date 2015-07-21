@@ -5,6 +5,15 @@
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 
+p {
+    padding-bottom: 1cm;
+}
+
+.whatever{
+    left: 80px;
+    top:100px;
+}
+
 div.cont{
 
     min-width:50px;
@@ -18,6 +27,15 @@ div.cont2{
     height:920px;
     overflow:hidden;
     position:relative;
+    font-size: 30px;
+}
+div.cont3{
+
+    font-size: 19px;
+}
+div.cont4{
+
+    font-size: 25px;
 }
 img
 {
@@ -31,7 +49,7 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 80px;
+    left: 140px;
     top:100px;
     z-index: 10;
 }
@@ -41,7 +59,7 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 80px;
+    left: 140px;
     top:250px;
     z-index: 10;
 }
@@ -51,7 +69,7 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 80px;
+    left: 140px;
     top:400px;
     z-index: 10;
 }

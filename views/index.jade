@@ -8,6 +8,10 @@ block navbar
         span.icon-bar
     a.navbar-brand(href='#') WIBBLE
 
+    a.navbar-brand(href='#top') PASSIVE INFORMATION
+    a.navbar-brand(href='#text')  LOAD INFORMATION
+
+
 
 block head
     script(type='text/javascript', src='js/lib/crossfilter.js')
@@ -29,19 +33,30 @@ block column
                 div.panel-heading Passive
                 div.panel-body
                     div.cont2
+                        div(style='position: absolute; top:150px; left:25px; width:200px; height:30px') SOLAR!
                         img#imga(src='images/Passive/LEED Icons (EA).png', onclick="setAccessory('images/Passive/building Copy.png');")
+                    div.cont3
+                        div(style='position: absolute; top:300px; left:20px; width:200px; height:30px') NATURAL VENTILATION!
                         img#imgb(src='images/Passive/LEED Icons (IEQ).png', onclick="setAccessory('images/Passive/buildingCopy2.png');")
-                        img#imgc(src='images/Passive/LEED Icons (SS).png', onclick="setAccessory('images/Passive/buildingCopy3.png');")
+                    div.cont4
+                        div(style='position: absolute; top:435px; left:20px; width:200px; height:30px') THERMAL MASS!
+                        img#imgc(src='images/Passive/LEED Icons (Therm).png', onclick="setAccessory('images/Passive/buildingCopy3.png');")
+
 
 
                         img#imgd(src='images/Passive/building.png')
+    .row
+        p
+            a(name='text')
+        p
+            a(name='text') h
 
     .row
 
         .col-md-2.col-md-3.col-xs-3
             .row
-                .col-sm-12.col-sm-12.col-xs-12
-                    .panel.panel-success
+
+               .panel.panel-success
                         div.panel-heading Climate Zone
                         div.panel-body
                             div(data-bind='foreach: availableItems')
@@ -52,8 +67,8 @@ block column
                                 br
 
             .row
-                .col-md-12.col-sm-12.col-xs-12
-                    .panel.panel-success
+
+                .panel.panel-success
                         div.panel-heading Weather File
                         div.panel-body
                             #chart-row-CZ
@@ -63,6 +78,9 @@ block column
 
         .col-md-4.col-md-4.col-md-4
             .panel.panel-success
+
+
+
                 div.panel-heading Building Type
                 div.panel-body
                     div
