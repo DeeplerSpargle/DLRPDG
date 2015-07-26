@@ -12,6 +12,7 @@
       <script type="text/javascript" src="js/lib/jquery.min.js"></script>
       <script type="text/javascript" src="js/lib/knockout-min.js"></script>
       <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
+      <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
       <script type="text/javascript" src="/js/index.js"></script>
     </div>
     <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
@@ -30,18 +31,24 @@
   <body>
     <div class="container-fluid">
       <div class="row">
+        <p></p>
+      </div>
+      <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="panel panel-success">
             <div class="panel-heading">Passive</div>
             <div class="panel-body">
+              <div data-bind="foreach: availableItems">
+                <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
+              </div>
               <div class="cont2">
-                <div style="position: absolute; top:150px; left:25px; width:200px; height:30px">SOLAR!</div><img id="imga" src="images/Passive/LEED Icons (EA).png" onclick="setAccessory('images/Passive/building Copy.png');">
+                <div style="position: absolute; top:150px; left:25px; width:200px; height:30px">SOLAR!</div><img id="imga" src="images/Passive/LEED Icons (EA).png" data onclick="setAccessory('building Copy.png','images/Passive/');">
               </div>
               <div class="cont3">
-                <div style="position: absolute; top:300px; left:20px; width:200px; height:30px">NATURAL VENTILATION!</div><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" onclick="setAccessory('images/Passive/buildingCopy2.png');">
+                <div style="position: absolute; top:300px; left:20px; width:200px; height:30px">NATURAL VENTILATION!</div><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" onclick="setAccessory('buildingCopy2.png','images/Passive/');">
               </div>
               <div class="cont4">
-                <div style="position: absolute; top:435px; left:20px; width:200px; height:30px">THERMAL MASS!</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" onclick="setAccessory('images/Passive/buildingCopy3.png');"><img id="imgd" src="images/Passive/building.png">
+                <div style="position: absolute; top:435px; left:20px; width:200px; height:30px">THERMAL MASS!</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" onclick="setAccessory('buildingCopy3.png','images/Passive/');"><img id="imgd" src="images/Passive/building.png">
               </div>
             </div>
           </div>
@@ -54,12 +61,41 @@
       <div class="row">
         <div class="col-md-2 col-md-3 col-xs-3">
           <div class="row">
-            <div class="panel panel-success">
-              <div class="panel-heading">Climate Zone</div>
-              <div class="panel-body">
-                <div data-bind="foreach: availableItems">
-                  <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
+            <div id="accordion" class="panel-group">
+              <div id="accordion" class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="accordion-toggle">Collapsible Group Item #1</a></h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in-">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                  </div>
                 </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="accordion-toggle">Collapsible Group Item #2</a></h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="accordion-toggle">Collapsible Group Item #3</a></h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row"></div>
+          </div>
+          <div class="panel panel-success">
+            <div class="panel-heading">Climate Zone</div>
+            <div class="panel-body">
+              <div data-bind="foreach: availableItems">
+                <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
               </div>
             </div>
           </div>
@@ -67,8 +103,7 @@
             <div class="panel panel-success">
               <div class="panel-heading">Weather File</div>
               <div class="panel-body">
-                <div id="chart-row-CZ"></div>
-                <div></div>
+                <div id="chart-row-CZ"><br></div>
               </div>
               <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
               
@@ -76,25 +111,30 @@
           </div>
         </div>
         <div class="col-md-4 col-md-4 col-md-4">
-          <div class="panel panel-success">
-            <div class="panel-heading">Building Type</div>
-            <div class="panel-body">
-              <div><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container2">
-                <div></div>
-                <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
-                <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
-                <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
+          <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
+            <Simple>collapsible</Simple>
+          </button>
+          <div id="demo" class="collapse in">
+            <div class="panel panel-success">
+              <div class="panel-heading">Building Type</div>
+              <div class="panel-body">
+                <div><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container2">
+                  <div></div>
+                  <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
+                  <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
+                  <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
+                </div>
+                <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
+                <!--span(data-bind='text: fullName')-->
+                
+                
+                
+                
+                
+                
+                
+                
               </div>
-              <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
-              <!--span(data-bind='text: fullName')-->
-              
-              
-              
-              
-              
-              
-              
-              
             </div>
           </div>
         </div>
