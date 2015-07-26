@@ -18,7 +18,7 @@
     <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">WIBBLE</a><a href="#top" class="navbar-brand">PASSIVE INFORMATION</a><a href="#text" class="navbar-brand"> LOAD INFORMATION</a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">________</a><img id="imgf" src="images/Passive/Via3.png"><a href="#top" class="navbar-brand">PASSIVE INFORMATION</a><a href="#text2" class="navbar-brand"> LOAD INFORMATION</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -30,72 +30,66 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row">
-        <p></p>
-      </div>
+      <div class="row"></div>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="panel panel-success">
             <div class="panel-heading">Passive</div>
             <div class="panel-body">
-              <div data-bind="foreach: availableItems">
-                <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
-              </div>
-              <div class="cont2">
-                <div style="position: absolute; top:150px; left:25px; width:200px; height:30px">SOLAR!</div><img id="imga" src="images/Passive/LEED Icons (EA).png" data-bind="click:setAccessory.bind($data, 'EA')">
-              </div>
-              <div class="cont3">
-                <div style="position: absolute; top:300px; left:20px; width:200px; height:30px">NATURAL VENTILATION!</div><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" data-bind="click:setAccessory.bind($data, 'IEQ')">
-              </div>
-              <div class="cont4">
-                <div style="position: absolute; top:435px; left:20px; width:200px; height:30px">THERMAL MASS!</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" data-bind="click:setAccessory.bind($data, 'Therm')"><img id="imgd" src="images/Passive/building.png">
-              </div>
+              <p></p>
+              <div class="col-m-2 col-sm-2 col-sm-2">
+                <div class="panel panel-success">
+                  <div class="panel-heading">Passive</div>
+                  <div class="panel-body">
+                    <div data-bind="foreach: availableItems">
+                      <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-success">
+                  <div class="panel-body">
+                    <div class="cont2">
+                      <div style="position: absolute; top:150px; left:25px; width:200px; height:15px">Daylight & Shading<a href="#text" class="button"> Learn More</a></div><img id="imga" src="images/Passive/LEED Icons (EA).png" data-bind="click:setAccessory.bind($data, 'SUN.jpg')">
+                    </div>
+                    <div class="cont3">
+                      <div style="position: absolute; top:300px; left:20px; width:200px; height:30px">Cooling & Ventilation</div><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" data-bind="click:setAccessory.bind($data, 'FLOW.jpg')">
+                    </div>
+                    <div class="cont4">
+                      <div style="position: absolute; top:435px; left:20px; width:200px; height:30px">Heat Transfer</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" data-bind="click:setAccessory.bind($data, 'GAIN.jpg')">
+                    </div>
+                  </div>
+                </div>
+              </div><img id="imgd" data-bind="attr:{src:passiveFlow}"><img id="imgcz" data-bind="attr:{src:associatedItem().Picture}">
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <p><a name="text"></a></p>
-        <p><a name="text">h</a></p>
+        <p><a name="text">.</a></p>
+        <div class="panel panel-success">
+          <div class="panel-heading">Climate Zone</div>
+          <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail}"></div>
+        </div>
+      </div>
+      <div class="row">
+        <p><a name="text3"></a></p>
+        <p><a name="text4">.</a></p>
+        <p><a name="text2">.</a></p>
+        <div class="panel panel-success">
+          <div class="panel-heading">LOAD INFORMATION</div>
+          <div class="panel-body"></div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-2 col-md-3 col-xs-3">
           <div class="row">
-            <div id="accordion" class="panel-group">
-              <div id="accordion" class="panel-group">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="accordion-toggle">Collapsible Group Item #1</a></h4>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse in-">
-                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-                  </div>
+            <div class="panel panel-success">
+              <div class="panel-heading">Climate Zone</div>
+              <div class="panel-body">
+                <div data-bind="foreach: availableItems">
+                  <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="accordion-toggle">Collapsible Group Item #2</a></h4>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse">
-                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="accordion-toggle">Collapsible Group Item #3</a></h4>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse">
-                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row"></div>
-          </div>
-          <div class="panel panel-success">
-            <div class="panel-heading">Climate Zone</div>
-            <div class="panel-body">
-              <div data-bind="foreach: availableItems">
-                <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
               </div>
             </div>
           </div>
@@ -106,36 +100,28 @@
                 <div id="chart-row-CZ"><br></div>
               </div>
               <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
-              
             </div>
           </div>
         </div>
         <div class="col-md-4 col-md-4 col-md-4">
-          <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
-            <Simple>collapsible</Simple>
-          </button>
-          <div id="demo" class="collapse in">
-            <div class="panel panel-success">
-              <div class="panel-heading">Building Type</div>
-              <div class="panel-body">
-                <div><img id="zoom" data-bind="attr:{src:associatedItem().Picture}" class="img-container2">
-                  <div></div>
-                  <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
-                  <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
-                  <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
-                </div>
-                <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
-                <!--span(data-bind='text: fullName')-->
-                
-                
-                
-                
-                
-                
-                
-                
-              </div>
+          <div class="panel-heading">Building Type</div>
+          <div class="panel-body">
+            <div>
+              <div></div>
+              <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
+              <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
+              <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
             </div>
+            <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
+            <!--span(data-bind='text: fullName')-->
+            
+            
+            
+            
+            
+            
+            
+            
           </div>
         </div>
         <div class="col-lg-6 col-lg-8 col-lg-8">
@@ -149,18 +135,26 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="span12 table-graph"></div>
-            <h4>Data Table for Filtered End Energy Use</h4>
-            <table id="dc-table-graph" class="table table-hover dc-data-table">
-              <thead>
-                <tr class="header">
-                  <th>Weather File</th>
-                  <th>End Use Energy</th>
-                  <th>Energy Use (kBtu/Year)</th>
-                </tr>
-              </thead>
-            </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-sm-12 col-xs-12">
+            <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
+              <Simple>Data Table End Energy Use (kBtu/Year)</Simple>
+            </button>
+            <div id="demo" class="collapse in">
+              <div class="panel panel-success">
+                <div class="span12 table-graph"></div>
+                <table id="dc-table-graph" class="table table-hover dc-data-table">
+                  <thead>
+                    <tr class="header">
+                      <th>Weather File</th>
+                      <th>End Use Energy</th>
+                      <th>Energy Use (kBtu/Year)</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>

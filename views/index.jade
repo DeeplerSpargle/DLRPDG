@@ -6,10 +6,10 @@ block navbar
         span.icon-bar
         span.icon-bar
         span.icon-bar
-    a.navbar-brand(href='#') WIBBLE
-
+    a.navbar-brand(href='#') ________
+    img#imgf(src='images/Passive/Via3.png')
     a.navbar-brand(href='#top') PASSIVE INFORMATION
-    a.navbar-brand(href='#text')  LOAD INFORMATION
+    a.navbar-brand(href='#text2')  LOAD INFORMATION
 
 
 
@@ -28,7 +28,7 @@ block head
 block column
 
     .row
-        p
+
     .row
         .col-md-12.col-sm-12.col-xs-12
             .panel.panel-success
@@ -36,65 +36,60 @@ block column
 
                 div.panel-heading Passive
                 div.panel-body
-                    div(data-bind='foreach: availableItems')
-                        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-                        span(data-bind="text: '' + Name()")
-                        br
+                    p
+                    .col-m-2.col-sm-2.col-sm-2
+                        .panel.panel-success
+                            div.panel-heading Passive
+                            div.panel-body
+                                div(data-bind='foreach: availableItems')
+                                    input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                                    span(data-bind="text: '' + Name()")
+                                    br
 
-                    div.cont2
-                        div(style='position: absolute; top:150px; left:25px; width:200px; height:30px') SOLAR!
-                        img#imga(src='images/Passive/LEED Icons (EA).png', data-bind="click:setAccessory.bind($data, 'EA')")
-                    div.cont3
-                        div(style='position: absolute; top:300px; left:20px; width:200px; height:30px') NATURAL VENTILATION!
-                        img#imgb(src='images/Passive/LEED Icons (IEQ).png', data-bind="click:setAccessory.bind($data, 'IEQ')")
-                    div.cont4
-                        div(style='position: absolute; top:435px; left:20px; width:200px; height:30px') THERMAL MASS!
-                        img#imgc(src='images/Passive/LEED Icons (Therm).png', data-bind="click:setAccessory.bind($data, 'Therm')")
-                        img#imgd(src='images/Passive/building.png')
+                        .panel.panel-success
+
+                            div.panel-body
+                                div.cont2
+                                    div(style='position: absolute; top:150px; left:25px; width:200px; height:15px') Daylight & Shading
+                                        a.button(href='#text')  Learn More
+                                    img#imga(src='images/Passive/LEED Icons (EA).png', data-bind="click:setAccessory.bind($data, 'SUN.jpg')")
+                                div.cont3
+                                    div(style='position: absolute; top:300px; left:20px; width:200px; height:30px') Cooling & Ventilation
+                                    img#imgb(src='images/Passive/LEED Icons (IEQ).png', data-bind="click:setAccessory.bind($data, 'FLOW.jpg')")
+                                div.cont4
+                                    div(style='position: absolute; top:435px; left:20px; width:200px; height:30px') Heat Transfer
+                                    img#imgc(src='images/Passive/LEED Icons (Therm).png', data-bind="click:setAccessory.bind($data, 'GAIN.jpg')")
+                    img#imgd(data-bind = 'attr:{src:passiveFlow}')
+                    img#imgcz(data-bind='attr:{src:associatedItem().Picture}')
+
 
 
     .row
         p
             a(name='text')
         p
-            a(name='text') h
+            a(name='text') .
+
+        .panel.panel-success
+            div.panel-heading Climate Zone
+            div.panel-body
+                img#imgpd(data-bind = 'attr:{src:passiveFlowDetail}')
+    .row
+        p
+            a(name='text3')
+        p
+            a(name='text4') .
+        p
+            a(name='text2') .
+
+        .panel.panel-success
+            div.panel-heading LOAD INFORMATION
+            div.panel-body
 
     .row
 
         .col-md-2.col-md-3.col-xs-3
-
-
             .row
-                #accordion.panel-group
-                    #accordion.panel-group
-                        .panel.panel-default
-                            .panel-heading
-                                h4.panel-title
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
-                                        | Collapsible Group Item #1
-                            #collapseOne.panel-collapse.collapse.in-
-                                .panel-body
-                                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        .panel.panel-default
-                            .panel-heading
-                                h4.panel-title
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
-                                        | Collapsible Group Item #2
-                            #collapseTwo.panel-collapse.collapse
-                                .panel-body
-                                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        .panel.panel-default
-                            .panel-heading
-                                h4.panel-title
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
-                                        | Collapsible Group Item #3
-                            #collapseThree.panel-collapse.collapse
-                                .panel-body
-                                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-
-
-                .row
-
                .panel.panel-success
                         div.panel-heading Climate Zone
                         div.panel-body
@@ -106,7 +101,6 @@ block column
                                 br
 
             .row
-
                 .panel.panel-success
                         div.panel-heading Weather File
                         div.panel-body
@@ -117,19 +111,15 @@ block column
                                 br
                         //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
 
-
         .col-md-4.col-md-4.col-md-4
-            button.btn.btn-info(type='button', data-toggle='collapse', data-target='#demo')
-                    Simple collapsible
-                #demo.collapse.in
-                    .panel.panel-success
+
 
 
 
                         div.panel-heading Building Type
                         div.panel-body
                             div
-                                img.img-container2(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
+
                                 div
                                 select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
                                 //span(data-bind='text: selectedChoice().Burl()')
@@ -157,15 +147,20 @@ block column
 
 
 
-            .row
-                .span12.table-graph
-                h4 Data Table for Filtered End Energy Use
+        .row
+            .col-sm-12.col-sm-12.col-xs-12
+                button.btn.btn-info(type='button', data-toggle='collapse', data-target='#demo')
+                    Simple Data Table End Energy Use (kBtu/Year)
+                #demo.collapse.in
+                    .panel.panel-success
+                        .span12.table-graph
 
-                table#dc-table-graph.table.table-hover.dc-data-table
-                    thead
-                        tr.header
-                            th Weather File
 
-                            th End Use Energy
+                        table#dc-table-graph.table.table-hover.dc-data-table
+                            thead
+                                tr.header
+                                    th Weather File
 
-                            th Energy Use (kBtu/Year)
+                                    th End Use Energy
+
+                                    th Energy Use (kBtu/Year)

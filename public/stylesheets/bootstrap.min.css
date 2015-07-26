@@ -46,7 +46,7 @@ div.cont2{
     height:920px;
     overflow:hidden;
     position:relative;
-    font-size: 30px;
+    font-size: 19px;
 }
 div.cont3{
 
@@ -54,7 +54,7 @@ div.cont3{
 }
 div.cont4{
 
-    font-size: 25px;
+    font-size: 19px;
 }
 img
 {
@@ -68,8 +68,8 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 230px;
-    top:100px;
+    left: 5px;
+    top:0px;
     z-index: 10;
 }
 
@@ -78,8 +78,8 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 140px;
-    top:250px;
+    left: 5px;
+    top:275px;
     z-index: 10;
 }
 
@@ -88,18 +88,36 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 140px;
+    left: 5px;
     top:400px;
     z-index: 10;
 }
 
 #imgd
+ {
+     width:1550px;
+     height: auto;
+     position:absolute;
+     left: 200px;
+     top:48.5px;
+     z-index: 0;
+ }
+#imgcz
 {
-    width:1400px;
+    width:300px;
     height: auto;
     position:absolute;
-    left: 300px;
-    top:100px;
+    left: 1580px;
+    top:49px;
+    z-index: 0;
+}
+#imgpd
+{
+    width:1900px;
+    height: auto;
+    position:relative;
+    left: 00px;
+    top:0px;
     z-index: 0;
 }
 #imge
@@ -109,6 +127,16 @@ img
     position:absolute;
     left: 300px;
     top:100px;
+    z-index: 0;
+}
+
+#imgf
+{
+    width:100px;
+    height: auto;
+    position:absolute;
+    left: 0px;
+    top:0px;
     z-index: 0;
 }
 
@@ -4431,7 +4459,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
-    background-color: #eee;
+    background-color: #ggg;
     border-color: #337ab7
 }
 
@@ -4734,10 +4762,10 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 
 .navbar-brand {
     float: left;
-    height: 50px;
+    height: 60px;
     padding: 15px 15px;
     font-size: 18px;
-    line-height: 20px
+    line-height: 30px
 }
 
 .navbar-brand:focus, .navbar-brand:hover {
@@ -5087,12 +5115,12 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-inverse {
-    background-color: #222;
+    background-color: #f9423a;
     border-color: #080808
 }
 
 .navbar-inverse .navbar-brand {
-    color: #9d9d9d
+    color: black;
 }
 
 .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {

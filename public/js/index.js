@@ -1,11 +1,12 @@
 $(function () {
-    function DemoItem(url, name, picture, passivebuildingurl) {
+    function DemoItem(url, name, picture, passivebuildingurl,passiveDetailUrl) {
         var self = this;
 
         self.Url = ko.observable(url);
         self.Name = ko.observable(name);
         self.Picture = ko.observable(picture);
         self.passivePicture = ko.observable(passivebuildingurl);
+        self.passiveDetail = ko.observable(passiveDetailUrl);
         self.Selected = ko.observable(false);
 
     }
@@ -25,7 +26,7 @@ $(function () {
         self.associatedBuilding = ko.observable();
         self.selectedChoice = ko.observable();
 
-        self.selectedPassiveIcon = ko.observable("EA");
+        self.selectedPassiveIcon = ko.observable("base.jpg");
 
         self.setAccessory = function setAccessory(selectedPassive, data, event) {
             self.selectedPassiveIcon(selectedPassive);
@@ -36,9 +37,19 @@ $(function () {
             var something = self.selectedPassiveIcon();
             //use selected passive icon to drive this
             if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
-                return self.associatedItem().passivePicture() + 'building Copy.png';
+                return self.associatedItem().passivePicture() + something;
             }
         }, self);
+
+        self.passiveFlowDetail = ko.computed(function () {
+
+            var something = self.selectedPassiveIcon();
+            //use selected passive icon to drive this
+            if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
+                return self.associatedItem().passiveDetail() + something;
+            }
+        }, self);
+
 
         self.fullName = ko.pureComputed(function () {
             return self.associatedItem().Picture();
@@ -168,9 +179,9 @@ $(function () {
         };
 
         self.init = function init() {
-            self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami', 'images/1A MIAMI/Climate Files.jpg', 'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Houston', "images/2A HOUSTON/Climate Files2.jpg", 'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix', "images/2B PHOENIX/Climate Files3.jpg", 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami', 'images/1A MIAMI/Climate Files.jpg', 'images/Passive/Dickinson/','images/Passive/Dickinson/detail/'));
+            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Houston', "images/2A HOUSTON/Climate Files2.jpg", 'images/Passive/Stickney/','images/Passive/Stickney/detail/'));
+            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix', "images/2B PHOENIX/Climate Files3.jpg", 'images/Passive/Phoenix/','images/Passive/Phoenix/detail/'));
             self.availableItems.push(new DemoItem("datafiles/3a.json", 'Atlanta', "images/3A ATLANTA/Climate Files4.jpg", 'images/Passive/'));
             self.availableItems.push(new DemoItem("datafiles/3b.json", 'Las Vegas', "images/3B LAS VEGAS/Climate Files5.jpg", 'images/Passive/'));
             self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco', "images/3C SAN FRANCISCO/Climate Files6.jpg", 'images/Passive/'));
