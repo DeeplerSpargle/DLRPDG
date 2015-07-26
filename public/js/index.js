@@ -1,24 +1,16 @@
-function setAccessory(path,path2){
-    $("#imgd").attr("src", path2+path);
-}
-
-
 $(function () {
-
-
-
-    function DemoItem(url, name, picture,passivebuildingurl) {
+    function DemoItem(url, name, picture, passivebuildingurl) {
         var self = this;
 
         self.Url = ko.observable(url);
         self.Name = ko.observable(name);
         self.Picture = ko.observable(picture);
-        self.Picture = ko.observable(passivebuildingurl);
+        self.passivePicture = ko.observable(passivebuildingurl);
         self.Selected = ko.observable(false);
 
     }
 
-    function BuildingItem(initmname,buildingurl) {
+    function BuildingItem(initmname, buildingurl) {
         var self = this;
 
         self.Burl = ko.observable(buildingurl);
@@ -33,15 +25,25 @@ $(function () {
         self.associatedBuilding = ko.observable();
         self.selectedChoice = ko.observable();
 
-        self.passiveFlow = ko.pureComputed(function(){
-            return self.associatedItem().passivebuildingurl()+'building Copy.png';
+        self.selectedPassiveIcon = ko.observable("EA");
 
-        },self);
+        self.setAccessory = function setAccessory(selectedPassive, data, event) {
+            self.selectedPassiveIcon(selectedPassive);
+        };
 
-        self.fullName = ko.pureComputed(function(){
+        self.passiveFlow = ko.computed(function () {
+
+            var something = self.selectedPassiveIcon();
+            //use selected passive icon to drive this
+            if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
+                return self.associatedItem().passivePicture() + 'building Copy.png';
+            }
+        }, self);
+
+        self.fullName = ko.pureComputed(function () {
             return self.associatedItem().Picture();
 
-        },self);
+        }, self);
 
 
         self.associatedItem.subscribe(function (_associatedItem) {
@@ -60,7 +62,7 @@ $(function () {
             var ENERGYRingChart = dc.pieChart("#chart-ring-ENERGY"),
                 ENERGY2RingChart = dc.pieChart("#chart-ring-ENERGY2"),
                 WeatherFileRowChart = dc.rowChart("#chart-row-CZ");
-                dataTable = dc.dataTable("#dc-table-graph");
+            dataTable = dc.dataTable("#dc-table-graph");
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
@@ -88,7 +90,7 @@ $(function () {
                 return +d.Heat;
             });
 
-           ENERGYRingChart
+            ENERGYRingChart
                 .width(450).height(500)
                 .dimension(LabelDim)
                 .renderLabel(false)
@@ -100,14 +102,13 @@ $(function () {
                 .innerRadius(150)
                 .on("filtered", function (chart) {
                     dc.events.trigger(function () {
-                        if(chart.filter()) {
+                        if (chart.filter()) {
                             console.log(chart.filter());
 
                         }
                         else WeatherFileRowChart.filterAll();
                     });
                 });
-
 
 
             ENERGY2RingChart
@@ -139,20 +140,27 @@ $(function () {
                 .width(800)
                 .height(800)
                 .dimension(HeatingDim)
-                .group(function(d){
-                   return "List of all Selected"
+                .group(function (d) {
+                    return "List of all Selected"
                 })
                 .size(100)
                 .columns([
-                    function(d) { return d.WF; },
-                    function(d) { return d.Label; },
-                    function(d) { return d.Heat; }
+                    function (d) {
+                        return d.WF;
+                    },
+                    function (d) {
+                        return d.Label;
+                    },
+                    function (d) {
+                        return d.Heat;
+                    }
 
                 ])
-                .sortBy(function(d){ return d.WF; })
+                .sortBy(function (d) {
+                    return d.WF;
+                })
                 // (optional) sort order, :default ascending
                 .order(d3.ascending);
-
 
 
             dc.renderAll();
@@ -160,12 +168,12 @@ $(function () {
         };
 
         self.init = function init() {
-            self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami',     'images/1A MIAMI/Climate Files.jpg','images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Houston',    "images/2A HOUSTON/Climate Files2.jpg",'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix',   "images/2B PHOENIX/Climate Files3.jpg",'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/3a.json", 'Atlanta',    "images/3A ATLANTA/Climate Files4.jpg",'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/3b.json", 'Las Vegas',   "images/3B LAS VEGAS/Climate Files5.jpg",'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco',    "images/3C SAN FRANCISCO/Climate Files6.jpg",'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami', 'images/1A MIAMI/Climate Files.jpg', 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Houston', "images/2A HOUSTON/Climate Files2.jpg", 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix', "images/2B PHOENIX/Climate Files3.jpg", 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/3a.json", 'Atlanta', "images/3A ATLANTA/Climate Files4.jpg", 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/3b.json", 'Las Vegas', "images/3B LAS VEGAS/Climate Files5.jpg", 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco', "images/3C SAN FRANCISCO/Climate Files6.jpg", 'images/Passive/'));
             //self.availableItems.push(new DemoItem("datafiles/4a.json", 'Baltimore',   "images/4A BALTIMORE/Climate Files7.jpg"));
             //self.availableItems.push(new DemoItem("datafiles/4b.json", 'Albuquerque',    "images/4B ALBUQUERQUE/Climate Files8.jpg"));
             //self.availableItems.push(new DemoItem("datafiles/4c.json", 'Portland',   "images/4C PORTLAND/Climate Files9.jpg"));
@@ -177,12 +185,9 @@ $(function () {
             //self.availableItems.push(new DemoItem("datafiles/7.json", 'Duluth',    "images/7 DULUTH/Climate Files15.jpg"));
             //self.availableItems.push(new DemoItem("datafiles/8.json", 'Fairbanks',   "images/8 FAIRBANKS/Climate Files16.jpg"));
 
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE I","images/1A MIAMI/1A_MAX_WR.png"));
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE II","images/2A HOUSTON/2A_MAX_WR.png"));
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE III","images/2B PHOENIX/2B_MAX_WR.png"));
-
-
-            setAccessory('images/Passive/building.png');
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE I", "images/1A MIAMI/1A_MAX_WR.png"));
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE II", "images/2A HOUSTON/2A_MAX_WR.png"));
+            self.availableBuildings.push(new BuildingItem("BUILDING TYPE III", "images/2B PHOENIX/2B_MAX_WR.png"));
 
             self.associatedBuilding(self.availableBuildings()[0]);
             self.associatedItem(self.availableItems()[0]);

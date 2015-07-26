@@ -42,13 +42,13 @@
                 <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
               </div>
               <div class="cont2">
-                <div style="position: absolute; top:150px; left:25px; width:200px; height:30px">SOLAR!</div><img id="imga" src="images/Passive/LEED Icons (EA).png" data onclick="setAccessory('building Copy.png','images/Passive/');">
+                <div style="position: absolute; top:150px; left:25px; width:200px; height:30px">SOLAR!</div><img id="imga" src="images/Passive/LEED Icons (EA).png" data-bind="click:setAccessory.bind($data, 'EA')">
               </div>
               <div class="cont3">
-                <div style="position: absolute; top:300px; left:20px; width:200px; height:30px">NATURAL VENTILATION!</div><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" onclick="setAccessory('buildingCopy2.png','images/Passive/');">
+                <div style="position: absolute; top:300px; left:20px; width:200px; height:30px">NATURAL VENTILATION!</div><img id="imgb" src="images/Passive/LEED Icons (IEQ).png" data-bind="click:setAccessory.bind($data, 'IEQ')">
               </div>
               <div class="cont4">
-                <div style="position: absolute; top:435px; left:20px; width:200px; height:30px">THERMAL MASS!</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" onclick="setAccessory('buildingCopy3.png','images/Passive/');"><img id="imgd" src="images/Passive/building.png">
+                <div style="position: absolute; top:435px; left:20px; width:200px; height:30px">THERMAL MASS!</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" data-bind="click:setAccessory.bind($data, 'Therm')"><img id="imgd" src="images/Passive/building.png">
               </div>
             </div>
           </div>

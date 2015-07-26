@@ -43,13 +43,13 @@ block column
 
                     div.cont2
                         div(style='position: absolute; top:150px; left:25px; width:200px; height:30px') SOLAR!
-                        img#imga(src='images/Passive/LEED Icons (EA).png', data  onclick="setAccessory('building Copy.png','images/Passive/');")
+                        img#imga(src='images/Passive/LEED Icons (EA).png', data-bind="click:setAccessory.bind($data, 'EA')")
                     div.cont3
                         div(style='position: absolute; top:300px; left:20px; width:200px; height:30px') NATURAL VENTILATION!
-                        img#imgb(src='images/Passive/LEED Icons (IEQ).png', onclick="setAccessory('buildingCopy2.png','images/Passive/');")
+                        img#imgb(src='images/Passive/LEED Icons (IEQ).png', data-bind="click:setAccessory.bind($data, 'IEQ')")
                     div.cont4
                         div(style='position: absolute; top:435px; left:20px; width:200px; height:30px') THERMAL MASS!
-                        img#imgc(src='images/Passive/LEED Icons (Therm).png', onclick="setAccessory('buildingCopy3.png','images/Passive/');")
+                        img#imgc(src='images/Passive/LEED Icons (Therm).png', data-bind="click:setAccessory.bind($data, 'Therm')")
                         img#imgd(src='images/Passive/building.png')
 
 
