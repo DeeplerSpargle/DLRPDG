@@ -113,15 +113,6 @@
               </div>
               <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
               
-              
-              
-              
-              
-              
-              
-              
-              
-              
             </div>
           </div>
         </div>
@@ -130,7 +121,7 @@
             <div class="col-sm-12 col-sm-12 col-xs-12">
               <div class="panel panel-success">
                 <div class="panel-heading">End Energy Use(kBtu/Year)</div>
-                <div class="panel-body">
+                <div class="panel-body fixed-panel">
                   <div id="chart-ring-ENERGY"></div>
                 </div>
               </div>
@@ -138,13 +129,18 @@
           </div>
         </div>
         <div class="col-md-4 col-md-4 col-md-4">
-          <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
-            <Simple>Data Table End Energy Use (kBtu/Year)</Simple>
+          <button type="button" data-toggle="collapse" data-target="#buildtype" class="btn btn-info">
+            <Simple>Tabs</Simple>
           </button>
-          <div id="demo" class="collapse out">
-            <div class="panel-heading">Building Type</div>
-            <div class="panel-body">
-              <div>
+          <div id="buildtype" class="collapse out">
+            <div id="exTab1" class="container">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="#1a" data-toggle="tab">Building Type</a></li>
+                <li><a href="#2a" data-toggle="tab">Advanced Charts</a></li>
+              </ul>
+            </div>
+            <div class="tab-content clearfix">
+              <div id="1a" class="tab-pane active">
                 <div></div>
                 <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
                 <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
@@ -152,30 +148,28 @@
               </div>
               <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
               <!--span(data-bind='text: fullName')-->
+              <div id="2a" class="tab-pane">
+                <div class="panel-body fixed-panel2">
+                  <div class="span12 table-graph">
+                    <table id="dc-table-graph" class="table table-hover dc-data-table">
+                      <thead>
+                        <tr class="header">
+                          <th>Weather File</th>
+                          <th>End Use Energy</th>
+                          <th>Energy Use (kBtu/Year)</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 col-sm-12 col-xs-12">
+          <div class="col-md-12 col-md-12 col-md-12">
             <div class="panel panel-success">
               <div class="panel-body"><img id="img3" src="/images/Passive/Via3.png"></div>
-            </div>
-            <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
-              <Simple>Data Table End Energy Use (kBtu/Year)</Simple>
-            </button>
-            <div id="demo" class="collapse out">
-              <div class="panel panel-success">
-                <div class="span12 table-graph"></div>
-                <table id="dc-table-graph" class="table table-hover dc-data-table">
-                  <thead>
-                    <tr class="header">
-                      <th>Weather File</th>
-                      <th>End Use Energy</th>
-                      <th>Energy Use (kBtu/Year)</th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
             </div>
           </div>
         </div>

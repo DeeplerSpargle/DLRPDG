@@ -5,6 +5,52 @@
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 
+
+
+#exTab1 .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+}
+
+#exTab2 h3 {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+    border-radius: 0;
+}
+
+/* change border radius for the tab , apply corners on top*/
+
+#exTab3 .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+}
+
+#exTab3 .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+}
+
+
+
+
+.fixed-panel{
+    min-height: 600px;
+    max-height:1500px;
+    
+}
+.fixed-panel2{
+    min-height: 400px;
+    max-height:600px;
+    overflow-y:scroll;
+}
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
@@ -155,9 +201,9 @@ img
 
 .img-container{
     height:100%;
-    max-height:600px;
+    max-height:200px;
     width: 100%;
-    max-width: 600;
+    max-width: 100;
 }
 .img-container2{
     height:100%;
@@ -3731,7 +3777,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-info {
     color: #fff;
-    background-color: #5bc0de;
+    background-color: #E14019;
     border-color: #46b8da
 }
 
