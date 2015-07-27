@@ -184,7 +184,7 @@ $(function () {
             self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix', "images/2B PHOENIX/2B_Band.png", 'images/Passive/Phoenix/','images/Passive/Phoenix/detail/'));
             self.availableItems.push(new DemoItem("datafiles/3a.json", 'Atlanta', "images/3A ATLANTA/Climate Files4.jpg", 'images/Passive/'));
             self.availableItems.push(new DemoItem("datafiles/3b.json", 'Las Vegas', "images/3B LAS VEGAS/Climate Files5.jpg", 'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/'));
+            self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/','images/Passive/Stickney/detail/'));
             self.availableItems.push(new DemoItem("datafiles/4a.json", 'Baltimore',   "images/4A BALTIMORE/Climate Files7.jpg"));
             self.availableItems.push(new DemoItem("datafiles/4b.json", 'Albuquerque',    "images/4B ALBUQUERQUE/Climate Files8.jpg"));
             self.availableItems.push(new DemoItem("datafiles/4c.json", 'Portland',   "images/4C PORTLAND/Climate Files9.jpg"));

@@ -30,21 +30,22 @@ block column
     .row
 
     .row
+        p
         .col-md-12.col-sm-12.col-xs-12
             .panel.panel-success
-
-
-                div.panel-heading Passive
                 div.panel-body
                     p
                     .col-m-2.col-sm-2.col-sm-2
                         .panel.panel-success
-                            div.panel-heading Passive
+                            div.panel-heading Choose Climate Zone
                             div.panel-body
-                                div(data-bind='foreach: availableItems')
-                                    input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-                                    span(data-bind="text: '' + Name()")
-                                    br
+                               
+                                .col-md-12
+
+                                    div(data-bind='foreach: availableItems')
+                                        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                                        span(data-bind="text: '' + Name()")
+                                        br
 
                         .panel.panel-success
 
