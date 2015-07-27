@@ -43,11 +43,16 @@
 .fixed-panel{
     min-height: 600px;
     max-height:1500px;
-    
+
 }
 .fixed-panel2{
     min-height: 400px;
     max-height:600px;
+    overflow-y:scroll;
+}
+.fixed-panel3{
+    min-height: 1px;
+    max-height:10px;
     overflow-y:scroll;
 }
 
@@ -145,16 +150,16 @@ img
 
 #imgd
 {
-    width:1550px;
+    width:1570px;
     height: auto;
     position:absolute;
     left: 300px;
-    top:48.5px;
+    top:0px;
     z-index: 0;
 }
 #img3
 {
-    width:1300px;
+    width:1320px;
     height: auto;
     position:absolute;
     left: 300px;
@@ -163,11 +168,11 @@ img
 }
 #imgcz
 {
-    width:1550px;
+    width:1575px;
     height: auto;
     position:absolute;
-    left: 300px;
-    top:600px;
+    left: 296px;
+    top:580px;
     z-index: 0;
 }
 #imgpd
