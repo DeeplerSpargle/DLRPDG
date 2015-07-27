@@ -64,10 +64,10 @@
                       <div style="position: absolute; top:340px; left:15px; width:200px; height:30px">Heat Transfer</div><img id="imgc" src="images/Passive/LEED Icons (Therm).png" data-bind="click:setAccessory.bind($data, 'GAIN.jpg')">
                     </div>
                     <div class="cont5">
-                      <div style="position: absolute; top:40px; left:15px; width:200px; height:15px"><a href="#text" class="button">    Learn More</a></div>
-                      <div style="position: absolute; top:95px; left:15px; width:200px; height:15px"><a href="#text" class="button">    Learn More</a></div>
-                      <div style="position: absolute; top:240px; left:15px; width:200px; height:15px"><a href="#text" class="button">    Learn More</a></div>
-                      <div style="position: absolute; top:360px; left:15px; width:200px; height:30px"><a href="#text" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:40px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:95px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:240px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:360px; left:15px; width:200px; height:30px"><a href="#passivedetails" class="button">    Learn More</a></div>
                     </div>
                   </div>
                 </div>
@@ -77,10 +77,10 @@
         </div>
       </div>
       <div class="row">
-        <p><a name="text"></a></p>
-        <p><a name="text">.</a></p>
+        <p><a name="passivedetails"></a></p>
+        <p><a name="passivedetails">.</a></p>
         <div class="panel panel-success">
-          <div class="panel-heading">Climate Zone</div>
+          <div class="panel-heading">Passive Strategy<a href="#top" class="button">    Back to Passive Strategies</a></div>
           <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail}"></div>
         </div>
       </div>
@@ -112,28 +112,17 @@
                 <div id="chart-row-CZ"><br></div>
               </div>
               <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
             </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-md-4 col-md-4">
-          <div class="panel-heading">Building Type</div>
-          <div class="panel-body">
-            <div>
-              <div></div>
-              <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
-              <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
-              <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
-            </div>
-            <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
-            <!--span(data-bind='text: fullName')-->
-            
-            
-            
-            
-            
-            
-            
-            
           </div>
         </div>
         <div class="col-lg-6 col-lg-8 col-lg-8">
@@ -148,12 +137,33 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4 col-md-4 col-md-4">
+          <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
+            <Simple>Data Table End Energy Use (kBtu/Year)</Simple>
+          </button>
+          <div id="demo" class="collapse out">
+            <div class="panel-heading">Building Type</div>
+            <div class="panel-body">
+              <div>
+                <div></div>
+                <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
+                <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
+                <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
+              </div>
+              <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
+              <!--span(data-bind='text: fullName')-->
+            </div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-sm-12 col-sm-12 col-xs-12">
+            <div class="panel panel-success">
+              <div class="panel-body"><img id="img3" src="/images/Passive/Via3.png"></div>
+            </div>
             <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-info">
               <Simple>Data Table End Energy Use (kBtu/Year)</Simple>
             </button>
-            <div id="demo" class="collapse in">
+            <div id="demo" class="collapse out">
               <div class="panel panel-success">
                 <div class="span12 table-graph"></div>
                 <table id="dc-table-graph" class="table table-hover dc-data-table">

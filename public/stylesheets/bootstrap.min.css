@@ -98,14 +98,23 @@ img
 }
 
 #imgd
- {
-     width:1550px;
-     height: auto;
-     position:absolute;
-     left: 300px;
-     top:48.5px;
-     z-index: 0;
- }
+{
+    width:1550px;
+    height: auto;
+    position:absolute;
+    left: 300px;
+    top:48.5px;
+    z-index: 0;
+}
+#img3
+{
+    width:1300px;
+    height: auto;
+    position:absolute;
+    left: 300px;
+    top:48.5px;
+    z-index: 0;
+}
 #imgcz
 {
     width:1550px;
