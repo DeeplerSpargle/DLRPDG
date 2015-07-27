@@ -49,16 +49,33 @@ block column
                         .panel.panel-success
 
                             div.panel-body
+
                                 div.cont2
-                                    div(style='position: absolute; top:150px; left:25px; width:200px; height:15px') Daylight & Shading
-                                        a.button(href='#text')  Learn More
+                                    div(style='position: absolute; top:20px; left:15px; width:200px; height:15px') Daylight
+                                    div(style='position: absolute; top:50px; left:45px; width:200px; height:15px') &
+                                    div(style='position: absolute; top:75px; left:15px; width:200px; height:15px') Shading
                                     img#imga(src='images/Passive/LEED Icons (EA).png', data-bind="click:setAccessory.bind($data, 'SUN.jpg')")
                                 div.cont3
-                                    div(style='position: absolute; top:300px; left:20px; width:200px; height:30px') Cooling & Ventilation
+                                    div(style='position: absolute; top:180px; left:15px; width:200px; height:30px') Cooling
+                                    div(style='position: absolute; top:200px; left:45px; width:200px; height:15px') &
+                                    div(style='position: absolute; top:220px; left:15px; width:200px; height:15px') Ventilation
                                     img#imgb(src='images/Passive/LEED Icons (IEQ).png', data-bind="click:setAccessory.bind($data, 'FLOW.jpg')")
                                 div.cont4
-                                    div(style='position: absolute; top:435px; left:20px; width:200px; height:30px') Heat Transfer
+                                    div(style='position: absolute; top:340px; left:15px; width:200px; height:30px') Heat Transfer
                                     img#imgc(src='images/Passive/LEED Icons (Therm).png', data-bind="click:setAccessory.bind($data, 'GAIN.jpg')")
+
+                                div.cont5
+                                    div(style='position: absolute; top:40px; left:15px; width:200px; height:15px')
+                                        a.button(href='#text')     Learn More
+
+                                    div(style='position: absolute; top:95px; left:15px; width:200px; height:15px')
+                                        a.button(href='#text')     Learn More
+
+                                    div(style='position: absolute; top:240px; left:15px; width:200px; height:15px')
+                                        a.button(href='#text')     Learn More
+
+                                    div(style='position: absolute; top:360px; left:15px; width:200px; height:30px')
+                                        a.button(href='#text')     Learn More
                     img#imgd(data-bind = 'attr:{src:passiveFlow}')
                     img#imgcz(data-bind='attr:{src:associatedItem().Picture}')
 

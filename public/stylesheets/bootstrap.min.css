@@ -56,6 +56,10 @@ div.cont4{
 
     font-size: 19px;
 }
+div.cont5{
+
+    font-size: 12px;
+}
 img
 {
 
@@ -68,7 +72,7 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 5px;
+    left: 130px;
     top:0px;
     z-index: 10;
 }
@@ -78,8 +82,8 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 5px;
-    top:275px;
+    left: 130px;
+    top:150px;
     z-index: 10;
 }
 
@@ -88,8 +92,8 @@ img
     width:150px;
     height: auto;
     position:absolute;
-    left: 5px;
-    top:400px;
+    left: 130px;
+    top:300px;
     z-index: 10;
 }
 
@@ -98,17 +102,17 @@ img
      width:1550px;
      height: auto;
      position:absolute;
-     left: 200px;
+     left: 300px;
      top:48.5px;
      z-index: 0;
  }
 #imgcz
 {
-    width:300px;
+    width:1550px;
     height: auto;
     position:absolute;
-    left: 1580px;
-    top:49px;
+    left: 300px;
+    top:600px;
     z-index: 0;
 }
 #imgpd
@@ -5115,7 +5119,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-inverse {
-    background-color: #f9423a;
+    background-color: cadetblue;
     border-color: #080808
 }
 
@@ -6243,7 +6247,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 
 .panel-success > .panel-heading {
     color: #fff;
-    background-color: #f9423a;
+    background-color: #E14019;
     border-color: #d6e9c6
 }
 
