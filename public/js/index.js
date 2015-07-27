@@ -50,6 +50,14 @@ $(function () {
             }
         }, self);
 
+        self.passiveFlowDetail2 = ko.computed(function () {
+
+            var something = self.selectedPassiveIcon();
+            //use selected passive icon to drive this
+            if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
+                return self.associatedItem().passiveDetail() + 'SHADE.jpg';
+            }
+        }, self);
 
         self.fullName = ko.pureComputed(function () {
             return self.associatedItem().Picture();
@@ -102,20 +110,20 @@ $(function () {
             });
 
             ENERGYRingChart
-                .width(450).height(500)
+                .width(800).height(800)
                 .dimension(LabelDim)
                 .renderLabel(false)
                 .title(function (d) {
                     return d.key + " : " + d.value.toString();
                 })
-                .legend(dc.legend().x(150).y(150))
+                .legend(dc.legend().x(300).y(300))
+
                 .group(EnergyPerYear)
-                .innerRadius(150)
+                .innerRadius(300)
                 .on("filtered", function (chart) {
                     dc.events.trigger(function () {
                         if (chart.filter()) {
                             console.log(chart.filter());
-
                         }
                         else WeatherFileRowChart.filterAll();
                     });

@@ -4,7 +4,15 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+rect {
+    cursor: pointer;                           /* NEW */
+    stroke-width: 2;
 
+    height: 16px;
+}
+rect.disabled {                              /* NEW */
+    fill: transparent !important;              /* NEW */
+}
 
 
 #exTab1 .tab-content {
@@ -7649,7 +7657,7 @@ div.dc-chart {
 }
 
 .dc-legend {
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .dc-legend-item {
@@ -7710,7 +7718,7 @@ div.dc-chart {
 
 .dc-chart .box rect {
     stroke: #000;
-    stroke-width: 1.5px;
+    stroke-width: 3px;
 }
 
 .dc-chart .box .center {
