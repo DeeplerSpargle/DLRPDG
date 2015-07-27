@@ -14,6 +14,7 @@
       <script type="text/javascript" src="js/lib/topojson.v0.min.js"></script>
       <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
       <script type="text/javascript" src="/js/index.js"></script>
+      <script type="text/javascript" src="/js/lib/d3tip.js"></script>
     </div>
     <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -68,7 +69,7 @@
                     </div>
                     <div class="cont5">
                       <div style="position: absolute; top:40px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
-                      <div style="position: absolute; top:95px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:95px; left:15px; width:200px; height:15px"><a href="#passivedetails2" class="button">    Learn More</a></div>
                       <div style="position: absolute; top:240px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
                       <div style="position: absolute; top:360px; left:15px; width:200px; height:30px"><a href="#passivedetails" class="button">    Learn More</a></div>
                     </div>
@@ -82,11 +83,13 @@
       <div class="row">
         <p><a name="passivedetails"></a></p>
         <p><a name="passivedetails">.</a></p>
-        <div class="panel panel-success">
+        <div class="panel panel-success fixed-panel4">
           <div class="panel-heading">Passive Strategy<a href="#top" class="button">    Back to Passive Strategies</a></div>
           <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail}"></div>
         </div>
-        <div class="panel panel-success">
+        <p><a name="passivedetails2"></a></p>
+        <p><a name="passivedetails2">.</a></p>
+        <div class="panel panel-success fixed-panel4">
           <div class="panel-heading">Passive Strategy<a href="#top" class="button">    Back to Passive Strategies</a></div>
           <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail2}"></div>
         </div>
@@ -129,7 +132,10 @@
               <div class="panel panel-success">
                 <div class="panel-heading">End Energy Use(kBtu/Year)</div>
                 <div class="panel-body fixed-panel">
-                  <div id="chart-ring-ENERGY"></div>
+                  <div class="col-sm-4 col-sm-4 col-xs-4"></div>
+                  <div class="col-sm-12 col-sm-12 col-xs-12">
+                    <div id="chart-ring-ENERGY"></div>
+                  </div>
                 </div>
               </div>
             </div>

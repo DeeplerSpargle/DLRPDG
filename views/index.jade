@@ -24,6 +24,8 @@ block head
     script(type='text/javascript', src='js/lib/topojson.v0.min.js')
     script(type='text/javascript', src='js/lib/bootstrap.min.js')
     script(type='text/javascript', src='/js/index.js')
+    script(type='text/javascript', src='/js/lib/d3tip.js')
+
 
 block column
 
@@ -71,7 +73,7 @@ block column
                                         a.button(href='#passivedetails')     Learn More
 
                                     div(style='position: absolute; top:95px; left:15px; width:200px; height:15px')
-                                        a.button(href='#passivedetails')     Learn More
+                                        a.button(href='#passivedetails2')     Learn More
 
                                     div(style='position: absolute; top:240px; left:15px; width:200px; height:15px')
                                         a.button(href='#passivedetails')     Learn More
@@ -89,13 +91,16 @@ block column
         p
             a(name='passivedetails') .
 
-        .panel.panel-success
+        .panel.panel-success.fixed-panel4
             div.panel-heading Passive Strategy
                 a.button(href='#top')     Back to Passive Strategies
             div.panel-body
                 img#imgpd(data-bind = 'attr:{src:passiveFlowDetail}')
-
-        .panel.panel-success
+        p
+            a(name='passivedetails2')
+        p
+            a(name='passivedetails2') .
+        .panel.panel-success.fixed-panel4
             div.panel-heading Passive Strategy
                 a.button(href='#top')     Back to Passive Strategies
             div.panel-body
@@ -144,7 +149,9 @@ block column
                     .panel.panel-success
                         div.panel-heading End Energy Use(kBtu/Year)
                         div.panel-body.fixed-panel
-                            #chart-ring-ENERGY
+                            .col-sm-4.col-sm-4.col-xs-4
+                            .col-sm-12.col-sm-12.col-xs-12
+                             #chart-ring-ENERGY
 
         .col-md-4.col-md-4.col-md-4
             button.btn.btn-info(type='button', data-toggle='collapse', data-target='#buildtype')

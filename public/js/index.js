@@ -108,18 +108,24 @@ $(function () {
             PerZone = WFDim.group().reduceSum(function (d) {
                 return +d.Heat;
             });
+            d3.selectAll("#version").text(dc.version);
+
+            var pieTip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value); });
 
             ENERGYRingChart
-                .width(800).height(800)
+                .width(650).height(650)
                 .dimension(LabelDim)
                 .renderLabel(false)
                 .title(function (d) {
                     return d.key + " : " + d.value.toString();
                 })
-                .legend(dc.legend().x(300).y(300))
+                .legend(dc.legend().x(200).y(225))
 
                 .group(EnergyPerYear)
-                .innerRadius(300)
+                .innerRadius(200)
                 .on("filtered", function (chart) {
                     dc.events.trigger(function () {
                         if (chart.filter()) {
@@ -182,31 +188,79 @@ $(function () {
                 .order(d3.ascending);
 
 
+
             dc.renderAll();
+                d3.selectAll("g.x text")
+                    .attr("class", "campusLabel")
+                    .style("text-anchor", "end")
+                    .attr("transform", "translate(-10,0)rotate(315)");
+                d3.selectAll(".pie-slice").call(pieTip);
+                d3.selectAll(".pie-slice").on('mouseover', pieTip.show)
+                    .on('mouseout', pieTip.hide);
 
         };
 
         self.init = function init() {
-            self.availableItems.push(new DemoItem("datafiles/1a.json", 'Miami', 'images/1A MIAMI/Climate Files.jpg', 'images/Passive/Dickinson/','images/Passive/Dickinson/detail/'));
-            self.availableItems.push(new DemoItem("datafiles/2a.json", 'Houston', "images/2A HOUSTON/Climate Files2.jpg", 'images/Passive/Stickney/','images/Passive/Stickney/detail/'));
-            self.availableItems.push(new DemoItem("datafiles/2b.json", 'Phoenix', "images/2B PHOENIX/2B_Band.png", 'images/Passive/Phoenix/','images/Passive/Phoenix/detail/'));
-            self.availableItems.push(new DemoItem("datafiles/3a.json", 'Atlanta', "images/3A ATLANTA/Climate Files4.jpg", 'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/3b.json", 'Las Vegas', "images/3B LAS VEGAS/Climate Files5.jpg", 'images/Passive/'));
-            self.availableItems.push(new DemoItem("datafiles/3c.json", 'San Francisco', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/','images/Passive/Stickney/detail/'));
-            self.availableItems.push(new DemoItem("datafiles/4a.json", 'Baltimore',   "images/4A BALTIMORE/Climate Files7.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/4b.json", 'Albuquerque',    "images/4B ALBUQUERQUE/Climate Files8.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/4c.json", 'Portland',   "images/4C PORTLAND/Climate Files9.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/5a.json", 'Chicago',    "images/5A CHICAGO/5A_Band.png",'images/Passive/Dickinson/','images/Passive/Dickinson/detail/'));
-            self.availableItems.push(new DemoItem("datafiles/5b.json", 'Boulder',   "images/5B BOULDER/Climate Files11.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/5c.json", 'Vancouver',    "images/5C VANCOUVER/Climate Files12.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/6a.json", 'Minneapolis',   "images/6A MINNEAPOLIS/Climate Files13.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/6b.json", 'Helena',   "images/6B HELENA/Climate Files14.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/7.json", 'Duluth',    "images/7 DULUTH/Climate Files15.jpg"));
-            self.availableItems.push(new DemoItem("datafiles/8.json", 'Fairbanks',   "images/8 FAIRBANKS/Climate Files16.jpg"));
+            self.availableItems.push(
+                new DemoItem(
+                    "datafiles/1a.json",
+                    'Miami',
+                    'images/1A MIAMI/Climate Files.jpg',
+                    'images/Passive/Dickinson/',
+                    'images/Passive/Dickinson/detail/'
+                )
+            );
+            self.availableItems.push(
+                new DemoItem(
+                    "datafiles/2a.json",
+                    'Houston',
+                    "images/2A HOUSTON/Climate Files2.jpg",
+                    'images/Passive/Stickney/',
+                    'images/Passive/Stickney/detail/'
+                )
+            );
+            self.availableItems.push(
+                new DemoItem(
+                    "datafiles/2b.json",
+                    'Phoenix',
+                    "images/2B PHOENIX/2B_Band.png",
+                    'images/Passive/Phoenix/',
+                    'images/Passive/Phoenix/detail/'
+                )
+            );
+            self.availableItems.push(
+                new DemoItem("datafiles/3a.json", 'Atlanta', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/3b.json", 'Las Vegas', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/3c.json", 'San Francisco', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/4a.json", 'Baltimore', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/4b.json", 'Albuquerque', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/4c.json", 'Portland', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/5a.json", 'Chicago', "images/5A CHICAGO/5A_Band.png", 'images/Passive/Dickinson/', 'images/Passive/Dickinson/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/5b.json", 'Boulder', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/5c.json", 'Vancouver', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/6a.json", 'Minneapolis', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/6b.json", 'Helena', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/7.json", 'Duluth', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+            self.availableItems.push(
+                new DemoItem("datafiles/8.json", 'Fairbanks', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
 
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE I", "images/1A MIAMI/1A_MAX_WR.png"));
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE II", "images/2A HOUSTON/2A_MAX_WR.png"));
-            self.availableBuildings.push(new BuildingItem("BUILDING TYPE III", "images/2B PHOENIX/2B_MAX_WR.png"));
+            self.availableBuildings.push(
+                new BuildingItem("BUILDING TYPE I", "images/1A MIAMI/1A_MAX_WR.png"));
+            self.availableBuildings.push(
+                new BuildingItem("BUILDING TYPE II", "images/2A HOUSTON/2A_MAX_WR.png"));
+            self.availableBuildings.push(
+                new BuildingItem("BUILDING TYPE III", "images/2B PHOENIX/2B_MAX_WR.png"));
 
             self.associatedBuilding(self.availableBuildings()[0]);
             self.associatedItem(self.availableItems()[0]);

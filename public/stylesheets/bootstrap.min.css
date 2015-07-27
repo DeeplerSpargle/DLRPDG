@@ -4,6 +4,36 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
 rect {
     cursor: pointer;                           /* NEW */
     stroke-width: 2;
@@ -62,6 +92,11 @@ rect.disabled {                              /* NEW */
     min-height: 1px;
     max-height:10px;
     overflow-y:scroll;
+}
+.fixed-panel4{
+    min-height: 1000px;
+    max-height:1200px;
+
 }
 
 .panel-heading .accordion-toggle:after {
@@ -5187,7 +5222,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-inverse {
-    background-color: cadetblue;
+    background-color: #D2E9B9;
     border-color: #080808
 }
 
