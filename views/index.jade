@@ -46,11 +46,13 @@ block column
                                 .col-md-12
 
                                     div(data-bind='foreach: availableItems')
-                                        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                                        input(type='radio', data-bind="checkedValue: $data, checked: $root.associatedItem")
                                         span(data-bind="text: '' + Name()")
                                         br
 
                         .panel.panel-success
+                            button.btn.btn-info(type='button', data-bind = "click:setAccessory.bind($data, 'BASE.jpg')")
+                                Simple Clear
 
                             div.panel-body
 
@@ -113,84 +115,84 @@ block column
         p
             a(name='text2') .
 
-        .panel.panel-success
-            div.panel-heading LOAD INFORMATION
-            div.panel-body
+
 
     .row
+        .panel.panel-success.fixed-panel4
+            div.panel-heading LOAD INFORMATION
+                div.panel-body
+            .col-md-2.col-md-3.col-xs-3
+                .row
+                   .panel.panel-success
+                            div.panel-heading Climate Zone
+                            div.panel-body
+                                div(data-bind='foreach: availableItems')
 
-        .col-md-2.col-md-3.col-xs-3
-            .row
-               .panel.panel-success
-                        div.panel-heading Climate Zone
-                        div.panel-body
-                            div(data-bind='foreach: availableItems')
+                                    input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                                    span(data-bind="text: '' + Name()")
 
-                                input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-                                span(data-bind="text: '' + Name()")
+                                    br
 
-                                br
-
-            .row
-                .panel.panel-success
-                        div.panel-heading Weather File
-                        div.panel-body
-                            #chart-row-CZ
-
-
-
-                                br
-                        //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
-
-
-        .col-lg-6.col-lg-8.col-lg-8
-            .row
-                .col-sm-12.col-sm-12.col-xs-12
+                .row
                     .panel.panel-success
-                        div.panel-heading End Energy Use(kBtu/Year)
-                        div.panel-body.fixed-panel
-                            .col-sm-4.col-sm-4.col-xs-4
-                            .col-sm-12.col-sm-12.col-xs-12
-                             #chart-ring-ENERGY
-
-        .col-md-4.col-md-4.col-md-4
-            button.btn.btn-info(type='button', data-toggle='collapse', data-target='#buildtype')
-                Simple Tabs
-            #buildtype.collapse.out
-
-
-                    #exTab1.container
-                        ul.nav.nav-pills
-                            li.active
-                                a(href='#1a', data-toggle='tab') Building Type
-
-                            li
-                                a(href='#2a', data-toggle='tab') Advanced Charts
+                            div.panel-heading Weather File
+                            div.panel-body
+                                #chart-row-CZ
 
 
 
-                    .tab-content.clearfix
-                        #1a.tab-pane.active
+                                    br
+                            //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
 
-                            div
-                            select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
-                            //span(data-bind='text: selectedChoice().Burl()')
-                            img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
-                            //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
-                        //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
-                        //span(data-bind='text: fullName')
 
-                        #2a.tab-pane
-                                div.panel-body.fixed-panel2
-                                    .span12.table-graph
-                                        table#dc-table-graph.table.table-hover.dc-data-table
-                                            thead
-                                                tr.header
-                                                    th Weather File
+            .col-lg-6.col-lg-8.col-lg-8
+                .row
+                    .col-sm-12.col-sm-12.col-xs-12
+                        .panel.panel-success
+                            div.panel-heading End Energy Use(kBtu/Year)
+                            div.panel-body.fixed-panel
+                                .col-sm-4.col-sm-4.col-xs-4
+                                .col-sm-12.col-sm-12.col-xs-12
+                                 #chart-ring-ENERGY
 
-                                                    th End Use Energy
+            .col-md-4.col-md-4.col-md-4
+                button.btn.btn-info(type='button', data-toggle='collapse', data-target='#buildtype')
+                    Simple Tabs
+                #buildtype.collapse.out
 
-                                                    th Energy Use (kBtu/Year)
+
+                        #exTab1.container
+                            ul.nav.nav-pills
+                                li.active
+                                    a(href='#1a', data-toggle='tab') Building Type
+
+                                li
+                                    a(href='#2a', data-toggle='tab') Advanced Charts
+
+
+
+                        .tab-content.clearfix
+                            #1a.tab-pane.active
+
+                                div
+                                select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
+                                //span(data-bind='text: selectedChoice().Burl()')
+                                img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
+                                //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
+                            //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
+                            //span(data-bind='text: fullName')
+
+                            #2a.tab-pane
+                                    div.panel-body.fixed-panel2
+                                        .span12.table-graph
+                                            table#dc-table-graph.table.table-hover.dc-data-table
+                                                thead
+                                                    tr.header
+                                                        th Weather File
+
+                                                        th End Use Energy
+
+                                                        th Energy Use (kBtu/Year)
 
 
 
