@@ -25,7 +25,6 @@ $(function () {
         self.availableBuildings = ko.observableArray();
         self.associatedBuilding = ko.observable();
         self.selectedChoice = ko.observable();
-
         self.selectedPassiveIcon = ko.observable("base.jpg");
 
         self.setAccessory = function setAccessory(selectedPassive, data, event) {
@@ -33,7 +32,6 @@ $(function () {
         };
 
         self.passiveFlow = ko.computed(function () {
-
             var something = self.selectedPassiveIcon();
             //use selected passive icon to drive this
             if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
@@ -61,16 +59,14 @@ $(function () {
 
         self.fullName = ko.pureComputed(function () {
             return self.associatedItem().Picture();
-
         }, self);
 
 
         self.associatedItem.subscribe(function (_associatedItem) {
             //put code here. each time a checkbox is marked, this is run.
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
-
+            self.selectedPassiveIcon('base.jpg');
             self.getChartData(_associatedItem.Url(), self.renderChart);
-
         });
 
         self.getChartData = function (url, callback) {
