@@ -201,7 +201,7 @@ $(function () {
                 new DemoItem(
                     "datafiles/1a.json",
                     'Miami',
-                    'images/1A MIAMI/Climate Files.jpg',
+                    'images/1A MIAMI/2B_Band.png',
                     'images/Passive/Dickinson/',
                     'images/Passive/Dickinson/detail/'
                 )
@@ -210,7 +210,7 @@ $(function () {
                 new DemoItem(
                     "datafiles/2a.json",
                     'Houston',
-                    "images/2A HOUSTON/Climate Files2.jpg",
+                    "images/2A HOUSTON/2B_Band.png",
                     'images/Passive/Stickney/',
                     'images/Passive/Stickney/detail/'
                 )
