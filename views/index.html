@@ -55,7 +55,7 @@
                 <div class="panel panel-success">
                   <!--button.btn.btn-info(type='button', data-bind = "click:setAccessory.bind($data, 'BASE.jpg')")-->
                   <!--    Simple Clear-->
-                  <div class="panel-heading">Choose Climate Zone</div>
+                  <div class="panel-heading">Choose Passive</div>
                   <div class="panel-body">
                     <div class="cont2">
                       <div style="position: absolute; top:20px; left:15px; width:200px; height:15px">Daylight</div>
@@ -73,8 +73,8 @@
                     <div class="cont5">
                       <div style="position: absolute; top:40px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
                       <div style="position: absolute; top:95px; left:15px; width:200px; height:15px"><a href="#passivedetails2" class="button">    Learn More</a></div>
-                      <div style="position: absolute; top:240px; left:15px; width:200px; height:15px"><a href="#passivedetails" class="button">    Learn More</a></div>
-                      <div style="position: absolute; top:360px; left:15px; width:200px; height:30px"><a href="#passivedetails" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:240px; left:15px; width:200px; height:15px"><a href="#passivedetails3" class="button">    Learn More</a></div>
+                      <div style="position: absolute; top:360px; left:15px; width:200px; height:30px"><a href="#passivedetails4" class="button">    Learn More</a></div>
                     </div>
                   </div>
                 </div>
@@ -87,14 +87,34 @@
         <p><a name="passivedetails"></a></p>
         <p><a name="passivedetails">.</a></p>
         <div class="panel panel-success fixed-panel4">
-          <div class="panel-heading">Passive Strategy<a href="#top" class="button">    Back to Passive Strategies</a></div>
+          <div class="panel-heading">Daylighting Strategy
+            <div class="col-m-2 col-sm-2 col-sm-2"><a type="button" href="#top" class="btn btn-warning">Back to Overview</a></div>
+          </div>
           <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail}"></div>
         </div>
         <p><a name="passivedetails2"></a></p>
         <p><a name="passivedetails2">.</a></p>
         <div class="panel panel-success fixed-panel4">
-          <div class="panel-heading">Passive Strategy<a href="#top" class="button">    Back to Passive Strategies</a></div>
+          <div class="panel-heading">Shading Passive Strategy
+            <div class="col-m-2 col-sm-2 col-sm-2"><a type="button" href="#top" class="btn btn-warning">Back to Overview</a></div>
+          </div>
           <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail2}"></div>
+        </div>
+        <p><a name="passivedetails3"></a></p>
+        <p><a name="passivedetails3">.</a></p>
+        <div class="panel panel-success fixed-panel4">
+          <div class="panel-heading">Cooling & Ventilation Passive Strategy
+            <div class="col-m-2 col-sm-2 col-sm-2"><a type="button" href="#top" class="btn btn-success">Back to Overview</a></div>
+          </div>
+          <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail3}"></div>
+        </div>
+        <p><a name="passivedetails4"></a></p>
+        <p><a name="passivedetails4">.</a></p>
+        <div class="panel panel-success fixed-panel4">
+          <div class="panel-heading">Heat Transfer Passive Strategy
+            <div class="col-m-2 col-sm-2 col-sm-2"><a type="button" href="#top" class="btn btn-warning">Back to Overview</a></div>
+          </div>
+          <div class="panel-body"><img id="imgpd" data-bind="attr:{src:passiveFlowDetail4}"></div>
         </div>
       </div>
       <div class="row">
@@ -145,7 +165,7 @@
             </div>
           </div>
           <div class="col-md-4 col-md-4 col-md-4">
-            <button type="button" data-toggle="collapse" data-target="#buildtype" class="btn btn-info">
+            <button type="button" data-toggle="collapse" data-target="#buildtype" class="btn btn-warning">
               <Simple>Tabs</Simple>
             </button>
             <div id="buildtype" class="collapse out">

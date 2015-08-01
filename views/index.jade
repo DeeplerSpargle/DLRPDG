@@ -77,10 +77,10 @@ block column
                                         a.button(href='#passivedetails2')     Learn More
 
                                     div(style='position: absolute; top:240px; left:15px; width:200px; height:15px')
-                                        a.button(href='#passivedetails')     Learn More
+                                        a.button(href='#passivedetails3')     Learn More
 
                                     div(style='position: absolute; top:360px; left:15px; width:200px; height:30px')
-                                        a.button(href='#passivedetails')     Learn More
+                                        a.button(href='#passivedetails4')     Learn More
                     img#imgd(data-bind = 'attr:{src:passiveFlow}')
                     img#imgcz(data-bind='attr:{src:associatedItem().Picture}')
 
@@ -93,19 +93,48 @@ block column
             a(name='passivedetails') .
 
         .panel.panel-success.fixed-panel4
-            div.panel-heading Passive Strategy
-                a.button(href='#top')     Back to Passive Strategies
+            div.panel-heading Daylighting Strategy
+                .col-m-2.col-sm-2.col-sm-2
+                    a.btn.btn-warning(type='button', href='#top') Back to Overview
             div.panel-body
                 img#imgpd(data-bind = 'attr:{src:passiveFlowDetail}')
         p
             a(name='passivedetails2')
         p
             a(name='passivedetails2') .
+
         .panel.panel-success.fixed-panel4
-            div.panel-heading Passive Strategy
-                a.button(href='#top')     Back to Passive Strategies
+            div.panel-heading Shading Passive Strategy
+
+                .col-m-2.col-sm-2.col-sm-2
+                    a.btn.btn-warning(type='button', href='#top') Back to Overview
+
+
+
             div.panel-body
                 img#imgpd(data-bind = 'attr:{src:passiveFlowDetail2}')
+        p
+            a(name='passivedetails3')
+        p
+            a(name='passivedetails3') .
+
+        .panel.panel-success.fixed-panel4
+            div.panel-heading Cooling & Ventilation Passive Strategy
+                .col-m-2.col-sm-2.col-sm-2
+                    a.btn.btn-success(type='button', href='#top') Back to Overview
+            div.panel-body
+                img#imgpd(data-bind = 'attr:{src:passiveFlowDetail3}')
+        p
+            a(name='passivedetails4')
+        p
+            a(name='passivedetails4') .
+
+        .panel.panel-success.fixed-panel4
+            div.panel-heading Heat Transfer Passive Strategy
+                .col-m-2.col-sm-2.col-sm-2
+                    a.btn.btn-warning(type='button', href='#top') Back to Overview
+            div.panel-body
+                img#imgpd(data-bind = 'attr:{src:passiveFlowDetail4}')
     .row
         p
             a(name='text3')
@@ -155,7 +184,7 @@ block column
                                  #chart-ring-ENERGY
 
             .col-md-4.col-md-4.col-md-4
-                button.btn.btn-info(type='button', data-toggle='collapse', data-target='#buildtype')
+                button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
                     Simple Tabs
                 #buildtype.collapse.out
 

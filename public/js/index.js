@@ -41,19 +41,37 @@ $(function () {
 
         self.passiveFlowDetail = ko.computed(function () {
 
-            var something = self.selectedPassiveIcon();
+           // var something = self.selectedPassiveIcon();
             //use selected passive icon to drive this
             if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
-                return self.associatedItem().passiveDetail() + something;
+                return self.associatedItem().passiveDetail() + 'SHADE.jpg';
             }
         }, self);
 
         self.passiveFlowDetail2 = ko.computed(function () {
 
-            var something = self.selectedPassiveIcon();
+           // var something = self.selectedPassiveIcon();
             //use selected passive icon to drive this
             if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
-                return self.associatedItem().passiveDetail() + 'SHADE.jpg';
+                return self.associatedItem().passiveDetail() + 'SUN.jpg';
+            }
+        }, self);
+
+        self.passiveFlowDetail3 = ko.computed(function () {
+
+            //var something = self.selectedPassiveIcon();
+            //use selected passive icon to drive this
+            if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
+                return self.associatedItem().passiveDetail() + 'FLOW.jpg';
+            }
+        }, self);
+
+        self.passiveFlowDetail4 = ko.computed(function () {
+
+            //var something = self.selectedPassiveIcon();
+            //use selected passive icon to drive this
+            if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
+                return self.associatedItem().passiveDetail() + 'GAIN.jpg';
             }
         }, self);
 
