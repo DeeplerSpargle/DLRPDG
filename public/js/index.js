@@ -44,7 +44,7 @@ $(function () {
            // var something = self.selectedPassiveIcon();
             //use selected passive icon to drive this
             if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
-                return self.associatedItem().passiveDetail() + 'SHADE.jpg';
+                return self.associatedItem().passiveDetail() + 'SUN.jpg';
             }
         }, self);
 
@@ -53,7 +53,7 @@ $(function () {
            // var something = self.selectedPassiveIcon();
             //use selected passive icon to drive this
             if(self.associatedItem() !== undefined && self.associatedItem() !== null) {
-                return self.associatedItem().passiveDetail() + 'SUN.jpg';
+                return self.associatedItem().passiveDetail() + 'SHADE.jpg';
             }
         }, self);
 
