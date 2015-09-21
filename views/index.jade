@@ -173,20 +173,13 @@ block column
                             //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
 
 
-            .col-lg-6.col-lg-8.col-lg-8
-                .row
-                    .col-sm-12.col-sm-12.col-xs-12
-                        .panel.panel-success
-                            div.panel-heading End Energy Use(kBtu/Year)
-                            div.panel-body.fixed-panel
-                                .col-sm-4.col-sm-4.col-xs-4
-                                .col-sm-12.col-sm-12.col-xs-12
-                                 #chart-ring-ENERGY
+            .col-lg-10.col-lg-10.col10-lg-10
 
-            .col-md-4.col-md-4.col-md-4
-                button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
+
+
+                //button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
                     Simple Tabs
-                #buildtype.collapse.out
+                #buildtype.collapse.in
 
 
                         #exTab1.container
@@ -201,14 +194,22 @@ block column
 
                         .tab-content.clearfix
                             #1a.tab-pane.active
-
-                                div
-                                select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
-                                //span(data-bind='text: selectedChoice().Burl()')
-                                img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
-                                //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
-                            //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
-                            //span(data-bind='text: fullName')
+                                .row
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        .panel.panel-success
+                                            div.panel-heading End Energy Use(kBtu/Year)
+                                            div.panel-body.fixed-panel
+                                                .col-sm-4.col-sm-4.col-xs-4
+                                                .col-sm-12.col-sm-12.col-xs-12
+                                                    #chart-ring-ENERGY
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        div
+                                        select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
+                                        //span(data-bind='text: selectedChoice().Burl()')
+                                        img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
+                                    //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
+                                //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
+                                //span(data-bind='text: fullName')
 
                             #2a.tab-pane
                                     div.panel-body.fixed-panel2

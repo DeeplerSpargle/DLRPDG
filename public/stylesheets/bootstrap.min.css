@@ -86,6 +86,7 @@ rect.disabled {                              /* NEW */
 .fixed-panel2{
     min-height: 400px;
     max-height:600px;
+    max-width:400px;
     overflow-y:scroll;
 }
 .fixed-panel3{

@@ -133,6 +133,7 @@ $(function () {
                 .width(650).height(650)
                 .dimension(LabelDim)
                 .renderLabel(false)
+
                 .title(function (d) {
                     return d.key + " : " + d.value.toString();
                 })
@@ -147,14 +148,16 @@ $(function () {
                         }
                         else WeatherFileRowChart.filterAll();
                     });
-                });
 
+                })
+                .ordinalColors(['aqua','blue','purple','green','#001f3f','#FF851B','red','#3D9970','#FFDC00','maroon','grey']);
 
             ENERGY2RingChart
                 .width(200).height(200)
                 .dimension(HeatingDim)
                 .group(HeatingPerYear)
                 .innerRadius(50);
+
 
             WeatherFileRowChart
                 .width(300).height(200)
