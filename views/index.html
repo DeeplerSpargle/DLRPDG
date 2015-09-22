@@ -129,8 +129,8 @@
           </div>
           <div class="col-md-2 col-md-3 col-xs-3">
             <div class="row">
-              <div class="panel panel-success">
-                <div class="panel-heading">Climate Zone</div>
+              <div class="panel2 panel-success">
+                <div class="panel-heading2">Climate Zone</div>
                 <div class="panel-body">
                   <div data-bind="foreach: availableItems">
                     <input type="radio" data-bind="checkedValue: $data, checked: $root.associatedItem"><span data-bind="text: '' + Name()"></span><br>
@@ -139,15 +139,17 @@
               </div>
             </div>
             <div class="row">
-              <div class="panel panel-success">
-                <div class="panel-heading">Weather File</div>
-                <div class="panel-body"><br></div>
+              <div class="panel2 panel-success">
+                <div class="panel-heading2">School Type</div>
+                <div class="panel-body">
+                  <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"><br></select>
+                </div>
                 <!--iframe(seamless = 'seamless',src='datafiles/testtext.txt')-->
               </div>
             </div>
             <div class="row">
-              <div class="panel panel-success">
-                <div class="panel-heading">Weather File</div>
+              <div class="panel2 panel-success">
+                <div class="panel-heading2">Weather File</div>
                 <div class="panel-body">
                   <div id="chart-row-CZ"><br></div>
                 </div>
@@ -155,7 +157,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-10 col-lg-10 col10-lg-10">
+          <div class="col-lg-10 col-lg-10 col0-lg-10">
             <!--button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')Simple Tabs
             -->
             <div id="buildtype" class="collapse in">
@@ -164,43 +166,43 @@
                   <li class="active"><a href="#1a" data-toggle="tab">Building Type</a></li>
                   <li><a href="#2a" data-toggle="tab">Advanced Charts</a></li>
                 </ul>
-              </div>
-              <div class="tab-content clearfix">
-                <div id="1a" class="tab-pane active">
-                  <div class="row">
-                    <div class="col-sm-6 col-sm-6 col-xs-6">
-                      <div class="panel panel-success">
-                        <div class="panel-heading">End Energy Use(kBtu/Year)</div>
-                        <div class="panel-body fixed-panel">
-                          <div class="col-sm-4 col-sm-4 col-xs-4"></div>
-                          <div class="col-sm-12 col-sm-12 col-xs-12">
-                            <div id="chart-ring-ENERGY"></div>
+                <div class="tab-content clearfix">
+                  <div id="1a" class="tab-pane active">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-6 col-xs-6">
+                        <div class="panel panel-success">
+                          <div class="panel-heading">End Energy Use(kBtu/Year)</div>
+                          <div class="panel-body fixed-panel">
+                            <div class="col-sm-4 col-sm-4 col-xs-4">
+                              <div class="col-sm-12 col-sm-12 col-xs-12">
+                                <div id="chart-ring-ENERGY"></div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <div class="col-sm-6 col-sm-6 col-xs-6">
+                        <div></div>
+                        <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
+                      </div>
+                      <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
                     </div>
-                    <div class="col-sm-6 col-sm-6 col-xs-6">
-                      <div></div>
-                      <select data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'"></select>
-                      <!--span(data-bind='text: selectedChoice().Burl()')--><img id="zoom" data-bind="attr:{src:selectedChoice().Burl}" class="img-container">
-                    </div>
-                    <!--img.img-container(id='zoom',data-bind='attr:{src:fullName}')-->
+                    <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
+                    <!--span(data-bind='text: fullName')-->
                   </div>
-                  <!--img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')-->
-                  <!--span(data-bind='text: fullName')-->
-                </div>
-                <div id="2a" class="tab-pane">
-                  <div class="panel-body fixed-panel2">
-                    <div class="span12 table-graph">
-                      <table id="dc-table-graph" class="table table-hover dc-data-table">
-                        <thead>
-                          <tr class="header">
-                            <th>Weather File</th>
-                            <th>End Use Energy</th>
-                            <th>Energy Use (kBtu/Year)</th>
-                          </tr>
-                        </thead>
-                      </table>
+                  <div id="2a" class="tab-pane">
+                    <div class="panel-body fixed-panel2">
+                      <div class="span12 table-graph">
+                        <table id="dc-table-graph" class="table table-hover dc-data-table">
+                          <thead>
+                            <tr class="header">
+                              <th>Weather File</th>
+                              <th>End Use Energy</th>
+                              <th>Energy Use (kBtu/Year)</th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>

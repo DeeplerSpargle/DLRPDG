@@ -140,8 +140,8 @@ block column
                 div.panel-body
             .col-md-2.col-md-3.col-xs-3
                 .row
-                   .panel.panel-success
-                            div.panel-heading Climate Zone
+                   .panel2.panel-success
+                            div.panel-heading2 Climate Zone
                             div.panel-body
                                 div(data-bind='foreach: availableItems')
 
@@ -151,45 +151,47 @@ block column
                                     br
 
                 .row
-                    .panel.panel-success
-                        div.panel-heading Weather File
+                    .panel2.panel-success
+                        div.panel-heading2 School Type
                         div.panel-body
+                            select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
 
                                 br
                         //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
                 .row
-                    .panel.panel-success
-                        div.panel-heading Weather File
+                    .panel2.panel-success
+                        div.panel-heading2 Weather File
                         div.panel-body
                             #chart-row-CZ
                                 br
                         //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
 
-            .col-lg-10.col-lg-10.col10-lg-10
+            .col-lg-10.col-lg-10.col0-lg-10
                 //button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
                     Simple Tabs
                 #buildtype.collapse.in
-                        #exTab1.container
-                            ul.nav.nav-pills
-                                li.active
-                                    a(href='#1a', data-toggle='tab') Building Type
+                    #exTab1.container
+                        ul.nav.nav-pills
+                            li.active
+                                a(href='#1a', data-toggle='tab') Building Type
 
-                                li
-                                    a(href='#2a', data-toggle='tab') Advanced Charts
+                            li
+                                a(href='#2a', data-toggle='tab') Advanced Charts
 
                         .tab-content.clearfix
                             #1a.tab-pane.active
                                 .row
+
                                     .col-sm-6.col-sm-6.col-xs-6
                                         .panel.panel-success
                                             div.panel-heading End Energy Use(kBtu/Year)
                                             div.panel-body.fixed-panel
                                                 .col-sm-4.col-sm-4.col-xs-4
-                                                .col-sm-12.col-sm-12.col-xs-12
-                                                    #chart-ring-ENERGY
+                                                    .col-sm-12.col-sm-12.col-xs-12
+                                                        #chart-ring-ENERGY
                                     .col-sm-6.col-sm-6.col-xs-6
                                         div
-                                        select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
+
                                         //span(data-bind='text: selectedChoice().Burl()')
                                         img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
                                     //img.img-container(id='zoom',data-bind='attr:{src:fullName}')

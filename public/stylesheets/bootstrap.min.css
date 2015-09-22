@@ -112,6 +112,19 @@ rect.disabled {                              /* NEW */
     content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
 
+.panel-heading2 .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+.panel-heading2 .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+
 .panel-title a {
     display: block;
     padding: 10px 15px;
@@ -6120,6 +6133,16 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 }
 
+.panel2 {
+    margin-bottom: 1px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+}
+
+
 .panel-body {
     padding: 15px
     overflow:hidden;
@@ -6127,7 +6150,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-heading {
-    padding: 10px 10px;
+    padding: 8px 10px;
     font-size:18px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -6135,7 +6158,21 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 
 }
 
+
 .panel-heading > .dropdown .dropdown-toggle {
+    color: inherit
+}
+.panel-heading2 {
+    padding: 2px 2px;
+    font-size:16px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 4px
+
+}
+
+
+.panel-heading2 > .dropdown .dropdown-toggle {
     color: inherit
 }
 
@@ -6188,6 +6225,15 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     border-top-width: 0
 }
 
+
+.panel > .panel-heading2 + .panel-collapse > .list-group .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+}
+
+.panel-heading2 + .list-group .list-group-item:first-child {
+    border-top-width: 0
+}
 .list-group + .panel-footer {
     border-top-width: 0
 }
@@ -6291,6 +6337,13 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     border-top: 1px solid #ddd
 }
 
+.panel-group .panel-heading2 {
+    border-bottom: 0
+}
+
+.panel-group .panel-heading2 + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #ddd
+}
 .panel-group .panel-footer {
     border-top: 0
 }
@@ -6317,6 +6370,20 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     color: #f5f5f5;
     background-color: #333
 }
+.panel-default > .panel-heading2 {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd
+}
+
+.panel-default > .panel-heading2 + .panel-collapse > .panel-body {
+    border-top-color: #ddd
+}
+
+.panel-default > .panel-heading2 .badge {
+    color: #f5f5f5;
+    background-color: #333
+}
 
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #ddd
@@ -6336,7 +6403,20 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     border-top-color: #337ab7
 }
 
+.panel-primary > .panel-heading2 {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7
+}
 .panel-primary > .panel-heading .badge {
+    color: #337ab7;
+    background-color: #fff
+}
+.panel-primary > .panel-heading2 + .panel-collapse > .panel-body {
+    border-top-color: #337ab7
+}
+
+.panel-primary > .panel-heading2 .badge {
     color: #337ab7;
     background-color: #fff
 }
@@ -6363,7 +6443,20 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     color: #dff0d8;
     background-color: #3c763d
 }
+.panel-success > .panel-heading2 {
+    color: #fff;
+    background-color: #E14019;
+    border-color: #d6e9c6
+}
 
+.panel-success > .panel-heading2 + .panel-collapse > .panel-body {
+    border-top-color: #d6e9c6
+}
+
+.panel-success > .panel-heading2 .badge {
+    color: #dff0d8;
+    background-color: #3c763d
+}
 .panel-success > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #d6e9c6
 }
@@ -6383,6 +6476,21 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-info > .panel-heading .badge {
+    color: #d9edf7;
+    background-color: #31708f
+}
+
+.panel-info > .panel-heading2 {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1
+}
+
+.panel-info > .panel-heading2 + .panel-collapse > .panel-body {
+    border-top-color: #bce8f1
+}
+
+.panel-info > .panel-heading2 .badge {
     color: #d9edf7;
     background-color: #31708f
 }
@@ -6409,6 +6517,20 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
     color: #fcf8e3;
     background-color: #8a6d3b
 }
+.panel-warning > .panel-heading2 {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc
+}
+
+.panel-warning > .panel-heading2 + .panel-collapse > .panel-body {
+    border-top-color: #faebcc
+}
+
+.panel-warning > .panel-heading2 .badge {
+    color: #fcf8e3;
+    background-color: #8a6d3b
+}
 
 .panel-warning > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #faebcc
@@ -6429,6 +6551,21 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-danger > .panel-heading .badge {
+    color: #f2dede;
+    background-color: #a94442
+}
+
+.panel-danger > .panel-heading2 {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1
+}
+
+.panel-danger > .panel-heading2 + .panel-collapse > .panel-body {
+    border-top-color: #ebccd1
+}
+
+.panel-danger > .panel-heading2 .badge {
     color: #f2dede;
     background-color: #a94442
 }
