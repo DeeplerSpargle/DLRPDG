@@ -6112,10 +6112,10 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: #fff;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 1px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 }
@@ -6127,11 +6127,11 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-heading {
-    padding: 10px 30px;
-    font-size:20px;
+    padding: 10px 10px;
+    font-size:18px;
     border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px
+    border-top-left-radius: 0px;
+    border-top-right-radius: 4px
 
 }
 
