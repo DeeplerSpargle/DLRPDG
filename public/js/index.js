@@ -128,15 +128,15 @@ $(function () {
                 .html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value); });
 
             ENERGYRingChart
-                .width(650).height(650)
+                .width(1000).height(350)
                 .dimension(LabelDim)
                 .renderLabel(false)
                 .title(function (d) {
                     return d.key + " : " + d.value.toString();
                 })
-                .legend(dc.legend().x(200).y(225))
+                .legend(dc.legend().x(0).y(125))
                 .group(EnergyPerYear)
-                .innerRadius(200)
+                .innerRadius(150)
                 .on("filtered", function (chart) {
                     dc.events.trigger(function () {
                         if (chart.filter()) {
