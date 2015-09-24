@@ -99,6 +99,11 @@ rect.disabled {                              /* NEW */
     max-height:1200px;
 
 }
+.fixed-panelcz{
+    min-height: 350px;
+    max-height:700px;
+
+}
 
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */

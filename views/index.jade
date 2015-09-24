@@ -140,31 +140,38 @@ block column
                 div.panel-body
             .col-md-2.col-md-3.col-xs-3
                 .row
-                   .panel2.panel-success
-                            div.panel-heading2 Climate Zone
+
+                    button.btn.btn-success(type='button', data-toggle='collapse', data-target='#ClimateZone')
+                    Simple Choose Climate Zone
+                    #ClimateZone.collapse.out
+
+                       .panel2.panel-success
+                                div.panel-heading2 Climate Zone
+                                div.panel-body.fixed-panelcz
+                                    div(data-bind='foreach: availableItems')
+
+                                        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                                        span(data-bind="text: '' + Name()")
+
+                                        br
+
+                .row
+                    button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#ChooseSchool')
+                    Simple Choose School Type
+                    #ChooseSchool.collapse.out
+                        .panel2.panel-success
+                            div.panel-heading2 School Types
                             div.panel-body
-                                div(data-bind='foreach: availableItems')
-
-                                    input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-                                    span(data-bind="text: '' + Name()")
-
-                                    br
+                                select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
 
                 .row
-                    .panel2.panel-success
-                        div.panel-heading2 School Type
-                        div.panel-body
-                            select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
-
-                                br
-                        //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
-                .row
-                    .panel2.panel-success
-                        div.panel-heading2 Weather File
-                        div.panel-body
-                            #chart-row-CZ
-                                br
-                        //iframe(seamless = 'seamless',src='datafiles/testtext.txt')
+                    button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#ChooseWeatherFile')
+                    Simple Choose Weather File
+                    #ChooseWeatherFile.collapse.out
+                        .panel2.panel-success
+                            div.panel-heading2 Weather File
+                            div.panel-body
+                                select(data-bind="options: $root.availableWeatherfiles, value: selectedChoiceWeather, optionsText: 'Wname'")
 
             .col-lg-10.col-lg-10.col0-lg-10
                 //button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
@@ -184,11 +191,24 @@ block column
 
                                     .col-sm-6.col-sm-6.col-xs-6
                                         .panel.panel-success
-                                            div.panel-heading End Energy Use(kBtu/Year)
+                                            div.panel-heading2 End Energy Use(kBtu/Year)
                                             div.panel-body.fixed-panel
                                                 .col-sm-4.col-sm-4.col-xs-4
                                                     .col-sm-12.col-sm-12.col-xs-12
                                                         #chart-ring-ENERGY
+
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        .panel2.panel-success
+                                            div.panel-heading2 Weather File
+                                            div.panel-body
+                                                #chart-row-CZ
+
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        .panel2.panel-success
+                                            div.panel-heading2 Waaaa
+                                            div.panel-body
+
+                                                    #number-chart
                                     .col-sm-6.col-sm-6.col-xs-6
                                         div
 

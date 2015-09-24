@@ -16,13 +16,23 @@ $(function () {
         self.Jason = ko.observable(jason);
     }
 
+    function WeatherItem(weathername, weatherurl,weatherjason) {
+        var self = this;
+        self.Wurl = ko.observable(weatherurl);
+        self.Wname = ko.observable(weathername);
+        self.WJason = ko.observable(weatherjason);
+    }
+
     function ViewModel() {
         var self = this;
         self.availableItems = ko.observableArray();
         self.associatedItem = ko.observable();
         self.availableBuildings = ko.observableArray();
         self.associatedBuilding = ko.observable();
+        self.availableWeatherfiles = ko.observableArray();
+        self.associatedWeatherFile = ko.observable();
         self.selectedChoice = ko.observable();
+        self.selectedChoiceWeather = ko.observable();
         self.selectedPassiveIcon = ko.observable("base.jpg");
 
         self.setAccessory = function setAccessory(selectedPassive, data, event) {
@@ -77,13 +87,14 @@ $(function () {
         var update = function () {
             //put code here. each time a checkbox is marked, this is run.
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
-            if(self.associatedItem() && self.associatedBuilding()) {
+            if(self.associatedItem() && self.associatedBuilding() && self.associatedWeatherFile()) {
                 self.selectedPassiveIcon('base.jpg');
                 self.getChartData(self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
             }
         };
         self.associatedItem.subscribe(update);
         self.associatedBuilding.subscribe(update);
+        self.associatedWeatherFile.subscribe(update);
 
         self.getChartData = function (url, callback) {
             $.get(url, null, callback, "json");
@@ -122,10 +133,7 @@ $(function () {
             });
             d3.selectAll("#version").text(dc.version);
 
-            var pieTip = d3.tip()
-                .attr('class', 'd3-tip')
-                .offset([-10, 0])
-                .html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value); });
+
 
             ENERGYRingChart
                 .width(1000).height(350)
@@ -154,6 +162,10 @@ $(function () {
                 .group(HeatingPerYear)
                 .innerRadius(50);
 
+            var numberDisplay = dc.numberDisplay('#number-chart');
+            numberDisplay.group(HeatingPerYear)
+                .formatNumber(d3.format(".g"))
+                .valueAccessor( function(d) { return d.value } );
 
             WeatherFileRowChart
                 .width(300).height(200)
@@ -199,16 +211,12 @@ $(function () {
                 // (optional) sort order, :default ascending
                 .order(d3.ascending);
 
-
-
             dc.renderAll();
                 d3.selectAll("g.x text")
                     .attr("class", "campusLabel")
                     .style("text-anchor", "end")
                     .attr("transform", "translate(-10,0)rotate(315)");
-                d3.selectAll(".pie-slice").call(pieTip);
-                d3.selectAll(".pie-slice").on('mouseover', pieTip.show)
-                    .on('mouseout', pieTip.hide);
+
 
         };
 
@@ -253,6 +261,14 @@ $(function () {
             self.availableBuildings.push(
                 new BuildingItem("BUILDING TYPE III", "images/2B PHOENIX/2B_MAX_WR.png",".json"));
 
+            self.availableWeatherfiles.push(
+                new WeatherItem("TMYI", "ee","on"));
+            self.availableWeatherfiles.push(
+                new WeatherItem("TMYII", "fff","on"));
+            self.availableWeatherfiles.push(
+                new WeatherItem("TMYIII", "ddd","on"));
+
+            self.associatedWeatherFile(self.availableWeatherfiles()[0]);
             self.associatedBuilding(self.availableBuildings()[0]);
             self.associatedItem(self.availableItems()[0]);
         };
