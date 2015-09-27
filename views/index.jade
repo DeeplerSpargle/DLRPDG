@@ -36,7 +36,7 @@ block column
                 div.panel-body
                     .col-m-2.col-sm-2.col-sm-2
                         .panel.panel-success
-                            div.panel-heading Choose Climate Zone
+                            div.panel-heading Choose Climate
                             div.panel-body
                                 .col-md-12
 
@@ -138,7 +138,7 @@ block column
         .panel.panel-success.fixed-panel4
             div.panel-heading LOAD INFORMATION
                 div.panel-body
-            .col-md-2.col-md-3.col-xs-3
+            .col-md-1.col-md-1.col-xs-1
                 .row
 
                     button.btn.btn-success(type='button', data-toggle='collapse', data-target='#ClimateZone')
@@ -173,7 +173,7 @@ block column
                             div.panel-body
                                 select(data-bind="options: $root.availableWeatherfiles, value: selectedChoiceWeather, optionsText: 'Wname'")
 
-            .col-lg-10.col-lg-10.col0-lg-10
+            .col-lg-11.col-lg-11.col0-lg-11
                 //button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
                     Simple Tabs
                 #buildtype.collapse.in
@@ -189,13 +189,26 @@ block column
                             #1a.tab-pane.active
                                 .row
 
-                                    .col-sm-6.col-sm-6.col-xs-6
+                                    .col-sm-8.col-sm-8.col-xs-8
                                         .panel.panel-success
                                             div.panel-heading2 End Energy Use(kBtu/Year)
                                             div.panel-body.fixed-panel
-                                                .col-sm-4.col-sm-4.col-xs-4
-                                                    .col-sm-12.col-sm-12.col-xs-12
+
                                                         #chart-ring-ENERGY
+
+                                    .col-sm-4.col-sm-4.col-xs-4
+
+                                        div.panel-body.fixed-panel2
+                                            .span12.table-graph
+                                                table#dc-table-graph.table.table-hover.dc-data-table
+                                                    thead
+                                                        tr.header
+                                                            th Weather File
+
+                                                            th End Use Energy
+
+                                                            th Energy Use (kBtu/Year)
+                                .row
 
                                     .col-sm-6.col-sm-6.col-xs-6
                                         .panel2.panel-success
@@ -205,10 +218,11 @@ block column
 
                                     .col-sm-6.col-sm-6.col-xs-6
                                         .panel2.panel-success
-                                            div.panel-heading2 Waaaa
+                                            div.panel-heading2 % Max Dissatisfied. Percent Dissatisfied Breakdown:
+                                                #number-chart
                                             div.panel-body
+                                                #chart-row-1
 
-                                                    #number-chart
                                     .col-sm-6.col-sm-6.col-xs-6
                                         div
 
@@ -219,16 +233,7 @@ block column
                                 //span(data-bind='text: fullName')
 
                             #2a.tab-pane
-                                    div.panel-body.fixed-panel2
-                                        .span12.table-graph
-                                            table#dc-table-graph.table.table-hover.dc-data-table
-                                                thead
-                                                    tr.header
-                                                        th Weather File
 
-                                                        th End Use Energy
-
-                                                        th Energy Use (kBtu/Year)
 
         .row
             .col-md-12.col-md-12.col-md-12

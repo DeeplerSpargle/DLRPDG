@@ -90,6 +90,7 @@ $(function () {
             if(self.associatedItem() && self.associatedBuilding() && self.associatedWeatherFile()) {
                 self.selectedPassiveIcon('base.jpg');
                 self.getChartData(self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
+                self.getChartData2(self.associatedWeatherFile().Wurl(),self.renderChart2);
             }
         };
         self.associatedItem.subscribe(update);
@@ -100,11 +101,16 @@ $(function () {
             $.get(url, null, callback, "json");
         };
 
+        self.getChartData2 = function (url, callback) {
+            $.get(url, null, callback, "json");
+        };
+
         self.renderChart = function (chartData) {
             var ENERGYRingChart = dc.pieChart("#chart-ring-ENERGY"),
                 ENERGY2RingChart = dc.pieChart("#chart-ring-ENERGY2"),
                 WeatherFileRowChart = dc.rowChart("#chart-row-CZ");
-            dataTable = dc.dataTable("#dc-table-graph");
+            var dataTable = dc.dataTable("#dc-table-graph");
+
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
@@ -162,10 +168,7 @@ $(function () {
                 .group(HeatingPerYear)
                 .innerRadius(50);
 
-            var numberDisplay = dc.numberDisplay('#number-chart');
-            numberDisplay.group(HeatingPerYear)
-                .formatNumber(d3.format(".g"))
-                .valueAccessor( function(d) { return d.value } );
+
 
             WeatherFileRowChart
                 .width(300).height(200)
@@ -220,6 +223,58 @@ $(function () {
 
         };
 
+        self.renderChart2 = function (chartData) {
+            var chart1 = dc.rowChart("#chart-row-1");
+
+            // use static or load via d3.csv
+            // set crossfilter
+            var ndx = crossfilter(chartData);
+
+
+
+            LocationDim = ndx.dimension(function (d) {
+                return d.Label;
+            });
+
+
+            PerLocation = LocationDim.group().reduceSum(function (d) {
+                return +d.Dis;
+            });
+
+            PeakCoolingDim = ndx.dimension(function(d){
+                return d.PeakCoolingLoad;
+            });
+
+            d3.selectAll("#version").text(dc.version);
+
+
+            var numberDisplay = dc.numberDisplay('#number-chart');
+            numberDisplay.group(PerLocation)
+                .formatNumber(d3.format(".g"))
+                .valueAccessor( function(d) { return d.value } );
+
+            chart1
+                .width(300).height(200)
+                .dimension(LocationDim)
+                .title(function (d) {
+                    return d.key + " : " + d.value + "% Dissatisfied";
+                })
+                .renderLabel(true)
+                .group(PerLocation)
+                .elasticX(true)
+                .xAxis().ticks(4);
+
+
+
+            dc.renderAll();
+            d3.selectAll("g.x text")
+                .attr("class", "campusLabel")
+                .style("text-anchor", "end")
+                .attr("transform", "translate(-10,0)rotate(315)");
+
+
+        };
+
         self.init = function init() {
             self.availableItems.push(
                 new DemoItem("datafiles/1a",'Miami','images/3C SAN FRANCISCO/3C_Band.png','images/Passive/Dickinson/','images/Passive/Dickinson/detail/'));
@@ -262,11 +317,11 @@ $(function () {
                 new BuildingItem("BUILDING TYPE III", "images/2B PHOENIX/2B_MAX_WR.png",".json"));
 
             self.availableWeatherfiles.push(
-                new WeatherItem("TMYI", "ee","on"));
+                new WeatherItem("TMYI", "datafiles/addinfo.json","on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMYII", "fff","on"));
+                new WeatherItem("TMYII", "datafiles/addinfo.json","on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMYIII", "ddd","on"));
+                new WeatherItem("TMYIII", "datafiles/addinfo.json","on"));
 
             self.associatedWeatherFile(self.availableWeatherfiles()[0]);
             self.associatedBuilding(self.availableBuildings()[0]);
