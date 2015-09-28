@@ -38,7 +38,6 @@ rect {
     cursor: pointer;                           /* NEW */
     stroke-width: 2;
 
-    height: 16px;
 }
 rect.disabled {                              /* NEW */
     fill: transparent !important;              /* NEW */
@@ -74,9 +73,6 @@ rect.disabled {                              /* NEW */
     background-color: #428bca;
     padding : 5px 15px;
 }
-
-
-
 
 .fixed-panel{
     min-height: 400px;
@@ -7271,8 +7267,11 @@ button.close {
     border-radius: 10px
 }
 
+
+
+
 .carousel-indicators .active {
-    width: 12px;
+    width: 16px;
     height: 12px;
     margin: 0;
     background-color: #fff
@@ -7841,6 +7840,7 @@ div.dc-chart {
 
 .dc-legend-item {
     cursor: pointer;
+
 }
 
 .dc-chart g.axis text {

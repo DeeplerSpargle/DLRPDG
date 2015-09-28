@@ -36,7 +36,7 @@ block column
                 div.panel-body
                     .col-m-2.col-sm-2.col-sm-2
                         .panel.panel-success
-                            div.panel-heading Choose Climate
+                            div.panel-heading Choose Location
                             div.panel-body
                                 .col-md-12
 
@@ -141,8 +141,8 @@ block column
             .col-md-1.col-md-1.col-xs-1
                 .row
 
-                    button.btn.btn-success(type='button', data-toggle='collapse', data-target='#ClimateZone')
-                    Simple Choose Climate Zone
+                    button.btn.btn-info(type='button', data-toggle='collapse', data-target='#ClimateZone')
+                    Simple Choose Location
                     #ClimateZone.collapse.out
 
                        .panel2.panel-success
@@ -156,7 +156,7 @@ block column
                                         br
 
                 .row
-                    button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#ChooseSchool')
+                    button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#ChooseSchool')
                     Simple Choose School Type
                     #ChooseSchool.collapse.out
                         .panel2.panel-success
@@ -165,13 +165,21 @@ block column
                                 select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
 
                 .row
-                    button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#ChooseWeatherFile')
+                    button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#ChooseWeatherFile')
                     Simple Choose Weather File
                     #ChooseWeatherFile.collapse.out
                         .panel2.panel-success
                             div.panel-heading2 Weather File
                             div.panel-body
                                 select(data-bind="options: $root.availableWeatherfiles, value: selectedChoiceWeather, optionsText: 'Wname'")
+                .row
+                    button.btn.btn-success(type='button', data-toggle='collapse', data-target='#ChooseLoadFile')
+                    Simple Choose Load Reduction
+                    #ChooseLoadFile.collapse.out
+                        .panel2.panel-success
+                            div.panel-heading2 Load Reduction File
+                            div.panel-body
+                                select(data-bind="options: $root.availableLoads, value: selectedChoiceLoad, optionsText: 'Lname'")
 
             .col-lg-11.col-lg-11.col0-lg-11
                 //button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
@@ -180,24 +188,33 @@ block column
                     #exTab1.container
                         ul.nav.nav-pills
                             li.active
-                                a(href='#1a', data-toggle='tab') Building Type
+                                a(href='#1a', data-toggle='tab') Summary of Results
 
                             li
-                                a(href='#2a', data-toggle='tab') Advanced Charts
+                                a(href='#2a', data-toggle='tab') Comfort Indicators
+                            li
+                                a(href='#3a', data-toggle='tab') Additional Weather Information
 
                         .tab-content.clearfix
                             #1a.tab-pane.active
                                 .row
 
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        .panel.panel-success
+                                            div.panel-heading2 Peak Load
+                                            div.panel-body
+                                                #peakcooling-chart
+                                                #peakheating-chart
+                                    div(style='position: absolute; top:75px; left:815px; width:200px; height:15px') Shading
+                                        #number-chart
+
                                     .col-sm-8.col-sm-8.col-xs-8
                                         .panel.panel-success
                                             div.panel-heading2 End Energy Use(kBtu/Year)
                                             div.panel-body.fixed-panel
-
-                                                        #chart-ring-ENERGY
+                                                #chart-ring-ENERGY
 
                                     .col-sm-4.col-sm-4.col-xs-4
-
                                         div.panel-body.fixed-panel2
                                             .span12.table-graph
                                                 table#dc-table-graph.table.table-hover.dc-data-table
@@ -208,21 +225,26 @@ block column
                                                             th End Use Energy
 
                                                             th Energy Use (kBtu/Year)
+
+                            #2a.tab-pane
+
+                                    .row
+
+                                        .col-sm-6.col-sm-6.col-xs-6
+                                            .panel2.panel-success
+                                                div.panel-heading2 Weather File
+                                                div.panel-body
+                                                    #chart-row-CZ
+
+                                        .col-sm-6.col-sm-6.col-xs-6
+                                            .panel2.panel-success
+                                                div.panel-heading2 % Max Dissatisfied. Percent Dissatisfied Breakdown:
+                                                    #number-chart
+                                                div.panel-body
+                                                    #chart-row-1
+
+                            #3a.tab-pane
                                 .row
-
-                                    .col-sm-6.col-sm-6.col-xs-6
-                                        .panel2.panel-success
-                                            div.panel-heading2 Weather File
-                                            div.panel-body
-                                                #chart-row-CZ
-
-                                    .col-sm-6.col-sm-6.col-xs-6
-                                        .panel2.panel-success
-                                            div.panel-heading2 % Max Dissatisfied. Percent Dissatisfied Breakdown:
-                                                #number-chart
-                                            div.panel-body
-                                                #chart-row-1
-
                                     .col-sm-6.col-sm-6.col-xs-6
                                         div
 
@@ -231,9 +253,6 @@ block column
                                     //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
                                 //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
                                 //span(data-bind='text: fullName')
-
-                            #2a.tab-pane
-
 
         .row
             .col-md-12.col-md-12.col-md-12

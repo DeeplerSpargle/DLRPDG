@@ -15,6 +15,12 @@ $(function () {
         self.Bname = ko.observable(initmname);
         self.Jason = ko.observable(jason);
     }
+    function LoadItem(loadname, loadurl,loadjason) {
+        var self = this;
+        self.Lurl = ko.observable(loadurl);
+        self.Lname = ko.observable(loadname);
+        self.LJason = ko.observable(loadjason);
+    }
 
     function WeatherItem(weathername, weatherurl,weatherjason) {
         var self = this;
@@ -29,10 +35,13 @@ $(function () {
         self.associatedItem = ko.observable();
         self.availableBuildings = ko.observableArray();
         self.associatedBuilding = ko.observable();
+        self.availableLoads = ko.observableArray();
+        self.associatedLoad = ko.observable();
         self.availableWeatherfiles = ko.observableArray();
         self.associatedWeatherFile = ko.observable();
         self.selectedChoice = ko.observable();
         self.selectedChoiceWeather = ko.observable();
+        self.selectedChoiceLoad = ko.observable();
         self.selectedPassiveIcon = ko.observable("base.jpg");
 
         self.setAccessory = function setAccessory(selectedPassive, data, event) {
@@ -91,11 +100,13 @@ $(function () {
                 self.selectedPassiveIcon('base.jpg');
                 self.getChartData(self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
                 self.getChartData2(self.associatedWeatherFile().Wurl(),self.renderChart2);
+
             }
         };
         self.associatedItem.subscribe(update);
         self.associatedBuilding.subscribe(update);
         self.associatedWeatherFile.subscribe(update);
+        self.associatedLoad.subscribe(update);
 
         self.getChartData = function (url, callback) {
             $.get(url, null, callback, "json");
@@ -139,8 +150,6 @@ $(function () {
             });
             d3.selectAll("#version").text(dc.version);
 
-
-
             ENERGYRingChart
                 .width(1000).height(350)
                 .dimension(LabelDim)
@@ -148,9 +157,11 @@ $(function () {
                 .title(function (d) {
                     return d.key + " : " + d.value.toString();
                 })
-                .legend(dc.legend().x(0).y(125))
+                .legend(dc.legend().x(0).y(125).itemHeight(16))
+
                 .group(EnergyPerYear)
                 .innerRadius(150)
+
                 .on("filtered", function (chart) {
                     dc.events.trigger(function () {
                         if (chart.filter()) {
@@ -168,8 +179,6 @@ $(function () {
                 .group(HeatingPerYear)
                 .innerRadius(50);
 
-
-
             WeatherFileRowChart
                 .width(300).height(200)
                 .dimension(WFDim)
@@ -179,9 +188,9 @@ $(function () {
                 .renderLabel(true)
                 .group(PerZone)
                 .elasticX(true)
-                .renderlet(function (chart) {
+                WeatherFileRowChart.on("renderlet",(function (chart) {
                     ENERGYRingChart.filter(chart.filter());
-                })
+                }))
                 .on("postRedraw", function (chart) {
                     dc.events.trigger(function () {
                         ENERGYRingChart.filter(chart.filter());
@@ -220,38 +229,115 @@ $(function () {
                     .style("text-anchor", "end")
                     .attr("transform", "translate(-10,0)rotate(315)");
 
-
         };
 
         self.renderChart2 = function (chartData) {
             var chart1 = dc.rowChart("#chart-row-1");
+            var peakcLoadChart = dc.barChart('#peakcooling-chart');
+            var peakhLoadChart = dc.barChart('#peakheating-chart');
+            var numberDisplay = dc.numberDisplay('#number-chart');
 
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
-
-
-
-            LocationDim = ndx.dimension(function (d) {
-                return d.Label;
+            EUIDim = ndx.dimension(function (d){
+                return d.EUI;
             });
 
+            LocationDim = ndx.dimension(function (d) {
+                return d.Location;
+            });
 
             PerLocation = LocationDim.group().reduceSum(function (d) {
                 return +d.Dis;
             });
 
-            PeakCoolingDim = ndx.dimension(function(d){
-                return d.PeakCoolingLoad;
+            peakcDim = ndx.dimension(function(d){
+                return d.PeakcLabel;
             });
+
+            peakcGroup = peakcDim.group().reduceSum(function(d){
+                return d.PeakCoolingLoad/6;
+            });
+            peakhDim = ndx.dimension(function(d){
+                return d.PeakhLabel;
+            });
+
+            peakhGroup = peakhDim.group().reduceSum(function(d){
+                return d.PeakHeatingLoad/6;
+            });
+
 
             d3.selectAll("#version").text(dc.version);
 
 
-            var numberDisplay = dc.numberDisplay('#number-chart');
+
             numberDisplay.group(PerLocation)
                 .formatNumber(d3.format(".g"))
                 .valueAccessor( function(d) { return d.value } );
+
+
+            peakcLoadChart /* dc.barChart('#volume-month-chart', 'chartGroup') */
+                .width(200)
+                .height(300)
+                .x(d3.scale.ordinal())
+                .xUnits(dc.units.ordinal)
+                //.xUnits(function(){return 1;})
+                .brushOn(true)
+                .dimension(peakcDim)
+                .barPadding(0.1)
+                .outerPadding(0.05)
+                .group(peakcGroup)
+                .margins({top: 10, right: 50, bottom: 80, left: 60})
+                .y(d3.scale.linear().domain([0,1500000]))
+                .yAxisLabel("KW")
+                .yAxis().ticks(5);
+                //peakLoadChart.on("renderlet",(function(peakLoadChart){
+                //    var colors =d3.scale.ordinal().domain(["PeakHeatingLoad", "PeakCoolingLoad"])
+                //        .range(["orange", "red"]);
+                //    peakLoadChart.selectAll('rect.bar').each(function(d){
+                //        d3.select(this).attr("style", "fill: " + colors(d.key)); // use key accessor if you are using a custom accessor
+                //    });
+                //}));
+                peakcLoadChart.on("renderlet",(function(peakcLoadChart){
+                    peakcLoadChart.selectAll("rect.bar").attr("fill", function(d){
+                        if(d.key == "red")
+                            return "green";
+                        else
+                            return "blue";
+
+                    });}));
+            peakhLoadChart /* dc.barChart('#volume-month-chart', 'chartGroup') */
+                .width(200)
+                .height(300)
+                .x(d3.scale.ordinal())
+                .xUnits(dc.units.ordinal)
+                .y(d3.scale.linear().domain([0,1500000]))
+                //.xUnits(function(){return 1;})
+                .brushOn(true)
+                .dimension(peakhDim)
+                .barPadding(0.1)
+                .outerPadding(0.05)
+                .group(peakhGroup)
+                .margins({top: 10, right: 40, bottom: 80, left: 60})
+                .yAxisLabel("KW")
+                .yAxis().ticks(5);
+            //peakLoadChart.on("renderlet",(function(peakLoadChart){
+            //    var colors =d3.scale.ordinal().domain(["PeakHeatingLoad", "PeakCoolingLoad"])
+            //        .range(["orange", "red"]);
+            //    peakLoadChart.selectAll('rect.bar').each(function(d){
+            //        d3.select(this).attr("style", "fill: " + colors(d.key)); // use key accessor if you are using a custom accessor
+            //    });
+            //}));
+            peakhLoadChart.on("renderlet",(function(peakhLoadChart){
+                peakhLoadChart.selectAll("rect.bar").attr("fill", function(d){
+                    if(d.key == "red")
+                        return "green";
+                    else
+                        return "red";
+
+                });}));
+
 
             chart1
                 .width(300).height(200)
@@ -263,8 +349,6 @@ $(function () {
                 .group(PerLocation)
                 .elasticX(true)
                 .xAxis().ticks(4);
-
-
 
             dc.renderAll();
             d3.selectAll("g.x text")
@@ -310,27 +394,43 @@ $(function () {
                 new DemoItem("datafiles/8.json", 'Fairbanks', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
 
             self.availableBuildings.push(
-                new BuildingItem("BUILDING TYPE I", "images/1A MIAMI/1A_MAX_WR.png",".json"));
+                new BuildingItem("Primary", "images/1A MIAMI/1A_MAX_WR.png",".json"));
             self.availableBuildings.push(
-                new BuildingItem("BUILDING TYPE II", "images/2A HOUSTON/2A_MAX_WR.png",".json"));
-            self.availableBuildings.push(
-                new BuildingItem("BUILDING TYPE III", "images/2B PHOENIX/2B_MAX_WR.png",".json"));
+                new BuildingItem("Secondary", "images/2A HOUSTON/2A_MAX_WR.png",".json"));
 
             self.availableWeatherfiles.push(
-                new WeatherItem("TMYI", "datafiles/addinfo.json","on"));
+                new WeatherItem("TMY2 DOE", "datafiles/addinfo.json","on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMYII", "datafiles/addinfo.json","on"));
+                new WeatherItem("TMY3 DOE", "datafiles/addinfo.json","on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMYIII", "datafiles/addinfo.json","on"));
+                new WeatherItem("TMY3 WA", "datafiles/addinfo.json","on"));
+            self.availableWeatherfiles.push(
+                new WeatherItem("TMY7 WA", "datafiles/addinfo.json","on"));
+            self.availableWeatherfiles.push(
+                new WeatherItem("TMY15 WA", "datafiles/addinfo.json","on"));
+            self.availableWeatherfiles.push(
+                new WeatherItem("XMY MIN WA", "datafiles/addinfo.json","on"));
+            self.availableWeatherfiles.push(
+                new WeatherItem("XMY MAX WA", "datafiles/addinfo.json","on"));
+
+
+            self.availableLoads.push(
+                new LoadItem("BASEINE", "datafiles/addinfo.json","on"));
+            self.availableLoads.push(
+                new LoadItem("2010 Lighting Power Density", "datafiles/addinfo.json","on"));
+            self.availableLoads.push(
+                new LoadItem("Internal Lighting Reduction", "datafiles/addinfo.json","on"));
+            self.availableLoads.push(
+                new LoadItem("21st Century Classroom", "datafiles/addinfo.json","on"));
 
             self.associatedWeatherFile(self.availableWeatherfiles()[0]);
             self.associatedBuilding(self.availableBuildings()[0]);
             self.associatedItem(self.availableItems()[0]);
+            self.associatedLoad(self.availableLoads()[0]);
         };
     }
 
     var viewModel = new ViewModel();
-
     viewModel.init();
     ko.applyBindings(viewModel);
     window.viewModel = viewModel;
