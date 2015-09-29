@@ -1,5 +1,5 @@
 [
-	{
+	{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FLOOR 1",
         "Climate File": "TMY7WA",
         "DIS": "32",
@@ -10,7 +10,7 @@
         "EUI": "70"
     }
 	,
-	{
+	{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "MECH",
         "Climate File": "TMY7WA",
         "DIS": "48",
@@ -21,7 +21,7 @@
         "EUI": "70"
     }
 	,
-	{
+	{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FLOOR 2",
         "Climate File": "TMY7WA",
         "DIS": "34",
@@ -32,7 +32,7 @@
         "EUI": "70"
     }
 	,
-	{
+	{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "AUDITORIUM",
         "Climate File": "TMY7WA",
         "DIS": "33",
@@ -43,7 +43,7 @@
         "EUI": "70"
     }
 	,
-	{
+	{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
         "Climate File": "TMY7WA",
         "DIS": "19",
@@ -54,7 +54,7 @@
         "EUI": "70"
     }
 	,
-	{
+	{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "KITCHEN",
         "Climate File": "TMY7WA",
         "DIS": "346",

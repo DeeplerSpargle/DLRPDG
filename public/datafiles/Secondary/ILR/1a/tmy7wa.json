@@ -1,5 +1,5 @@
 [
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FLOOR 1",
         "Climate File": "TMY7WA",
         "DIS": "84",
@@ -10,7 +10,7 @@
         "EUI": "85"
     }
 ,
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "MECH",
         "Climate File": "TMY7WA",
         "DIS": "25",
@@ -21,7 +21,7 @@
         "EUI": "85"
     }
 ,
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FLOOR 2",
         "Climate File": "TMY7WA",
         "FLOOR 2": "91",
@@ -32,7 +32,7 @@
         "EUI": "85"
     }
 ,
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "AUDITORIUM",
         "Climate File": "TMY7WA",
         "AUDITORIUM": "24",
@@ -43,7 +43,7 @@
         "EUI": "85"
     }
 ,
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
         "Climate File": "TMY7WA",
         "GYM": "18",
@@ -54,7 +54,7 @@
         "EUI": "85"
     }
 ,
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "KITCHEN",
         "Climate File": "TMY7WA",
         "KITCHEN CAFETERIA": "0",

@@ -1,5 +1,5 @@
 [
-{
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "doeCWEC_ILR",
         "FLOOR 1": "11",
@@ -14,7 +14,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "TMY3WA_ILR",
         "FLOOR 1": "10",
@@ -29,7 +29,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "TMY7WA_ILR",
         "FLOOR 1": "11",
@@ -44,7 +44,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "TMY15WA_ILR",
         "FLOOR 1": "11",
@@ -59,7 +59,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "MAX_ILR",
         "FLOOR 1": "10",
@@ -74,7 +74,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "MIN_ILR",
         "FLOOR 1": "15",
@@ -89,7 +89,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "doeCWEC_ILR",
         "FLOOR 1": "11",
@@ -104,7 +104,7 @@
         "PeakCoolingLoad": "727729",
         "EUI": "aaa"
     },
-    {
+    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "5C",
         "Climate File": "CWEC_ILR",
         "FLOOR 1": "#N/A",
