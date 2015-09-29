@@ -205,14 +205,22 @@ block column
                                             div.panel-body
                                                 #peakcooling-chart
                                                 #peakheating-chart
-                                    div(style='position: absolute; top:75px; left:815px; width:200px; height:15px') Shading
-                                        #number-chart
 
+
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        .panel2.panel-success
+                                            div.panel-heading2  Weather File
+                                            div.panel-body
+                                                #chart-row-CZ
                                     .col-sm-8.col-sm-8.col-xs-8
                                         .panel.panel-success
                                             div.panel-heading2 End Energy Use(kBtu/Year)
                                             div.panel-body.fixed-panel
                                                 #chart-ring-ENERGY
+
+                                        div(style='position: absolute; top:165px; left:455px; width:200px; font-size:20px;color:blue') EUI:
+                                        div(style='position: absolute; top:190px; left:460px; width:200px; font-size:30px;color:blue') KW/sqft
+                                            #EUI-chart
 
                                     .col-sm-4.col-sm-4.col-xs-4
                                         div.panel-body.fixed-panel2
@@ -230,11 +238,7 @@ block column
 
                                     .row
 
-                                        .col-sm-6.col-sm-6.col-xs-6
-                                            .panel2.panel-success
-                                                div.panel-heading2 Weather File
-                                                div.panel-body
-                                                    #chart-row-CZ
+
 
                                         .col-sm-6.col-sm-6.col-xs-6
                                             .panel2.panel-success

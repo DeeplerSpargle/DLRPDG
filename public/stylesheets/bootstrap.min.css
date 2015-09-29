@@ -4,6 +4,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+#peakcooling-chart g.stack._0  > rect.bar {
+    stroke: none;
+    fill: blue;
+}
+#peakcooling-chart g.stack._1 > rect.bar {
+    stroke: none;
+    fill: green;
+}
+#peakcooling-chart g.stack._2 > rect.bar {
+    stroke: none;
+    fill: yellow;
+}
 
 .d3-tip {
     line-height: 1;

@@ -151,13 +151,13 @@ $(function () {
             d3.selectAll("#version").text(dc.version);
 
             ENERGYRingChart
-                .width(1000).height(350)
+                .width(1000).height(375)
                 .dimension(LabelDim)
                 .renderLabel(false)
                 .title(function (d) {
                     return d.key + " : " + d.value.toString();
                 })
-                .legend(dc.legend().x(0).y(125).itemHeight(16))
+                .legend(dc.legend().x(10).y(50).itemHeight(16))
 
                 .group(EnergyPerYear)
                 .innerRadius(150)
@@ -236,6 +236,7 @@ $(function () {
             var peakcLoadChart = dc.barChart('#peakcooling-chart');
             var peakhLoadChart = dc.barChart('#peakheating-chart');
             var numberDisplay = dc.numberDisplay('#number-chart');
+            var EUIDisplay = dc.numberDisplay('#EUI-chart');
 
             // use static or load via d3.csv
             // set crossfilter
@@ -243,6 +244,8 @@ $(function () {
             EUIDim = ndx.dimension(function (d){
                 return d.EUI;
             });
+
+
 
             LocationDim = ndx.dimension(function (d) {
                 return d.Location;
@@ -267,10 +270,15 @@ $(function () {
                 return d.PeakHeatingLoad/6;
             });
 
+            PerEUI = LocationDim.group().reduceSum(function (d) {
+                return +d.EUI;
+            });
 
             d3.selectAll("#version").text(dc.version);
 
-
+            EUIDisplay.group(PerEUI)
+                .formatNumber(d3.format(".g"))
+                .valueAccessor( function(d) { return d.value } );
 
             numberDisplay.group(PerLocation)
                 .formatNumber(d3.format(".g"))
@@ -285,13 +293,14 @@ $(function () {
                 //.xUnits(function(){return 1;})
                 .brushOn(true)
                 .dimension(peakcDim)
-                .barPadding(0.1)
-                .outerPadding(0.05)
+                .barPadding(0.5)
+                .outerPadding(0.3)
                 .group(peakcGroup)
-                .margins({top: 10, right: 50, bottom: 80, left: 60})
+                .renderHorizontalGridLines(true)
+                .margins({top: 15, right: 0, bottom: 80, left: 60})
                 .y(d3.scale.linear().domain([0,1500000]))
                 .yAxisLabel("KW")
-                .yAxis().ticks(5);
+                .yAxis().ticks(8);
                 //peakLoadChart.on("renderlet",(function(peakLoadChart){
                 //    var colors =d3.scale.ordinal().domain(["PeakHeatingLoad", "PeakCoolingLoad"])
                 //        .range(["orange", "red"]);
@@ -317,11 +326,12 @@ $(function () {
                 .brushOn(true)
                 .dimension(peakhDim)
                 .barPadding(0.1)
-                .outerPadding(0.05)
+                .outerPadding(0.3)
                 .group(peakhGroup)
-                .margins({top: 10, right: 40, bottom: 80, left: 60})
+                .margins({top: 15, right: 0, bottom: 80, left: 60})
                 .yAxisLabel("KW")
-                .yAxis().ticks(5);
+                .renderHorizontalGridLines(true)
+                .yAxis().ticks(8);
             //peakLoadChart.on("renderlet",(function(peakLoadChart){
             //    var colors =d3.scale.ordinal().domain(["PeakHeatingLoad", "PeakCoolingLoad"])
             //        .range(["orange", "red"]);
