@@ -1,4 +1,4 @@
-Climate Zone,Climate File,FLOOR 1,Mech,FLOOR 2,AUDITORIUM,GYM,KITCHEN CAFETERIA,Unmet Hours (Cooling),UH Compliance,Peak Heating Load,Peak Cooling Load,EUI
+Location,Climate File,FLOOR 1,Mech,FLOOR 2,AUDITORIUM,GYM,KITCHEN CAFETERIA,UnmetHoursCooling,UH Compliance,PeakHeatingLoad,PeakCoolingLoad,EUI
 1A,TMY7WA,84,25,91,24,18,0,2,2,3658993,1897464,aaa
 1A,TMY3WA,89,29,94,28,20,0,1,1,3658993,1897464,aaa
 1A,TMY3,81,24,89,23,17,0,1,1,3658993,1897464,aaa

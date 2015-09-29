@@ -1,0 +1,69 @@
+[
+    {
+        "Location": "FLOOR 1",
+        "Climate File": "MAX",
+        "DIS": "92",
+        "UnmetHoursCooling": "1",
+        "UH Compliance": "38",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+    {
+        "Location": "MECH",
+        "Climate File": "MAX",
+        "DIS": "32",
+        "UnmetHoursCooling": "1",
+        "UH Compliance": "38",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+    {
+        "Location": "FLOOR 2",
+        "Climate File": "MAX",
+        "DIS": "95",
+        "UnmetHoursCooling": "1",
+        "UH Compliance": "38",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+    {
+        "Location": "AUDITORIUM",
+        "Climate File": "MAX",
+        "DIS": "31",
+        "UnmetHoursCooling": "1",
+        "UH Compliance": "38",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+    {
+        "Location": "GYM",
+        "Climate File": "MAX",
+        "DIS": "23",
+        "UnmetHoursCooling": "1",
+        "UH Compliance": "38",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+    {
+        "Location": "KITCHEN",
+        "Climate File": "MAX",
+        "DIS": "37",
+        "UnmetHoursCooling": "1",
+        "UH Compliance": "38",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+
+
+]

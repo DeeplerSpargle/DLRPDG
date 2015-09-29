@@ -7,7 +7,7 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 1",
@@ -17,7 +17,7 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 2",
@@ -27,7 +27,7 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "PERFORMANCE",
@@ -37,17 +37,17 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 4",
         "Climate File": "TMY3WA",
-        "DIS": "8",
+        "DIS": "48",
         "UnmetHoursCooling": "151",
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 3",
@@ -57,7 +57,7 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FOOD PREP",
@@ -67,7 +67,7 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     },
    { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
@@ -77,5 +77,5 @@
         "UH Compliance": "151",
         "PeakHeatingLoad": "3542153",
         "PeakCoolingLoad": "1819953",
-        "EUI": "aaa"
+        "EUI": "48"
     }]

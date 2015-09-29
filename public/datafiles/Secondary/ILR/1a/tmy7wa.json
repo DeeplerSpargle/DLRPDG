@@ -1,0 +1,68 @@
+[
+{
+        "Location": "FLOOR 1",
+        "Climate File": "TMY7WA",
+        "DIS": "84",
+        "UnmetHoursCooling": "2",
+        "UH Compliance": "2",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+{
+        "Location": "MECH",
+        "Climate File": "TMY7WA",
+        "DIS": "25",
+        "UnmetHoursCooling": "2",
+        "UH Compliance": "2",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+{
+        "Location": "FLOOR 2",
+        "Climate File": "TMY7WA",
+        "FLOOR 2": "91",
+        "UnmetHoursCooling": "2",
+        "UH Compliance": "2",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+{
+        "Location": "AUDITORIUM",
+        "Climate File": "TMY7WA",
+        "AUDITORIUM": "24",
+        "UnmetHoursCooling": "2",
+        "UH Compliance": "2",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+{
+        "Location": "GYM",
+        "Climate File": "TMY7WA",
+        "GYM": "18",
+        "UnmetHoursCooling": "2",
+        "UH Compliance": "2",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+,
+{
+        "Location": "KITCHEN",
+        "Climate File": "TMY7WA",
+        "KITCHEN CAFETERIA": "0",
+        "UnmetHoursCooling": "2",
+        "UH Compliance": "2",
+        "PeakHeatingLoad": "3658993",
+        "PeakCoolingLoad": "1897464",
+        "EUI": "aaa"
+    }
+
+]

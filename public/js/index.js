@@ -20,7 +20,7 @@ $(function () {
         var self = this;
         self.Lurl = ko.observable(loadurl);
         self.Lname = ko.observable(loadname);
-        self.LJason = ko.observable(loadjason);
+        self.LaverageNum = ko.observable(loadjason);
     }
 
     function WeatherItem(weathername, weatherurl, weatherjason) {
@@ -261,14 +261,14 @@ $(function () {
             });
 
             peakcGroup = peakcDim.group().reduceSum(function (d) {
-                return d.PeakCoolingLoad / 8;
+                return d.PeakCoolingLoad /self.associatedLoad().LaverageNum();
             });
             peakhDim = ndx.dimension(function (d) {
                 return d.PeakhLabel;
             });
 
             peakhGroup = peakhDim.group().reduceSum(function (d) {
-                return d.PeakHeatingLoad/8 ;
+                return d.PeakHeatingLoad/self.associatedLoad().LaverageNum() ;
             });
 
             EUIGroup = LocationDim.group().reduceSum(function (d) {
@@ -438,13 +438,13 @@ $(function () {
 
 
             self.availableLoads.push(
-                new LoadItem("BASELINE", "/BASE", "on"));
+                new LoadItem("BASELINE", "/BASE", "6"));
             self.availableLoads.push(
-                new LoadItem("2010 Lighting Power Density", "/2010LPD", "on"));
+                new LoadItem("2010 Lighting Power Density", "/2010LPD", "6"));
             self.availableLoads.push(
-                new LoadItem("Internal Lighting Reduction", "/2010LPD", "on"));
+                new LoadItem("Internal Lighting Reduction", "/2010LPD", "6"));
             self.availableLoads.push(
-                new LoadItem("21st Century Classroom", "/21C", "on"));
+                new LoadItem("21st Century Classroom", "/21C", "8"));
 
             self.associatedWeatherFile(self.availableWeatherfiles()[0]);
             self.associatedBuilding(self.availableBuildings()[0]);

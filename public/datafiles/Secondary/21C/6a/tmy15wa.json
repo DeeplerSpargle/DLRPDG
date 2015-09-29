@@ -7,7 +7,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 1",
@@ -17,7 +17,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 2",
@@ -27,7 +27,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "PERFORMANCE",
@@ -37,7 +37,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 4",
@@ -47,7 +47,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 3",
@@ -57,7 +57,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FOOD PREP",
@@ -67,7 +67,7 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     },,
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
@@ -77,5 +77,5 @@
         "UH Compliance": "156",
         "PeakHeatingLoad": "4138171",
         "PeakCoolingLoad": "1489545",
-        "EUI": "aaa"
+        "EUI": "80"
     }]

@@ -7,8 +7,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 1",
         "Climate File": "TMY3",
@@ -17,8 +17,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 2",
         "Climate File": "TMY3",
@@ -27,8 +27,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "PERFORMANCE",
         "Climate File": "TMY3",
@@ -37,8 +37,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 4",
         "Climate File": "TMY3",
@@ -47,8 +47,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "LEARNING 3",
         "Climate File": "TMY3",
@@ -57,8 +57,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FOOD PREP",
         "Climate File": "TMY3",
@@ -67,8 +67,8 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
         "Climate File": "TMY3",
@@ -77,7 +77,7 @@
         "UH Compliance": "155",
         "PeakHeatingLoad": "3651144",
         "PeakCoolingLoad": "2933947",
-        "EUI": "aaa"
-    },,
+        "EUI": "61"
+    }
 
 ]
