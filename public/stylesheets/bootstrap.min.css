@@ -8,9 +8,9 @@
     stroke: none;
     fill: blue;
 }
-#peakcooling-chart g.stack._1 > rect.bar {
+#peakheating-chart g.stack._0 > rect.bar {
     stroke: none;
-    fill: green;
+    fill: red;
 }
 #peakcooling-chart g.stack._2 > rect.bar {
     stroke: none;

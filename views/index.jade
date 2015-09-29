@@ -145,15 +145,15 @@ block column
                     Simple Choose Location
                     #ClimateZone.collapse.out
 
-                       .panel2.panel-success
-                                div.panel-heading2 Climate Zone
-                                div.panel-body.fixed-panelcz
-                                    div(data-bind='foreach: availableItems')
+                        .panel2.panel-success
+                            div.panel-heading2 Climate Zone
+                            div.panel-body.fixed-panelcz
+                                div(data-bind='foreach: availableItems')
 
-                                        input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
-                                        span(data-bind="text: '' + Name()")
+                                    input(type='radio', data-bind='checkedValue: $data, checked: $root.associatedItem')
+                                    span(data-bind="text: '' + Name()")
 
-                                        br
+                                    br
 
                 .row
                     button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#ChooseSchool')
@@ -236,16 +236,16 @@ block column
 
                             #2a.tab-pane
 
-                                    .row
+                                .row
 
 
 
-                                        .col-sm-6.col-sm-6.col-xs-6
-                                            .panel2.panel-success
-                                                div.panel-heading2 % Max Dissatisfied. Percent Dissatisfied Breakdown:
-                                                    #number-chart
-                                                div.panel-body
-                                                    #chart-row-1
+                                    .col-sm-6.col-sm-6.col-xs-6
+                                        .panel2.panel-success
+                                            div.panel-heading2 % Max Dissatisfied. Percent Dissatisfied Breakdown:
+                                                #number-chart
+                                            div.panel-body
+                                                #chart-row-1
 
                             #3a.tab-pane
                                 .row
