@@ -34,7 +34,7 @@ block column
         .col-md-12.col-sm-12.col-xs-12
             .panel.panel-success
                 div.panel-body
-                    .col-m-2.col-sm-2.col-sm-2
+                    .col-m-4.col-sm-4.col-sm-4
                         .panel.panel-success
                             div.panel-heading Choose Location
                             div.panel-body
@@ -218,40 +218,44 @@ block column
                                             div.panel-body.fixed-panel
                                                 #chart-ring-ENERGY
 
-                                        div(style='position: absolute; top:165px; left:455px; width:200px; font-size:20px;color:blue') EUI:
-                                        div(style='position: absolute; top:190px; left:460px; width:200px; font-size:30px;color:blue') KW/sqft
+
+                                        div(style='position: absolute; top:190px; left:460px; width:200px; font-size:30px;color:black') kBtu/SF
                                             #EUI-chart
 
-                                    .col-sm-4.col-sm-4.col-xs-4
-                                        div.panel-body.fixed-panel2
-                                            .span12.table-graph
-                                                table#dc-table-graph.table.table-hover.dc-data-table
-                                                    thead
-                                                        tr.header
-                                                            th Weather File
-
-                                                            th End Use Energy
-
-                                                            th Energy Use (kBtu/Year)
+                                    //.col-sm-4.col-sm-4.col-xs-4
+                                    //    div.panel-body.fixed-panel2
+                                    //        .span12.table-graph
+                                    //            table#dc-table-graph.table.table-hover.dc-data-table
+                                    //                thead
+                                    //                    tr.header
+                                    //                        th Weather File
+                                    //
+                                    //                        th End Use Energy
+                                    //
+                                    //                        th Energy Use (kBtu/Year)
 
                             #2a.tab-pane
 
                                 .row
-
-
-
                                     .col-sm-6.col-sm-6.col-xs-6
                                         .panel2.panel-success
                                             div.panel-heading2 % Max Dissatisfied. Percent Dissatisfied Breakdown:
-                                                #number-chart
-                                            div.panel-body
+                                                #Dis-chart
                                                 #chart-row-1
+                                    .col-sm-4.col-sm-4.col-xs-4
+                                        .panel2.panel-success
+                                            div.panel-heading2 Unmet Hours
+                                                div.panel-body
+                                                    div(style='position: absolute; top:20px; left:0px; width:200px; font-size:16px;color:black')
+                                                        b Cooling Unmet Hours:
+                                                    div(style='position: absolute; top:30px; left:180px; width:200px; font-size:25px;color:black')
+                                                         #UHC-chart
+
 
                             #3a.tab-pane
                                 .row
                                     .col-sm-6.col-sm-6.col-xs-6
                                         div
-
                                         //span(data-bind='text: selectedChoice().Burl()')
                                         img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
                                     //img.img-container(id='zoom',data-bind='attr:{src:fullName}')

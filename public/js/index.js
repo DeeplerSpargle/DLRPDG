@@ -181,10 +181,10 @@ $(function () {
                 .innerRadius(50);
 
             WeatherFileRowChart
-                .width(300).height(200)
+                .width(500).height(300)
                 .dimension(WFDim)
                 .title(function (d) {
-                    return d.key + " : " + d.value + "KW";
+                    return d.key + " : " + d.value + "kBtu";
                 })
                 .renderLabel(true)
                 .group(PerZone)
@@ -197,7 +197,7 @@ $(function () {
                         ENERGYRingChart.filter(chart.filter());
                     });
                 })
-                .xAxis().ticks(4);
+                .xAxis().ticks(5);
 
             dataTable
                 .width(800)
@@ -233,12 +233,13 @@ $(function () {
         };
 
         self.renderChart2 = function (chartData) {
-            var chart1 = dc.rowChart("#chart-row-1");
+            var DisRowChart = dc.rowChart("#chart-row-1");
             var peakcLoadChart = dc.barChart('#peakcooling-chart');
             var peakhLoadChart = dc.barChart('#peakheating-chart');
-            var numberDisplay = dc.numberDisplay('#number-chart');
+            var DisDisplay = dc.numberDisplay('#Dis-chart');
             var EUIDisplay = dc.numberDisplay('#EUI-chart');
-
+            var UHCDisplay = dc.numberDisplay('#UHC-chart');
+            var UHHDisplay = dc.numberDisplay('#UHH-chart');
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
@@ -252,7 +253,7 @@ $(function () {
             });
 
             PerLocation = LocationDim.group().reduceSum(function (d) {
-                return +d.Dis;
+                return +d.DIS;
             });
 
             peakcDim = ndx.dimension(function (d) {
@@ -260,29 +261,46 @@ $(function () {
             });
 
             peakcGroup = peakcDim.group().reduceSum(function (d) {
-                return d.PeakCoolingLoad / 6;
+                return d.PeakCoolingLoad / 8;
             });
             peakhDim = ndx.dimension(function (d) {
                 return d.PeakhLabel;
             });
 
             peakhGroup = peakhDim.group().reduceSum(function (d) {
-                return d.PeakHeatingLoad / 6;
+                return d.PeakHeatingLoad/8 ;
             });
 
-            PerEUI = LocationDim.group().reduceSum(function (d) {
+            EUIGroup = LocationDim.group().reduceSum(function (d) {
                 return +d.EUI;
             });
 
+            UnmetHoursCoolingDim = ndx.dimension(function (d) {
+                return d.UnmetHoursCooling;
+            });
+
+            UnmetHoursCoolingGroup = LocationDim.group().reduceSum(function (d) {
+                return +d.UnmetHoursCooling;
+            });
+
+
+
+
             d3.selectAll("#version").text(dc.version);
 
-            EUIDisplay.group(PerEUI)
+            EUIDisplay.group(EUIGroup)
+                .formatNumber(d3.format(".g"))
+                .valueAccessor(function (d) {
+                    return d.value
+                });
+            UHCDisplay.group(UnmetHoursCoolingGroup)
                 .formatNumber(d3.format(".g"))
                 .valueAccessor(function (d) {
                     return d.value
                 });
 
-            numberDisplay.group(PerLocation)
+
+            DisDisplay.group(PerLocation)
                 .formatNumber(d3.format(".g"))
                 .valueAccessor(function (d) {
                     return d.value
@@ -302,8 +320,8 @@ $(function () {
                 .group(peakcGroup)
                 .renderHorizontalGridLines(true)
                 .margins({top: 15, right: 0, bottom: 80, left: 60})
-                .y(d3.scale.linear().domain([0, 1500000]))
-                .yAxisLabel("KW")
+                .y(d3.scale.linear().domain([0, 5000000]))
+                .yAxisLabel("kBtu")
                 .yAxis().ticks(8);
             //peakLoadChart.on("renderlet",(function(peakLoadChart){
             //    var colors =d3.scale.ordinal().domain(["PeakHeatingLoad", "PeakCoolingLoad"])
@@ -326,7 +344,7 @@ $(function () {
                 .height(300)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
-                .y(d3.scale.linear().domain([0, 1500000]))
+                .y(d3.scale.linear().domain([0, 5000000]))
                 //.xUnits(function(){return 1;})
                 .brushOn(true)
                 .dimension(peakhDim)
@@ -334,31 +352,32 @@ $(function () {
                 .outerPadding(0.3)
                 .group(peakhGroup)
                 .margins({top: 15, right: 0, bottom: 80, left: 60})
-                .yAxisLabel("KW")
+                .yAxisLabel("kBtu")
                 .renderHorizontalGridLines(true)
 
                 .yAxis().ticks(8);
             //peakhLoadChart.ordinalColors(["#6a51a3", "#2171b5", "#238b45", "#d94801", "#cb181d"]);
-            peakcLoadChart.selectAll("rect.bar").attr("fill", function (d) {
-                return "rgb(0, 0, " + (d * 10) + ")";
-            });
 
-            chart1
-                .width(300).height(200)
+
+            DisRowChart
+                .width(500).height(300)
                 .dimension(LocationDim)
                 .title(function (d) {
                     return d.key + " : " + d.value + "% Dissatisfied";
                 })
                 .renderLabel(true)
                 .group(PerLocation)
-                .elasticX(true)
-                .xAxis().ticks(4);
+                .elasticX(false)
+                .margins({top: 15, right: 20, bottom: 80, left: 20})
+                .xAxis().ticks(10);
+            DisRowChart.x(d3.scale.linear().range([0,(DisRowChart.width()-50)]).domain([0,100]));
+            DisRowChart.xAxis().scale(DisRowChart.x());
 
             dc.renderAll();
             d3.selectAll("g.x text")
                 .attr("class", "campusLabel")
                 .style("text-anchor", "end")
-                .attr("transform", "translate(-10,0)rotate(315)");
+                .attr("transform", "translate(-10,0)rotate(310)");
 
 
         };
