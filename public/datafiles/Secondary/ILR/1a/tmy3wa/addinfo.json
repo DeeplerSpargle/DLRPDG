@@ -1,0 +1,68 @@
+[
+    {
+        "Label": "FLOOR 1",
+        "Dis": "91",
+        "Unmet Hours (Heating)": "0",
+        "Unmet Hours (Cooling)": "1",
+        "UH Compliance": "1",
+        "Peak Heating Load": "1347474",
+        "Peak Cooling Load": "836799",
+        "Overheating Risk": "0",
+        "EUI": "0"
+    },
+    {
+        "Label": "Mech",
+        "Dis": "35",
+        "Unmet Hours (Heating)": "0",
+        "Unmet Hours (Cooling)": "1",
+        "UH Compliance": "1",
+        "Peak Heating Load": "1347474",
+        "Peak Cooling Load": "836799",
+        "Overheating Risk": "0",
+        "EUI": "0"
+    },
+    {
+        "Label": "FLOOR 2",
+        "Dis": "95",
+        "Unmet Hours (Heating)": "0",
+        "Unmet Hours (Cooling)": "1",
+        "UH Compliance": "1",
+        "Peak Heating Load": "1347474",
+        "Peak Cooling Load": "836799",
+        "Overheating Risk": "0",
+        "EUI": "0"
+    },
+    {
+        "Label": "AUDITORIUM",
+        "Dis": "30",
+        "Unmet Hours (Heating)": "0",
+        "Unmet Hours (Cooling)": "1",
+        "UH Compliance": "1",
+        "Peak Heating Load": "1347474",
+        "Peak Cooling Load": "836799",
+        "Overheating Risk": "0",
+        "EUI": "0"
+    },
+    {
+        "Label": "GYM",
+        "Dis": "22",
+        "Unmet Hours (Heating)": "0",
+        "Unmet Hours (Cooling)": "1",
+        "UH Compliance": "1",
+        "Peak Heating Load": "1347474",
+        "Peak Cooling Load": "836799",
+        "Overheating Risk": "0",
+        "EUI": "0"
+    },
+    {
+        "Label": "KITCHEN CAFETERIA",
+        "Dis": "28",
+        "Unmet Hours (Heating)": "0",
+        "Unmet Hours (Cooling)": "1",
+        "UH Compliance": "1",
+        "Peak Heating Load": "1347474",
+        "Peak Cooling Load": "836799",
+        "Overheating Risk": "0",
+        "EUI": "0"
+    }
+]

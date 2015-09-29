@@ -162,7 +162,7 @@ block column
                         .panel2.panel-success
                             div.panel-heading2 School Types
                             div.panel-body
-                                select(data-bind="options: $root.availableBuildings, value: selectedChoice, optionsText: 'Bname'")
+                                select(data-bind="options: $root.availableBuildings, value: $root.associatedBuilding, optionsText: 'Bname'")
 
                 .row
                     button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#ChooseWeatherFile')
@@ -171,7 +171,7 @@ block column
                         .panel2.panel-success
                             div.panel-heading2 Weather File
                             div.panel-body
-                                select(data-bind="options: $root.availableWeatherfiles, value: selectedChoiceWeather, optionsText: 'Wname'")
+                                select(data-bind="options: $root.availableWeatherfiles, value: $root.associatedWeatherFile, optionsText: 'Wname'")
                 .row
                     button.btn.btn-success(type='button', data-toggle='collapse', data-target='#ChooseLoadFile')
                     Simple Choose Load Reduction
@@ -179,7 +179,7 @@ block column
                         .panel2.panel-success
                             div.panel-heading2 Load Reduction File
                             div.panel-body
-                                select(data-bind="options: $root.availableLoads, value: selectedChoiceLoad, optionsText: 'Lname'")
+                                select(data-bind="options: $root.availableLoads, value: $root.associatedLoad, optionsText: 'Lname'")
 
             .col-lg-11.col-lg-11.col0-lg-11
                 //button.btn.btn-warning(type='button', data-toggle='collapse', data-target='#buildtype')
@@ -257,7 +257,7 @@ block column
                                     .col-sm-6.col-sm-6.col-xs-6
                                         div
                                         //span(data-bind='text: selectedChoice().Burl()')
-                                        img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
+                                        //img.img-container(id='zoom',data-bind='attr:{src:selectedChoice().Burl}')
                                     //img.img-container(id='zoom',data-bind='attr:{src:fullName}')
                                 //img.img-container(id='zoom',data-bind='attr:{src:associatedItem().Picture}')
                                 //span(data-bind='text: fullName')

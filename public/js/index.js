@@ -45,6 +45,7 @@ $(function () {
         self.selectedChoiceLoad = ko.observable();
         self.selectedPassiveIcon = ko.observable("base.jpg");
 
+
         self.setAccessory = function setAccessory(selectedPassive, data, event) {
             self.selectedPassiveIcon(selectedPassive);
         };
@@ -97,10 +98,10 @@ $(function () {
         var update = function () {
             //put code here. each time a checkbox is marked, this is run.
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
-            if (self.associatedItem() && self.associatedBuilding() && self.associatedWeatherFile()) {
+            if (self.associatedItem() && self.associatedBuilding() && self.associatedWeatherFile() && self.associatedLoad()) {
                 self.selectedPassiveIcon('base.jpg');
-                self.getChartData(self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
-                self.getChartData2(self.associatedWeatherFile().Wurl(), self.renderChart2);
+                self.getChartData('datafiles' + self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
+                self.getChartData2('datafiles' + self.associatedBuilding().Burl() + self.associatedLoad().Lurl() + self.associatedItem().Url() + self.associatedWeatherFile().Wurl(), self.renderChart2);
 
             }
         };
@@ -239,14 +240,13 @@ $(function () {
             var DisDisplay = dc.numberDisplay('#Dis-chart');
             var EUIDisplay = dc.numberDisplay('#EUI-chart');
             var UHCDisplay = dc.numberDisplay('#UHC-chart');
-            var UHHDisplay = dc.numberDisplay('#UHH-chart');
+            //var UHHDisplay = dc.numberDisplay('#UHH-chart');
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
             EUIDim = ndx.dimension(function (d) {
                 return d.EUI;
             });
-
 
             LocationDim = ndx.dimension(function (d) {
                 return d.Location;
@@ -384,67 +384,67 @@ $(function () {
 
         self.init = function init() {
             self.availableItems.push(
-                new DemoItem("datafiles/1a", 'Miami', 'images/3C SAN FRANCISCO/3C_Band.png', 'images/Passive/Dickinson/', 'images/Passive/Dickinson/detail/'));
+                new DemoItem("/1a", 'Miami', 'images/3C SAN FRANCISCO/3C_Band.png', 'images/Passive/Dickinson/', 'images/Passive/Dickinson/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/2a", 'Houston', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/2a", 'Houston', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/2b", 'Phoenix', "images/2B PHOENIX/2B_Band.png", 'images/Passive/Phoenix/', 'images/Passive/Phoenix/detail/'));
+                new DemoItem("/2b", 'Phoenix', "images/2B PHOENIX/2B_Band.png", 'images/Passive/Phoenix/', 'images/Passive/Phoenix/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/3a", 'Atlanta', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/3a", 'Atlanta', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/3b", 'Las Vegas', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/3b", 'Las Vegas', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/3c", 'San Francisco', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/3c", 'San Francisco', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/4a", 'Baltimore', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/4a", 'Baltimore', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/4b", 'Albuquerque', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/4b", 'Albuquerque', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/4c", 'Portland', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/4c", 'Portland', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/5a", 'Chicago', "images/5A CHICAGO/5A_Band.png", 'images/Passive/Dickinson/', 'images/Passive/Dickinson/detail/'));
+                new DemoItem("/5a", 'Chicago', "images/5A CHICAGO/5A_Band.png", 'images/Passive/Dickinson/', 'images/Passive/Dickinson/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/5b", 'Boulder', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/5b", 'Boulder', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/5c", 'Vancouver', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/5c", 'Vancouver', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/6a", 'Minneapolis', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/6a", 'Minneapolis', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/6b", 'Helena', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/6b", 'Helena', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/7.json", 'Duluth', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/7", 'Duluth', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
             self.availableItems.push(
-                new DemoItem("datafiles/8.json", 'Fairbanks', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
+                new DemoItem("/8", 'Fairbanks', "images/3C SAN FRANCISCO/3C_Band.png", 'images/Passive/Stickney/', 'images/Passive/Stickney/detail/'));
 
             self.availableBuildings.push(
-                new BuildingItem("Primary", "images/1A MIAMI/1A_MAX_WR.png", ".json"));
+                new BuildingItem("Primary", "/Secondary", ".json"));
             self.availableBuildings.push(
-                new BuildingItem("Secondary", "images/2A HOUSTON/2A_MAX_WR.png", ".json"));
+                new BuildingItem("Secondary", "/Secondary", ".json"));
 
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY2 DOE", "datafiles/addinfo.json", "on"));
+                new WeatherItem("TMY2 DOE", "/tmy2.json", "on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY3 DOE", "datafiles/addinfo.json", "on"));
+                new WeatherItem("TMY3 DOE", "/tmy3.json", "on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY3 WA", "datafiles/addinfo.json", "on"));
+                new WeatherItem("TMY3 WA", "/tmy3wa.json", "on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY7 WA", "datafiles/addinfo.json", "on"));
+                new WeatherItem("TMY7 WA", "/tmy7wa.json", "on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY15 WA", "datafiles/addinfo.json", "on"));
+                new WeatherItem("TMY15 WA", "/tmy15wa.json", "on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("XMY MIN WA", "datafiles/addinfo.json", "on"));
+                new WeatherItem("XMY MIN WA", "/min.json", "on"));
             self.availableWeatherfiles.push(
-                new WeatherItem("XMY MAX WA", "datafiles/addinfo.json", "on"));
+                new WeatherItem("XMY MAX WA", "/max.json", "on"));
 
 
             self.availableLoads.push(
-                new LoadItem("BASEINE", "datafiles/addinfo.json", "on"));
+                new LoadItem("BASELINE", "/BASE", "on"));
             self.availableLoads.push(
-                new LoadItem("2010 Lighting Power Density", "datafiles/addinfo.json", "on"));
+                new LoadItem("2010 Lighting Power Density", "/2010LPD", "on"));
             self.availableLoads.push(
-                new LoadItem("Internal Lighting Reduction", "datafiles/addinfo.json", "on"));
+                new LoadItem("Internal Lighting Reduction", "/2010LPD", "on"));
             self.availableLoads.push(
-                new LoadItem("21st Century Classroom", "datafiles/addinfo.json", "on"));
+                new LoadItem("21st Century Classroom", "/21C", "on"));
 
             self.associatedWeatherFile(self.availableWeatherfiles()[0]);
             self.associatedBuilding(self.availableBuildings()[0]);

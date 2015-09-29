@@ -1,0 +1,89 @@
+[
+{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "ADMIN",
+        "Climate File": "TMY7WA",
+        "ADMIN": "25",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "LEARNING 1",
+        "Climate File": "TMY7WA",
+        
+        "LEARNING 1": "29",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "LEARNING 2",
+        "Climate File": "TMY7WA",
+        
+        "LEARNING 2": "20",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "PERFORMANCE",
+        "Climate File": "TMY7WA",
+        
+        "PERFORMANCE": "21",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "LEARNING 4",
+        "Climate File": "TMY7WA",
+        
+        "LEARNING 4": "23",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "LEARNING 3",
+        "Climate File": "TMY7WA",
+        
+        "LEARNING 3": "24",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "FOOD PREP",
+        "Climate File": "TMY7WA",
+        
+        
+        "FOOD PREP": "32",
+        
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    },{ "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
+        "Location": "GYM",
+        "Climate File": "TMY7WA",
+        
+        "GYM": "25",
+        "UnmetHoursCooling": "225",
+        "UH Compliance": "225",
+        "PeakHeatingLoad": "3988641",
+        "PeakCoolingLoad": "2568606",
+        "EUI": "aaa"
+    }]
