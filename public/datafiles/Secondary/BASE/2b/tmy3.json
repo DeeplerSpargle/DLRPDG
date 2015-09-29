@@ -6,9 +6,9 @@
         "Unmet Hours (Heating)": "0",
         "UnmetHoursCooling": "22",
         "UH Compliance": "22",
-        "PeakHeatingLoad": "3335691",
+        "PeakHeatingLoad": "3335664",
         "PeakCoolingLoad": "2663299",
-        "EUI": "aaa"
+        "EUI": "64"
     },
     { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "MECH",
@@ -17,9 +17,9 @@
         "Unmet Hours (Heating)": "0",
         "UnmetHoursCooling": "22",
         "UH Compliance": "22",
-        "PeakHeatingLoad": "3335691",
+        "PeakHeatingLoad": "3335664",
         "PeakCoolingLoad": "2663299",
-        "EUI": "aaa"
+        "EUI": "64"
     },
     { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FLOOR 2",
@@ -28,9 +28,9 @@
         "Unmet Hours (Heating)": "0",
         "UnmetHoursCooling": "22",
         "UH Compliance": "22",
-        "PeakHeatingLoad": "3335691",
+        "PeakHeatingLoad": "3335664",
         "PeakCoolingLoad": "2663299",
-        "EUI": "aaa"
+        "EUI": "64"
     },
     { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "AUDITORIUM",
@@ -39,9 +39,9 @@
         "Unmet Hours (Heating)": "0",
         "UnmetHoursCooling": "22",
         "UH Compliance": "22",
-        "PeakHeatingLoad": "3335691",
+        "PeakHeatingLoad": "3335664",
         "PeakCoolingLoad": "2663299",
-        "EUI": "aaa"
+        "EUI": "64"
     },
     { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
@@ -50,9 +50,9 @@
         "Unmet Hours (Heating)": "0",
         "UnmetHoursCooling": "22",
         "UH Compliance": "22",
-        "PeakHeatingLoad": "3335691",
+        "PeakHeatingLoad": "3335664",
         "PeakCoolingLoad": "2663299",
-        "EUI": "aaa"
+        "EUI": "64"
     },
     { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "KITCHEN",
@@ -61,9 +61,9 @@
         "Unmet Hours (Heating)": "0",
         "UnmetHoursCooling": "22",
         "UH Compliance": "22",
-        "PeakHeatingLoad": "3335691",
+        "PeakHeatingLoad": "3335664",
         "PeakCoolingLoad": "2663299",
-        "EUI": "aaa"
+        "EUI": "64"
     }
 
 

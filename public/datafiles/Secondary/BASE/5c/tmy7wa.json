@@ -9,7 +9,7 @@
         "UH Compliance": "63",
         "PeakHeatingLoad": "3909844",
         "PeakCoolingLoad": "1097704",
-        "EUI": "aaa"
+        "EUI": "77"
     },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "MECH",
@@ -20,7 +20,7 @@
         "UH Compliance": "63",
         "PeakHeatingLoad": "3909844",
         "PeakCoolingLoad": "1097704",
-        "EUI": "aaa"
+        "EUI": "77"
     },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "FLOOR 2",
@@ -31,7 +31,7 @@
         "UH Compliance": "63",
         "PeakHeatingLoad": "3909844",
         "PeakCoolingLoad": "1097704",
-        "EUI": "aaa"
+        "EUI": "77"
     },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "AUDITORIUM",
@@ -42,7 +42,7 @@
         "UH Compliance": "63",
         "PeakHeatingLoad": "3909844",
         "PeakCoolingLoad": "1097704",
-        "EUI": "aaa"
+        "EUI": "77"
     },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "GYM",
@@ -53,7 +53,7 @@
         "UH Compliance": "63",
         "PeakHeatingLoad": "3909844",
         "PeakCoolingLoad": "1097704",
-        "EUI": "aaa"
+        "EUI": "77"
     },
 { "PeakcLabel": "PeakCoolingLoad","PeakhLabel": "PeakHeatingLoad",
         "Location": "KITCHEN",
@@ -64,7 +64,7 @@
         "UH Compliance": "63",
         "PeakHeatingLoad": "3909844",
         "PeakCoolingLoad": "1097704",
-        "EUI": "aaa"
+        "EUI": "77"
     }
 
 ]

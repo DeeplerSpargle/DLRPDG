@@ -442,7 +442,7 @@ $(function () {
             self.availableLoads.push(
                 new LoadItem("2010 Lighting Power Density", "/2010LPD", "6"));
             self.availableLoads.push(
-                new LoadItem("Internal Lighting Reduction", "/2010LPD", "6"));
+                new LoadItem("Internal Lighting Reduction", "/ILR", "6"));
             self.availableLoads.push(
                 new LoadItem("21st Century Classroom", "/21C", "8"));
 
