@@ -1,0 +1,12 @@
+[{"WF":"TMY2","Label":"Heating (kBtu)", "Heat":7100293
+ },{"WF":"TMY2","Label":"Cooling (kBtu)","Heat":1741083
+ },{"WF":"TMY2","Label":"Interior Lighting (kBtu)","Heat":2701816
+ },{"WF":"TMY2","Label":"Exterior Lighting (kBtu)","Heat":177771
+ },{"WF":"TMY2","Label":"Receptacle Equipment (kBtu)","Heat":2023218
+ },{"WF":"TMY2","Label":"Interior Fans (kBtu)","Heat":4619997
+ },{"WF":"TMY2","Label":"Distribution Pumps Energy (kBtu)","Heat":0
+ },{"WF":"TMY2","Label":"Heat Rejection (kBtu)","Heat":111133
+ },{"WF":"TMY2","Label":"DHW (kBtu)","Heat":345722
+ },{"WF":"TMY2","Label":"Refrigeration (kBtu)","Heat":34299
+ },{"WF":"TMY2","Label":"Cooking (kBtu)","Heat":1228691
+ }]

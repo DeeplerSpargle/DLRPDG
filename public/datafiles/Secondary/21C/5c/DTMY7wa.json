@@ -1,0 +1,12 @@
+[{"WF":"TMY7wa","Label":"Heating (kBtu)", "Heat":6349647
+ },{"WF":"TMY7wa","Label":"Cooling (kBtu)","Heat":441983
+ },{"WF":"TMY7wa","Label":"Interior Lighting (kBtu)","Heat":2555342
+ },{"WF":"TMY7wa","Label":"Exterior Lighting (kBtu)","Heat":200013
+ },{"WF":"TMY7wa","Label":"Receptacle Equipment (kBtu)","Heat":1078516
+ },{"WF":"TMY7wa","Label":"Interior Fans (kBtu)","Heat":1976750
+ },{"WF":"TMY7wa","Label":"Distribution Pumps Energy (kBtu)","Heat":19845
+ },{"WF":"TMY7wa","Label":"Heat Rejection (kBtu)","Heat":28212
+ },{"WF":"TMY7wa","Label":"DHW (kBtu)","Heat":938047
+ },{"WF":"TMY7wa","Label":"Refrigeration (kBtu)","Heat":96624
+ },{"WF":"TMY7wa","Label":"Cooking (kBtu)","Heat":2350761
+ }]

@@ -1,4 +1,9 @@
 [
+
+    {
+        "WF": "TMY15wa",
+        "Label": "Cooling (kBtu)",
+        "Heat": "919374"},
     {
         "WF": "TMY2 DOE",
         "Label": "Heating (kBtu)",

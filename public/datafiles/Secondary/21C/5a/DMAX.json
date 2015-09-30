@@ -1,0 +1,12 @@
+[{"WF":"MAX","Label":"Heating (kBtu)", "Heat":3340899
+ },{"WF":"MAX","Label":"Cooling (kBtu)","Heat":2201721
+ },{"WF":"MAX","Label":"Interior Lighting (kBtu)","Heat":2555342
+ },{"WF":"MAX","Label":"Exterior Lighting (kBtu)","Heat":193406
+ },{"WF":"MAX","Label":"Receptacle Equipment (kBtu)","Heat":1078516
+ },{"WF":"MAX","Label":"Interior Fans (kBtu)","Heat":2122189
+ },{"WF":"MAX","Label":"Distribution Pumps Energy (kBtu)","Heat":12135
+ },{"WF":"MAX","Label":"Heat Rejection (kBtu)","Heat":140535
+ },{"WF":"MAX","Label":"DHW (kBtu)","Heat":938047
+ },{"WF":"MAX","Label":"Refrigeration (kBtu)","Heat":96624
+ },{"WF":"MAX","Label":"Cooking (kBtu)","Heat":2350761
+ }]

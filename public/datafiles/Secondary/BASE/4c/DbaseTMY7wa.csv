@@ -1,0 +1,12 @@
+[{"WF":"TMY7wa","Label":"Heating (kBtu)",6778694} 
+ ,{"WF":"TMY7wa","Label":"Cooling (kBtu)","Heat":1639621} 
+ ,{"WF":"TMY7wa","Label":"Interior Lighting (kBtu)","Heat":2993656} 
+ ,{"WF":"TMY7wa","Label":"Exterior Lighting (kBtu)","Heat":195840} 
+ ,{"WF":"TMY7wa","Label":"Receptacle Equipment (kBtu)","Heat":2023218} 
+ ,{"WF":"TMY7wa","Label":"Interior Fans (kBtu)","Heat":2076733} 
+ ,{"WF":"TMY7wa","Label":"Distribution Pumps Energy (kBtu)","Heat":20101} 
+ ,{"WF":"TMY7wa","Label":"Heat Rejection (kBtu)","Heat":104657} 
+ ,{"WF":"TMY7wa","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"TMY7wa","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"TMY7wa","Label":"Cooking (kBtu)","Heat":1228691} 
+ ]

@@ -1,0 +1,12 @@
+[{"WF":"TMY15wa","Label":"Heating (kBtu)", "Heat":2491758
+ },{"WF":"TMY15wa","Label":"Cooling (kBtu)","Heat":999309
+ },{"WF":"TMY15wa","Label":"Interior Lighting (kBtu)","Heat":2555342
+ },{"WF":"TMY15wa","Label":"Exterior Lighting (kBtu)","Heat":187331
+ },{"WF":"TMY15wa","Label":"Receptacle Equipment (kBtu)","Heat":1078516
+ },{"WF":"TMY15wa","Label":"Interior Fans (kBtu)","Heat":1723821
+ },{"WF":"TMY15wa","Label":"Distribution Pumps Energy (kBtu)","Heat":0
+ },{"WF":"TMY15wa","Label":"Heat Rejection (kBtu)","Heat":63786
+ },{"WF":"TMY15wa","Label":"DHW (kBtu)","Heat":938047
+ },{"WF":"TMY15wa","Label":"Refrigeration (kBtu)","Heat":96624
+ },{"WF":"TMY15wa","Label":"Cooking (kBtu)","Heat":2350761
+ }]

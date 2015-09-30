@@ -4,7 +4,7 @@
         "Climate File": "TMY7WA",
         "ADMIN": "25",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -15,7 +15,7 @@
         
         "LEARNING 1": "29",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -26,7 +26,7 @@
         
         "LEARNING 2": "20",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -37,7 +37,7 @@
         
         "PERFORMANCE": "21",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -48,7 +48,7 @@
         
         "LEARNING 4": "23",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -59,7 +59,7 @@
         
         "LEARNING 3": "24",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -71,7 +71,7 @@
         
         "FOOD PREP": "32",
         
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",
@@ -81,7 +81,7 @@
         "Climate File": "TMY7WA",
         
         "GYM": "25",
-        "UnmetHoursCooling": "225",
+        "UnmetHoursHeating": "0","UnmetHoursCooling": "225",
         "UH Compliance": "225",
         "PeakHeatingLoad": "3988641",
         "PeakCoolingLoad": "2568606",

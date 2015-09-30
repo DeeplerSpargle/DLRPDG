@@ -1,0 +1,78 @@
+[{"WF":"TMY15wa","Label":"Heating (kBtu)",8308162} 
+ ,{"WF":"TMY15wa","Label":"Cooling (kBtu)","Heat":692782} 
+ ,{"WF":"TMY15wa","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"TMY15wa","Label":"Exterior Lighting (kBtu)","Heat":187331} 
+ ,{"WF":"TMY15wa","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"TMY15wa","Label":"Interior Fans (kBtu)","Heat":4011100} 
+ ,{"WF":"TMY15wa","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"TMY15wa","Label":"Heat Rejection (kBtu)","Heat":44220} 
+ ,{"WF":"TMY15wa","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"TMY15wa","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"TMY15wa","Label":"Cooking (kBtu)","Heat":1228691} 
+ ,{"WF":"TMY7wa","Label":"Heating (kBtu)",9087022} 
+ ,{"WF":"TMY7wa","Label":"Cooling (kBtu)","Heat":730573} 
+ ,{"WF":"TMY7wa","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"TMY7wa","Label":"Exterior Lighting (kBtu)","Heat":188245} 
+ ,{"WF":"TMY7wa","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"TMY7wa","Label":"Interior Fans (kBtu)","Heat":3972109} 
+ ,{"WF":"TMY7wa","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"TMY7wa","Label":"Heat Rejection (kBtu)","Heat":46632} 
+ ,{"WF":"TMY7wa","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"TMY7wa","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"TMY7wa","Label":"Cooking (kBtu)","Heat":1228691} 
+ ,{"WF":"TMY3wa","Label":"Heating (kBtu)",7508169} 
+ ,{"WF":"TMY3wa","Label":"Cooling (kBtu)","Heat":825020} 
+ ,{"WF":"TMY3wa","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"TMY3wa","Label":"Exterior Lighting (kBtu)","Heat":185980} 
+ ,{"WF":"TMY3wa","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"TMY3wa","Label":"Interior Fans (kBtu)","Heat":4110782} 
+ ,{"WF":"TMY3wa","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"TMY3wa","Label":"Heat Rejection (kBtu)","Heat":52661} 
+ ,{"WF":"TMY3wa","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"TMY3wa","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"TMY3wa","Label":"Cooking (kBtu)","Heat":1228691} 
+ ,{"WF":"TMY2","Label":"Heating (kBtu)",9047887} 
+ ,{"WF":"TMY2","Label":"Cooling (kBtu)","Heat":672296} 
+ ,{"WF":"TMY2","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"TMY2","Label":"Exterior Lighting (kBtu)","Heat":179911} 
+ ,{"WF":"TMY2","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"TMY2","Label":"Interior Fans (kBtu)","Heat":3940403} 
+ ,{"WF":"TMY2","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"TMY2","Label":"Heat Rejection (kBtu)","Heat":42912} 
+ ,{"WF":"TMY2","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"TMY2","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"TMY2","Label":"Cooking (kBtu)","Heat":1228691} 
+ ,{"WF":"TMY3","Label":"Heating (kBtu)",8637653} 
+ ,{"WF":"TMY3","Label":"Cooling (kBtu)","Heat":749649} 
+ ,{"WF":"TMY3","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"TMY3","Label":"Exterior Lighting (kBtu)","Heat":181650} 
+ ,{"WF":"TMY3","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"TMY3","Label":"Interior Fans (kBtu)","Heat":4009935} 
+ ,{"WF":"TMY3","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"TMY3","Label":"Heat Rejection (kBtu)","Heat":47850} 
+ ,{"WF":"TMY3","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"TMY3","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"TMY3","Label":"Cooking (kBtu)","Heat":1228691} 
+ ,{"WF":"MIN","Label":"Heating (kBtu)",10880684} 
+ ,{"WF":"MIN","Label":"Cooling (kBtu)","Heat":461897} 
+ ,{"WF":"MIN","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"MIN","Label":"Exterior Lighting (kBtu)","Heat":183577} 
+ ,{"WF":"MIN","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"MIN","Label":"Interior Fans (kBtu)","Heat":3771193} 
+ ,{"WF":"MIN","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"MIN","Label":"Heat Rejection (kBtu)","Heat":29483} 
+ ,{"WF":"MIN","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"MIN","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"MIN","Label":"Cooking (kBtu)","Heat":1228691} 
+ ,{"WF":"MAX","Label":"Heating (kBtu)",6172578} 
+ ,{"WF":"MAX","Label":"Cooling (kBtu)","Heat":926792} 
+ ,{"WF":"MAX","Label":"Interior Lighting (kBtu)","Heat":1892969} 
+ ,{"WF":"MAX","Label":"Exterior Lighting (kBtu)","Heat":183202} 
+ ,{"WF":"MAX","Label":"Receptacle Equipment (kBtu)","Heat":1213937} 
+ ,{"WF":"MAX","Label":"Interior Fans (kBtu)","Heat":4256559} 
+ ,{"WF":"MAX","Label":"Distribution Pumps Energy (kBtu)","Heat":0} 
+ ,{"WF":"MAX","Label":"Heat Rejection (kBtu)","Heat":59157} 
+ ,{"WF":"MAX","Label":"DHW (kBtu)","Heat":345722} 
+ ,{"WF":"MAX","Label":"Refrigeration (kBtu)","Heat":34299} 
+ ,{"WF":"MAX","Label":"Cooking (kBtu)","Heat":1228691} 
+ ]

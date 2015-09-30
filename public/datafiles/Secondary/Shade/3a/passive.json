@@ -1,0 +1,137 @@
+[
+    {
+        "Iteration": "ADMIN",
+        "No Shade": "16",
+        "1 Ft Shade": "16",
+        "2Ft Shade": "16",
+        "3 Ft Shade": "16",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0182",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "LEARNING 1",
+        "No Shade": "19",
+        "1 Ft Shade": "18",
+        "2Ft Shade": "18",
+        "3 Ft Shade": "18",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0183",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "LEARNING 2",
+        "No Shade": "14",
+        "1 Ft Shade": "14",
+        "2Ft Shade": "14",
+        "3 Ft Shade": "14",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0184",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "PERFORMANCE",
+        "No Shade": "13",
+        "1 Ft Shade": "13",
+        "2Ft Shade": "13",
+        "3 Ft Shade": "13",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0185",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "LEARNING 4",
+        "No Shade": "15",
+        "1 Ft Shade": "14",
+        "2Ft Shade": "14",
+        "3 Ft Shade": "14",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0186",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "LEARNING 3",
+        "No Shade": "15",
+        "1 Ft Shade": "15",
+        "2Ft Shade": "15",
+        "3 Ft Shade": "15",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0187",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "FOOD PREP",
+        "No Shade": "25",
+        "1 Ft Shade": "25",
+        "2Ft Shade": "25",
+        "3 Ft Shade": "25",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0188",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "GYM",
+        "No Shade": "18",
+        "1 Ft Shade": "18",
+        "2Ft Shade": "18",
+        "3 Ft Shade": "18",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0189",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "UnmetHoursHeating",
+        "No Shade": "14",
+        "1 Ft Shade": "13",
+        "2Ft Shade": "13",
+        "3 Ft Shade": "12",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0190",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "Unmet Hours (Cooling)",
+        "No Shade": "189",
+        "1 Ft Shade": "192",
+        "2Ft Shade": "192",
+        "3 Ft Shade": "182",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0191",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": "UH Compliance",
+        "No Shade": "203",
+        "1 Ft Shade": "205",
+        "2Ft Shade": "205",
+        "3 Ft Shade": "194",
+        "Climate Zone": "3A",
+        "Climate File": "TMY15WA_BSEW0192",
+        "Peak Heating Load": "4399384",
+        "Peak Cooling Load": "2052857",
+        "EUI": "69"
+    },
+    {
+        "Iteration": ""
+    }
+]

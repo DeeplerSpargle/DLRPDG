@@ -100,7 +100,8 @@ $(function () {
             //With each run _associatedItemIds contains the ID of each DemoItem that has been checked
             if (self.associatedItem() && self.associatedBuilding() && self.associatedWeatherFile() && self.associatedLoad()) {
                 self.selectedPassiveIcon('base.jpg');
-                self.getChartData('datafiles' + self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
+                //self.getChartData('datafiles' + self.associatedItem().Url() + self.associatedBuilding().Jason(), self.renderChart);
+                self.getChartData('datafiles' + self.associatedBuilding().Burl() + self.associatedLoad().Lurl() + self.associatedItem().Url() + self.associatedWeatherFile().WJason(), self.renderChart);
                 self.getChartData2('datafiles' + self.associatedBuilding().Burl() + self.associatedLoad().Lurl() + self.associatedItem().Url() + self.associatedWeatherFile().Wurl(), self.renderChart2);
 
             }
@@ -240,7 +241,7 @@ $(function () {
             var DisDisplay = dc.numberDisplay('#Dis-chart');
             var EUIDisplay = dc.numberDisplay('#EUI-chart');
             var UHCDisplay = dc.numberDisplay('#UHC-chart');
-            //var UHHDisplay = dc.numberDisplay('#UHH-chart');
+            var UHHDisplay = dc.numberDisplay('#UHH-chart');
             // use static or load via d3.csv
             // set crossfilter
             var ndx = crossfilter(chartData);
@@ -282,6 +283,13 @@ $(function () {
             UnmetHoursCoolingGroup = LocationDim.group().reduceSum(function (d) {
                 return +d.UnmetHoursCooling;
             });
+            UnmetHoursHeatingDim = ndx.dimension(function (d) {
+                return d.UnmetHoursHeating;
+            });
+
+            UnmetHoursHeatingGroup = LocationDim.group().reduceSum(function (d) {
+                return +d.UnmetHoursHeating;
+            });
 
 
 
@@ -294,6 +302,12 @@ $(function () {
                     return d.value
                 });
             UHCDisplay.group(UnmetHoursCoolingGroup)
+                .formatNumber(d3.format(".g"))
+                .valueAccessor(function (d) {
+                    return d.value
+                });
+
+            UHHDisplay.group(UnmetHoursHeatingGroup)
                 .formatNumber(d3.format(".g"))
                 .valueAccessor(function (d) {
                     return d.value
@@ -422,20 +436,35 @@ $(function () {
                 new BuildingItem("Secondary", "/Secondary", ".json"));
 
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY2 DOE", "/tmy2.json", "on"));
+                new WeatherItem("TMY2 DOE", "/tmy2.json", "/DO.json"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY3 DOE", "/tmy3.json", "on"));
+                new WeatherItem("TMY3 DOE", "/tmy3.json", "/DO.json"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY3 WA", "/tmy3wa.json", "on"));
+                new WeatherItem("TMY3 WA", "/tmy3wa.json", "/DO.json"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY7 WA", "/tmy7wa.json", "on"));
+                new WeatherItem("TMY7 WA", "/tmy7wa.json", "/DO.json"));
             self.availableWeatherfiles.push(
-                new WeatherItem("TMY15 WA", "/tmy15wa.json", "on"));
+                new WeatherItem("TMY15 WA", "/tmy15wa.json", "/DO.json"));
             self.availableWeatherfiles.push(
-                new WeatherItem("XMY MIN WA", "/min.json", "on"));
+                new WeatherItem("XMY MIN WA", "/min.json", "/DO.json"));
             self.availableWeatherfiles.push(
-                new WeatherItem("XMY MAX WA", "/max.json", "on"));
+                new WeatherItem("XMY MAX WA", "/max.json", "/DO.json"));
 
+            //
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("TMY2 DOE", "/tmy2.json", "/DTMY2.json"));
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("TMY3 DOE", "/tmy3.json", "/DTMY3.json"));
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("TMY3 WA", "/tmy3wa.json", "/DTMY3wa.json"));
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("TMY7 WA", "/tmy7wa.json", "/DTMY7wa.json"));
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("TMY15 WA", "/tmy15wa.json", "/DTMY15wa.json"));
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("XMY MIN WA", "/min.json", "/MIN.json"));
+            //self.availableWeatherfiles.push(
+            //    new WeatherItem("XMY MAX WA", "/max.json", "/MAX.json"));
 
             self.availableLoads.push(
                 new LoadItem("BASELINE", "/BASE", "6"));
